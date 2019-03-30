@@ -23,7 +23,13 @@ namespace Practis_Task1
             double pi = 3.141592653;
             double e = 2.7182818284590452;
             Console.WriteLine($"Pi = {pi}, E = {e}");
-           
+            string first = "\nмоя строка 1";
+            string second = "\tмоя строка 2";
+            string third = "\aмоя строка 3";
+            Console.WriteLine(first);
+            Console.WriteLine(second);
+            Console.WriteLine(third);
+
         }
         public static decimal PerformCalcul(int r)
         { 
