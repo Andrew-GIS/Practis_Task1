@@ -10,7 +10,7 @@ namespace Practis_Task1
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello! room ");
+            Console.WriteLine("ready to study ");
         }
     }
 }
