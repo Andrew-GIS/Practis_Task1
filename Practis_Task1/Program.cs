@@ -20,6 +20,9 @@ namespace Practis_Task1
             int _Identifier = 4;
             int \u006fldenifier;
             int myVariab1le;
+            double pi = 3.141592653;
+            double e = 2.7182818284590452;
+            Console.WriteLine($"Pi = {pi}, E = {e}");
            
         }
         public static decimal PerformCalcul(int r)
