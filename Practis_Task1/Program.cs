@@ -30,7 +30,9 @@ namespace Practis_Task1
             Console.WriteLine(third);
 
         }
+
         public static decimal PerformCalcul(int r)
+
         { 
             const decimal Pi = 3.14m;
 
