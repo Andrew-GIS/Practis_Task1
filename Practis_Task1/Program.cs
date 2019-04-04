@@ -42,6 +42,23 @@ namespace Practis_Task1
                 double Perimetr = side * 4;
                 Console.WriteLine($"Периметр данной фигуры = {Perimetr}");
             }
+            if (choose == 5)
+            {
+                Console.WriteLine("Добро пожаловать в задачу 5");
+                Console.WriteLine("В условии дана фигура - два круга с общим центром и разными радиусами, при условии того что R1 > R2");
+                Console.Write("Введите радиус внешнего круга R1 = ");
+                const double pi = 3.14;
+                double R1 = Convert.ToDouble(Console.ReadLine());
+                Console.Write("Введите радиус внутреннего круга R2 = ");
+                double R2 = Convert.ToDouble(Console.ReadLine());
+                double S1 = pi * R1 * R1;
+                double S2 = pi * R2 * R2;
+                double S3 = S1 - S2;
+                Console.WriteLine($"Площадь пространства внешнего круга = {S1}");
+                Console.WriteLine($"Площадь пространства внутренего круга = {S2}");
+                Console.WriteLine($"Площадь пространства между внутреним и внешним кольцом = {S3}");
+
+            }
             Console.ReadKey();
         }
 
