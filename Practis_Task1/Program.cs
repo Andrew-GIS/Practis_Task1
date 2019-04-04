@@ -111,7 +111,11 @@ namespace Practis_Task1
                     Console.WriteLine($"Измененное Первое число = {first}");
                     Console.WriteLine($"Измененное Второе число = {second}");
                 }
-
+                else if (choose > 9)
+                {
+                    Console.WriteLine("Error");
+                    Console.WriteLine("Введенное число вне диапозона от 1 до 9, либо являеться символом");
+                }
             }
             Console.ReadKey();
         }
