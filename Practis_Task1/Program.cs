@@ -10,36 +10,12 @@ namespace Practis_Task1
     {
         static void Main(string[] args)
         {
-            //task 1
-            int uberful = 5;
-            int _Identifier = 4;
-            int \u006fldenifier;
-            int myVariab1le;
+            Console.WriteLine("Список задач : ");
+            Console.WriteLine("Введите название задачи к решению которого вы хотите перейти (от 1 до 9) ");
 
-            //task 2
-            double pi = 3.141592653;
-            double e = 2.7182818284590452;
-            Console.WriteLine($"Pi = {pi}, E = {e}");
-            //task 3
-
-            string first = "\nмоя строка 1";
-            string second = "\tмоя строка 2";
-            string third = "\aмоя строка 3";
-            Console.WriteLine(first);
-            Console.WriteLine(second);
-            Console.WriteLine(third);
-
+            Console.ReadKey();
         }
 
-        public static decimal PerformCalcul(int r)
-
-        { 
-            const decimal Pi = 3.14m;
-
-            decimal square = Pi * r * r;
-
-            return square;
-        }
     }
 
    
