@@ -84,6 +84,35 @@ namespace Practis_Task1
                 result = (byte)(first * second);
                 Console.WriteLine($"Произведение двух чисел = {result}");
             }
+            if (choose == 9)
+            {
+                int first = 45;
+                int second = 64;
+                Console.WriteLine("Выбедите вариан замены переменных");
+                Console.WriteLine($"Первое число = {first}");
+                Console.WriteLine($"Второе число = {second}");
+                Console.WriteLine("1. C участием третей переменной ");
+                Console.WriteLine("2. Без участия третей переменной ");
+                int chooseVariant = Convert.ToInt32(Console.ReadLine());
+                if (chooseVariant == 1)
+                {
+                    int third;
+                    third = first;
+                    first = second;
+                    second = third;
+                    Console.WriteLine($"Измененное Первое число = {first}");
+                    Console.WriteLine($"Измененное Второе число = {second}");
+                }
+                if (chooseVariant == 2)
+                {
+                    first = first + second;
+                    second = first - second;
+                    first = first - second;
+                    Console.WriteLine($"Измененное Первое число = {first}");
+                    Console.WriteLine($"Измененное Второе число = {second}");
+                }
+
+            }
             Console.ReadKey();
         }
 
