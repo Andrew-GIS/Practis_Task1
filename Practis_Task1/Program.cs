@@ -27,6 +27,13 @@ namespace Practis_Task1
                 string str2 = "Привет " + str1 + "!";
                 Console.WriteLine(str2);
             }
+            if (choose == 3)
+            {
+                Console.WriteLine("Добро пожаловать в задачу 3");
+                var v1 = 'v';
+                v1 = (char)'c';
+                Console.WriteLine(v1);
+            }
             Console.ReadKey();
         }
 
