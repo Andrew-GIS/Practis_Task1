@@ -19,6 +19,14 @@ namespace Practis_Task1
                 int x1 = 255;
                 Console.WriteLine($"Целочисленная переменная x1 = {x1}");
             }
+            if (choose == 2)
+            {
+                Console.WriteLine("Добро пожаловать в задачу 2");
+                Console.WriteLine("Ваше Имя? ");
+                string str1 = Console.ReadLine();
+                string str2 = "Привет " + str1 + "!";
+                Console.WriteLine(str2);
+            }
             Console.ReadKey();
         }
 
