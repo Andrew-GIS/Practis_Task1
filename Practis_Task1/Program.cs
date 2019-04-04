@@ -67,6 +67,14 @@ namespace Practis_Task1
                 Console.WriteLine($"Десятки {tens}");
                 Console.WriteLine($"Еденицы {units}");
             }
+            if (choose == 7)
+            {
+                Console.WriteLine("Добро пожаловать в задачу 7");
+                int first = 7;
+                int second = 23;
+                long sum = first + second;
+                Console.WriteLine($"Сумма двух чисел = {sum}");
+            }
             Console.ReadKey();
         }
 
