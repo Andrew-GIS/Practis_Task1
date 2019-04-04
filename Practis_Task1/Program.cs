@@ -57,7 +57,15 @@ namespace Practis_Task1
                 Console.WriteLine($"Площадь пространства внешнего круга = {S1}");
                 Console.WriteLine($"Площадь пространства внутренего круга = {S2}");
                 Console.WriteLine($"Площадь пространства между внутреним и внешним кольцом = {S3}");
-
+            }
+            if (choose == 6)
+            {
+                Console.WriteLine("Добро пожаловать в задачу 6");
+                int num = 43;
+                int tens = num / 10;
+                int units = num % 10;
+                Console.WriteLine($"Десятки {tens}");
+                Console.WriteLine($"Еденицы {units}");
             }
             Console.ReadKey();
         }
