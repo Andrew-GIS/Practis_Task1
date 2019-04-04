@@ -34,6 +34,14 @@ namespace Practis_Task1
                 v1 = (char)'c';
                 Console.WriteLine(v1);
             }
+            if (choose == 4)
+            {
+                Console.WriteLine("Добро пожаловать в задачу 4");
+                Console.WriteLine("В условии дана фигура - квадрат, введите длину стороны квадрата ");
+                double side = Convert.ToDouble(Console.ReadLine());
+                double Perimetr = side * 4;
+                Console.WriteLine($"Периметр данной фигуры = {Perimetr}");
+            }
             Console.ReadKey();
         }
 
