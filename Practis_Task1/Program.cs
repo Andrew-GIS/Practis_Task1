@@ -75,6 +75,15 @@ namespace Practis_Task1
                 long sum = first + second;
                 Console.WriteLine($"Сумма двух чисел = {sum}");
             }
+            if (choose == 8)
+            {
+                Console.WriteLine("Добро пожаловать в задачу 8");
+                long first = 154;
+                long second = 2;
+                byte result;
+                result = (byte)(first * second);
+                Console.WriteLine($"Произведение двух чисел = {result}");
+            }
             Console.ReadKey();
         }
 
