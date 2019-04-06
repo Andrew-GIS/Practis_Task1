@@ -356,7 +356,7 @@ namespace Practis_Task1
             {
                 factorial = factorial * i;
             }
-            Console.WriteLine(factorial);
+            Console.WriteLine($"factorial {value} = {factorial}");
         }
     }
 }
