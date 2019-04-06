@@ -14,7 +14,8 @@ namespace Practis_Task1
             //Task2();
             //Task3();
             //Task4();
-            Task5();
+            //Task5();
+            Task6();
 
         }
         public static void Task1()
@@ -134,6 +135,34 @@ namespace Practis_Task1
                 default:
                     Console.WriteLine("Inpute correct sign '+'; '-'; '*'; '/'");
                     break;
+            }
+        }
+        public static void Task6()
+        {
+            //
+            // Task where we must find diapason of numbers
+            //
+            Console.WriteLine("Inpute you value ");
+            int value = Convert.ToInt32(Console.ReadLine());
+            if (value>100)
+            {
+                Console.WriteLine("Our value is biggest than 100");
+            }
+            if ((value>=0)&&(value<=14))
+            {
+                Console.WriteLine("Our value is on the [0-14] diapasone");
+            }
+            if ((value >= 15) && (value <= 35))
+            {
+                Console.WriteLine("Our value is on the [15-35] diapasone");
+            }
+            if ((value >= 36) && (value <= 50))
+            {
+                Console.WriteLine("Our value is on the [36-50] diapasone");
+            }
+            if ((value >= 50) && (value <= 100))
+            {
+                Console.WriteLine("Our value is on the [50-100] diapasone");
             }
         }
 
