@@ -13,7 +13,8 @@ namespace Practis_Task1
             //Task1();
             //Task2();
             //Task3();
-            Task4();
+            //Task4();
+            Task5();
 
         }
         public static void Task1()
@@ -88,8 +89,57 @@ namespace Practis_Task1
             Console.WriteLine($"First ex. x = {x}");
 
         }
+        public static void Task5()
+        {
+            //
+            //Calculator
+            //
+            Console.WriteLine("Inpute first value");
+            int operator1 = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Inpute second value");
+            int operator2 = Convert.ToInt32(Console.ReadLine());
+            int result;
+            Console.WriteLine("Inpute sign");
+            string sign = Console.ReadLine();
+            switch (sign)
+            {
+                case "+":
+
+                    result = operator1 + operator2;
+                    Console.WriteLine($"Resalt of sum  = {result}");
+                    break;
+                case "-":
+
+                    result = operator1 - operator2;
+                    Console.WriteLine($"Resalt of different  = {result}");
+                    break;
+                case "*":
+
+                    result = operator1 * operator2;
+                    Console.WriteLine($"Resalt of multiply  = {result}");
+                    break;
+                case "/":
+                    
+                    if (operator2 == 0)
+                    {
+                        Console.WriteLine("Second value can't be 0");
+                        break;
+                    }
+                    else
+                    {
+                        result = operator1 / operator2;
+                        Console.WriteLine($"Resalt of divide  = {result}");
+                        break;
+                    }
+                default:
+                    Console.WriteLine("Inpute correct sign '+'; '-'; '*'; '/'");
+                    break;
+            }
+        }
 
     }
 
-   
 }
+
+   
+
