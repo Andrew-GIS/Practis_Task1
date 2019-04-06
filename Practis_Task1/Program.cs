@@ -12,7 +12,8 @@ namespace Practis_Task1
         {
             //Task1();
             //Task2();
-            Task3();
+            //Task3();
+            Task4();
 
         }
         public static void Task1()
@@ -65,6 +66,26 @@ namespace Practis_Task1
             {
                 Console.WriteLine("Your value is does not conform to condition");
             }
+
+        }
+        public static void Task4()
+        {
+            //
+            // Math operation with some value (x;y;z)
+            //
+            int x = 10;
+            int y = 12;
+            int z = 3;
+            x+= y-x++*y;
+            Console.WriteLine($"First ex. x = {x}");
+            z = --x - y * 5;
+            Console.WriteLine($"Second ex. z = {z}");
+            y /= x + 5 % z;
+            Console.WriteLine($"Third ex. y = {y}");
+            z = x++ + y * 5;
+            Console.WriteLine($"Forth ex. z = {z}");
+            x = y - x++ * z;
+            Console.WriteLine($"First ex. x = {x}");
 
         }
 
