@@ -16,7 +16,8 @@ namespace Practis_Task1
             //Task4();
             //Task5();
             // Task6();
-            Task7();
+            //Task7();
+            Task8();
 
         }
         public static void Task1()
@@ -210,6 +211,56 @@ namespace Practis_Task1
                     Console.WriteLine("My translator doesn't know this word ");
                     break;
             }
+        }
+
+        public static void Task8()
+        {
+            //
+            //Employee bonus calculation.
+            //
+            Console.WriteLine("input your main salary ");
+            double salary = Convert.ToInt32(Console.ReadLine());
+            double final_salary;
+            Console.WriteLine("Input your work experience, choose from variant bellow: ");
+            Console.WriteLine("1. Your work experience is less than 5 years - 10%");
+            Console.WriteLine("2. Your work experience is from 5 years but less than 10 - 15%");
+            Console.WriteLine("3. Your work experience is from 10 years but less than 15 -25% ");
+            Console.WriteLine("4. Your work experience is from 15 years but less than 20 - 35%  ");
+            Console.WriteLine("5. Your work experience is from 20 years but less than 25 - 45%  ");
+            Console.WriteLine("6. Your work experience is from 25 - 50%  ");
+            int choose = Convert.ToInt32(Console.ReadLine());
+            switch (choose)
+                {
+                case 1:
+                    final_salary = salary + (salary * 0.1);
+                    Console.WriteLine($"Your salary with bonus = {final_salary}");
+                    break;
+                case 2:
+                    final_salary = salary + (salary * 0.15);
+                    Console.WriteLine($"Your salary with bonus = {final_salary}");
+                    break;
+                case 3:
+                    final_salary = salary + (salary * 0.25);
+                    Console.WriteLine($"Your salary with bonus = {final_salary}");
+                    break;
+                case 4:
+                    final_salary = salary + (salary * 0.35);
+                    Console.WriteLine($"Your salary with bonus = {final_salary}");
+                    break;
+                case 5:
+                    final_salary = salary + (salary * 0.45);
+                    Console.WriteLine($"Your salary with bonus = {final_salary}");
+                    break;
+                case 6:
+                    final_salary = salary + (salary * 0.5);
+                    Console.WriteLine($"Your salary with bonus = {final_salary}");
+                    break;
+                default:
+                    Console.WriteLine("Error value! Choose from the list");
+                    break;
+            }
+                 
+
         }
 
     }
