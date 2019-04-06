@@ -18,7 +18,8 @@ namespace Practis_Task1
             // Task6();
             //Task7();
             //Task8();
-            Task9();
+            //Task9();
+            Task10();
 
         }
         public static void Task1()
@@ -342,6 +343,21 @@ namespace Practis_Task1
 
         }
 
+        public static void Task10()
+        {
+            //
+            //Factorial of Value
+            //
+            Console.WriteLine("Inpute our value");
+            int value = Convert.ToInt32(Console.ReadLine());
+            int factorial = 1;
+
+            for (int i = 1; i <= value; i++)
+            {
+                factorial = factorial * i;
+            }
+            Console.WriteLine(factorial);
+        }
     }
 }
 
