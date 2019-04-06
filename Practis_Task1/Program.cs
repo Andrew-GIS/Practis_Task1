@@ -17,7 +17,8 @@ namespace Practis_Task1
             //Task5();
             // Task6();
             //Task7();
-            Task8();
+            //Task8();
+            Task9();
 
         }
         public static void Task1()
@@ -53,7 +54,7 @@ namespace Practis_Task1
             {
                 Console.WriteLine("B value doesn't locate between A and C");
             }
-            
+
         }
         public static void Task3()
         {
@@ -80,7 +81,7 @@ namespace Practis_Task1
             int x = 10;
             int y = 12;
             int z = 3;
-            x+= y-x++*y;
+            x += y - x++ * y;
             Console.WriteLine($"First ex. x = {x}");
             z = --x - y * 5;
             Console.WriteLine($"Second ex. z = {z}");
@@ -122,7 +123,7 @@ namespace Practis_Task1
                     Console.WriteLine($"Resalt of multiply  = {result}");
                     break;
                 case "/":
-                    
+
                     if (operator2 == 0)
                     {
                         Console.WriteLine("Second value can't be 0");
@@ -146,11 +147,11 @@ namespace Practis_Task1
             //
             Console.WriteLine("Inpute you value ");
             int value = Convert.ToInt32(Console.ReadLine());
-            if (value>100)
+            if (value > 100)
             {
                 Console.WriteLine("Our value is biggest than 100");
             }
-            if ((value>=0)&&(value<=14))
+            if ((value >= 0) && (value <= 14))
             {
                 Console.WriteLine("Our value is on the [0-14] diapasone");
             }
@@ -230,7 +231,7 @@ namespace Practis_Task1
             Console.WriteLine("6. Your work experience is from 25 - 50%  ");
             int choose = Convert.ToInt32(Console.ReadLine());
             switch (choose)
-                {
+            {
                 case 1:
                     final_salary = salary + (salary * 0.1);
                     Console.WriteLine($"Your salary with bonus = {final_salary}");
@@ -259,13 +260,93 @@ namespace Practis_Task1
                     Console.WriteLine("Error value! Choose from the list");
                     break;
             }
-                 
+
+
+        }
+
+        public static void Task9()
+        {
+            //
+            //Calculator
+            //
+            bool main = true;
+            while (main == true)
+            {
+
+                int operator1 = 0;
+                int operator2 = 0;
+                Console.WriteLine("Inpute first value");
+                string operator_1 = Console.ReadLine();
+                bool succses = Int32.TryParse(operator_1, out operator1);
+                
+                if (!succses)
+                {
+                    Console.WriteLine("Not valid value");
+                    continue;
+                }
+                Console.WriteLine("Inpute second value");
+                string operator_2 = Console.ReadLine();
+                bool succses2 = Int32.TryParse(operator_2, out operator2);
+                if (!succses2)
+                {
+                    Console.WriteLine("Not valid value");
+                    continue;
+                }
+
+                int result;
+                Console.WriteLine("Inpute sign");
+                string sign = Console.ReadLine();
+                switch (sign)
+                {
+                    case "+":
+                        result = operator1 + operator2;
+                        Console.WriteLine($"Resalt of sum  = {result}");
+                        break;
+                    case "-":
+                        result = operator1 - operator2;
+                        Console.WriteLine($"Resalt of different  = {result}");
+                        break;
+                    case "*":
+                        result = operator1 * operator2;
+                        Console.WriteLine($"Resalt of multiply  = {result}");
+                        break;
+                    case "/":
+                        if (operator2 == 0)
+                        {
+                            Console.WriteLine("Second value can't be 0");
+                            break;
+                        }
+                        else
+                        {
+                            result = operator1 / operator2;
+                            Console.WriteLine($"Resalt of divide  = {result}");
+                            break;
+                        }
+                    default:
+                        Console.WriteLine("Inpute correct sign '+'; '-'; '*'; '/'");
+                        break;
+                }
+                Console.WriteLine("Work was end, would you like to continue enter: Y - if continue; and N - if  end");
+                string reth = Console.ReadLine();
+                if (reth == "Y")
+                {
+                    continue;
+                }
+                if (reth == "N")
+                {
+                    main = false;
+                }
+            }
+
+
 
         }
 
     }
-
 }
+
+
+
 
    
 
