@@ -15,7 +15,8 @@ namespace Practis_Task1
             //Task3();
             //Task4();
             //Task5();
-            Task6();
+            // Task6();
+            Task7();
 
         }
         public static void Task1()
@@ -163,6 +164,51 @@ namespace Practis_Task1
             if ((value >= 50) && (value <= 100))
             {
                 Console.WriteLine("Our value is on the [50-100] diapasone");
+            }
+        }
+
+        public static void Task7()
+        {
+            //
+            //Translator
+            //
+            Console.WriteLine("Inpute your word ");
+            string word = Console.ReadLine();
+            switch (word)
+            {
+                case "Rain":
+                    Console.WriteLine("English: Rain --->  Русский: Дождь");
+                    break;
+                case "Wind":
+                    Console.WriteLine("English: Wind --->  Русский: Ветер");
+                    break;
+                case "Sunny":
+                    Console.WriteLine("English: Sunny --->  Русский: Солнечно");
+                    break;
+                case "Frosty":
+                    Console.WriteLine("English: Frosy --->  Русский: Морозно");
+                    break;
+                case "Shower":
+                    Console.WriteLine("English: Shower --->  Русский: Ливень");
+                    break;
+                case "Ice":
+                    Console.WriteLine("English: Ice --->  Русский: Гололед");
+                    break;
+                case "Dry":
+                    Console.WriteLine("English: Dry --->  Русский: Сухо");
+                    break;
+                case "Storm":
+                    Console.WriteLine("English: Storm --->  Русский: Шторм");
+                    break;
+                case "Snow":
+                    Console.WriteLine("English: Snow --->  Русский: Снег");
+                    break;
+                case "Frogs falling from sky":
+                    Console.WriteLine("English: Frogs falling from sky --->  Русский: Жабы падают с неба");
+                    break;
+                default:
+                    Console.WriteLine("My translator doesn't know this word ");
+                    break;
             }
         }
 
