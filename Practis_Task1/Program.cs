@@ -19,7 +19,8 @@ namespace Practis_Task1
             //Task7();
             //Task8();
             //Task9();
-            Task10();
+            //Task10();
+            Task11();
 
         }
         public static void Task1()
@@ -279,7 +280,7 @@ namespace Practis_Task1
                 Console.WriteLine("Inpute first value");
                 string operator_1 = Console.ReadLine();
                 bool succses = Int32.TryParse(operator_1, out operator1);
-                
+
                 if (!succses)
                 {
                     Console.WriteLine("Not valid value");
@@ -358,9 +359,120 @@ namespace Practis_Task1
             }
             Console.WriteLine($"factorial {value} = {factorial}");
         }
-    }
-}
 
+        public static void Task11() //pboblem with rhombus
+        {
+            //
+            //Drawing some figure (string; rectangle; right triangle; equilateral triangle; rhombus).
+            //
+            bool repit = true;
+            while (repit = true)
+            {
+                char star = '*';
+                Console.WriteLine("Choose your figure");
+                Console.WriteLine("1.String");
+                Console.WriteLine("2.Rectangle");
+                Console.WriteLine("3.Right Triangle");
+                Console.WriteLine("4.Equilateral Triangle");
+                Console.WriteLine("5.Rhombus");
+                int choose = Convert.ToInt32(Console.ReadLine());
+                
+                
+                switch (choose)
+                {
+                    case 1:
+                        int width = 68;
+                        Console.Write("String of:");
+                        for (int i = 0; i < width; i++)
+                        {
+                            Console.Write(star);
+                        }
+                        Console.WriteLine();
+                        break;
+                    case 2:
+                        int width_for_rectangle = 5;
+                        string space = "     ";
+                        for (int i = 0; i <width_for_rectangle+2; i++)
+                        {
+                            Console.Write(star);
+                        }
+                        Console.Write("\n");
+                        for (int i = 0; i <width_for_rectangle; i++)
+                        {
+                            Console.WriteLine($"{star}{space}{star}");
+                        }
+                        for (int i = 0; i <width_for_rectangle+2; i++)
+                        {
+                            Console.Write(star);
+                        }
+                        Console.WriteLine();
+                        break;
+                     case 4: //with internet support
+                        
+                        int lenth = 1;
+                        Console.Write($"    {star}");
+                        while (lenth <= 5)
+                        {
+
+                            int k = 5;
+                            int hight = 1;
+
+                            Console.WriteLine("");
+                            while (k > lenth)
+                            {
+                                Console.Write(" ");
+                                k--;
+                            }
+                            while (hight <= lenth)
+                            {
+                                Console.Write($"{star}{star}");
+                                hight++;
+                            }
+                            lenth++;
+                        }
+                        Console.WriteLine();
+
+                        break;
+
+                    case 3:
+                        int number_of_lines = 5;
+                        int count = 1;
+                        while (number_of_lines-- != 0)
+                        {
+                            int c = count;
+                            while (c-- != 0)
+                            {
+                                Console.Write("*");
+                            }
+                            Console.WriteLine();
+                            count +=1;
+                        }
+                        // second variant 
+                        //int num_row = 5;
+                        //for (int n = 0; n < num_row; n++)
+                        //{
+                        //    for (int j_trianng = 0; j_trianng<=n_row;j_trianng++)
+                        //    {
+                        //        Console.WriteLine(star);
+                        //    }  
+                        //}
+                        break;
+                    case 5:
+
+                        break;
+                            default:
+                        Console.WriteLine("Number of figure that you input doesn't exist in sample");
+                            repit = false;
+                            break;
+
+                        }
+
+
+                }
+            }
+        }
+    }
+           
 
 
 
