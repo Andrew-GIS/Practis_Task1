@@ -20,7 +20,8 @@ namespace Practis_Task1
             //Task8();
             //Task9();
             //Task10();
-            Task11();
+            //Task11();
+            Defining_of_value();
 
         }
         public static void Task1()
@@ -339,9 +340,6 @@ namespace Practis_Task1
                     main = false;
                 }
             }
-
-
-
         }
 
         public static void Task10()
@@ -376,8 +374,8 @@ namespace Practis_Task1
                 Console.WriteLine("4.Equilateral Triangle");
                 Console.WriteLine("5.Rhombus");
                 int choose = Convert.ToInt32(Console.ReadLine());
-                
-                
+
+
                 switch (choose)
                 {
                     case 1:
@@ -392,23 +390,23 @@ namespace Practis_Task1
                     case 2:
                         int width_for_rectangle = 5;
                         string space = "     ";
-                        for (int i = 0; i <width_for_rectangle+2; i++)
+                        for (int i = 0; i < width_for_rectangle + 2; i++)
                         {
                             Console.Write(star);
                         }
                         Console.Write("\n");
-                        for (int i = 0; i <width_for_rectangle; i++)
+                        for (int i = 0; i < width_for_rectangle; i++)
                         {
                             Console.WriteLine($"{star}{space}{star}");
                         }
-                        for (int i = 0; i <width_for_rectangle+2; i++)
+                        for (int i = 0; i < width_for_rectangle + 2; i++)
                         {
                             Console.Write(star);
                         }
                         Console.WriteLine();
                         break;
-                     case 4: //with internet support
-                        
+                    case 4: //with internet support
+
                         int lenth = 1;
                         Console.Write($"    {star}");
                         while (lenth <= 5)
@@ -445,7 +443,7 @@ namespace Practis_Task1
                                 Console.Write("*");
                             }
                             Console.WriteLine();
-                            count +=1;
+                            count += 1;
                         }
                         // second variant 
                         //int num_row = 5;
@@ -460,18 +458,96 @@ namespace Practis_Task1
                     case 5:
 
                         break;
-                            default:
+                    default:
                         Console.WriteLine("Number of figure that you input doesn't exist in sample");
-                            repit = false;
-                            break;
+                        repit = false;
+                        break;
+                }
+            }
+        }
 
+        public static void Defining_of_value()
+        {
+            bool repite = true;
+            while (repite == true)
+            {
+                Console.WriteLine("Inpute your value");
+                int value = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("Choose variant what you want to check in this value");
+                Console.WriteLine("1. Check your value on sign (negative or positive)");
+                Console.WriteLine("2. Check our value to simple (simple or no)");
+                Console.WriteLine("3. Check our value about dividing to 2;5;3;6;9 ");
+                int choose = Convert.ToInt32(Console.ReadLine());
+                int counter = 0;
+                switch (choose)
+                {
+                    case 1:
+                        if (value > 0)
+                        {
+                            Console.WriteLine("Your Value is positive");
+                        }
+                        else if (value < 0)
+                        {
+                            Console.WriteLine("Your Value is negative");
+                        }
+                        else
+                        {
+                            Console.WriteLine("Your Value is ZERO");
+                        }
+                        break;
+
+                    case 2:
+                        
+                            for (int i = 1; i <= value; i++)
+                            {
+                                if (value % i == 0)
+                                {
+                                counter++;
+                                }
+                            }
+                        if (counter == 2)
+                        {
+                            Console.WriteLine("Your value is simple");
+                        }
+                        else if (counter != 2)
+                        {
+                            Console.WriteLine("Your value is NOT Simple");
                         }
 
-
+                        break;
+                    case 3:
+                        if (value%2==0 && value%5==0 && value%3 ==0 && value%6==0 && value%9 ==0)
+                        {
+                            Console.WriteLine("OK - Your value is DEVIDE by 2;3;5;6;9 at the same time");
+                        }
+                        else
+                        {
+                            Console.WriteLine("NOT - Your value is DOESN'T devide by 2;3;5;6;9 at the same time");
+                        }
+                        Console.WriteLine("Numbers from 0 to 1000 that devides by 2;3;5;6;9 at the same time");
+                        for (int i = 0; i < 1000; i++)
+                        {
+                            if (i % 2 == 0 && i % 5 == 0 && i % 3 == 0 && i % 6 == 0 && i % 9 == 0)
+                            {
+                                Console.Write($"{i}; ");
+                            }   
+                        }
+                        break;
+                }
+                Console.WriteLine("\n Work was end, would you like to continue enter: Y - if continue; and N - if  end");
+                string reth = Console.ReadLine();
+                if (reth == "Y")
+                {
+                    continue;
+                }
+                else 
+                {
+                    repite = false;
                 }
             }
         }
     }
+}
            
 
 
