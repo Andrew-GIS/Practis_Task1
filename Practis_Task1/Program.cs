@@ -22,7 +22,8 @@ namespace Practis_Task1
             //Task10();
             //Task11();
             //Defining_of_value();
-            Route();
+            //Route();
+            Value_Between_Numbers();
 
         }
         public static void Task1()
@@ -569,6 +570,31 @@ namespace Practis_Task1
                 Console.WriteLine($"Number of roads that car can send some gifts {route}");
             }
 
+        }
+
+        public static void Value_Between_Numbers()
+        {
+            Console.WriteLine("Inpute first value");
+            int first = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Inpute second value");
+            int second = Convert.ToInt32(Console.ReadLine());
+            int sum_between = 0;
+            for (int i=first;i<=second;i++)
+            {
+                //Console.WriteLine($"{i}, ");
+                sum_between += i;
+            }
+            Console.WriteLine($"Sum of numbers bitween {first} and {second} = {sum_between}");
+            Console.WriteLine("All neagtive value located between our numbers: ");
+            for (int i = first; i <= second; i++)
+            {
+                
+                if (i % 2 == 1)   
+                {
+                    Console.Write($"{i}, ");
+                }
+            }
+            Console.WriteLine();
         }
 
     }
