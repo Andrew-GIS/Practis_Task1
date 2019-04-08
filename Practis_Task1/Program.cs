@@ -21,7 +21,8 @@ namespace Practis_Task1
             //Task9();
             //Task10();
             //Task11();
-            Defining_of_value();
+            //Defining_of_value();
+            Route();
 
         }
         public static void Task1()
@@ -34,6 +35,7 @@ namespace Practis_Task1
             int hours = second / 3600;
             Console.WriteLine($"Number of hours = {hours}");
         }
+
         public static void Task2()
         {
             //
@@ -59,6 +61,7 @@ namespace Practis_Task1
             }
 
         }
+
         public static void Task3()
         {
             //
@@ -76,6 +79,7 @@ namespace Practis_Task1
             }
 
         }
+
         public static void Task4()
         {
             //
@@ -96,6 +100,7 @@ namespace Practis_Task1
             Console.WriteLine($"First ex. x = {x}");
 
         }
+
         public static void Task5()
         {
             //
@@ -143,6 +148,7 @@ namespace Practis_Task1
                     break;
             }
         }
+
         public static void Task6()
         {
             //
@@ -546,6 +552,25 @@ namespace Practis_Task1
                 }
             }
         }
+
+        public static void Route()
+        {
+            int start = 1;
+            Console.WriteLine("Inpute number of clients ");
+            int clients = Convert.ToInt32(Console.ReadLine());
+            int route = 1;
+            do
+            {
+                route *= start;
+                start++;
+            }
+            while (start <= clients);
+            {
+                Console.WriteLine($"Number of roads that car can send some gifts {route}");
+            }
+
+        }
+
     }
 }
            
