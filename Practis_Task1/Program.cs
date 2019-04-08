@@ -23,7 +23,8 @@ namespace Practis_Task1
             //Task11();
             //Defining_of_value();
             //Route();
-            Value_Between_Numbers();
+            //Value_Between_Numbers();
+            QuantityNumbers_InValue();
 
         }
         public static void Task1()
@@ -595,6 +596,23 @@ namespace Practis_Task1
                 }
             }
             Console.WriteLine();
+        }
+
+        public static void QuantityNumbers_InValue()
+        {
+            Console.WriteLine("Input your natural value ");
+            int value = Convert.ToInt32(Console.ReadLine());
+            int counter = 0;
+            while (value != 0)
+            {
+                if (value % 2 == 0)
+                {
+                    counter++;
+                }
+                value = value / 10;
+            }
+            Console.WriteLine($"Quantity of count numbers = {counter}");
+
         }
 
     }
