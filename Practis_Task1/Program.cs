@@ -25,8 +25,8 @@ namespace Practis_Task1
             //Route();
             //Value_Between_Numbers();
             //QuantityNumbers_InValue();
-            Average_Of_Value();
-
+            //Average_Of_Value();
+            Skier();
         }
         public static void Task1()
         {
@@ -644,6 +644,30 @@ namespace Practis_Task1
                     Console.WriteLine("Your first value is beggest than Second - this is didn't corresponds to our conditions");
                 }
         }
+
+        public static void Skier()
+        {
+            double start = 10;
+            double finish = 100;
+            double distance;
+            double increment;
+            int counter = 0;
+           
+                do
+                {
+                    increment = start * 0.1;
+                    start = increment + start;
+                    distance = start;
+                    counter++;
+
+
+                }
+                while (distance <= finish);
+                {
+                    Console.WriteLine($"Our skier will reach 100km point at the {counter}th day");
+                }
+        }
+
     }
 }
            
