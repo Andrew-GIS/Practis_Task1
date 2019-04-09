@@ -24,7 +24,8 @@ namespace Practis_Task1
             //Defining_of_value();
             //Route();
             //Value_Between_Numbers();
-            QuantityNumbers_InValue();
+            //QuantityNumbers_InValue();
+            Average_Of_Value();
 
         }
         public static void Task1()
@@ -615,6 +616,34 @@ namespace Practis_Task1
 
         }
 
+        public static void Average_Of_Value()
+        {
+                Console.WriteLine("Input first value, first value must be smaller than second ");
+                int first = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("Inpute second value ");
+                int second = Convert.ToInt32(Console.ReadLine());
+                double avarage = 0;
+                double sum = 0;
+                int counter = 0;
+                if (second >= first)
+                {
+                    for (int i = first; i <= second; i++)
+                    {
+
+                        sum += i;
+                        counter++;
+                        avarage = sum / counter;
+
+                    }
+                //Console.WriteLine($"Kol {counter}; Sum {sum} ;  Avarage {avarage}");
+                Console.WriteLine($"Avarage of values between firs and second = {avarage}");
+
+                }
+                else
+                {
+                    Console.WriteLine("Your first value is beggest than Second - this is didn't corresponds to our conditions");
+                }
+        }
     }
 }
            
