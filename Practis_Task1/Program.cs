@@ -30,7 +30,8 @@ namespace Practis_Task1
             //Multiply_Without_Multiply();
             //Square_of_numbers();
             //Fibonacci_Void();
-            Fibonachy_Count();
+            //Fibonachy_Count();
+            Parsing_Of_Value();
         }
         public static void Task1()
         {
@@ -705,7 +706,7 @@ namespace Practis_Task1
         public static void Square_of_numbers()
         {
             //
-            //Выведите все квадраты натуральных чисел, не превосходящие данного числа N.
+            //Print all squares of natural numbers not exceeding a given number N.
             //
             Console.WriteLine("Inpute you N value ");
             int N = Convert.ToInt32(Console.ReadLine());
@@ -778,6 +779,31 @@ namespace Practis_Task1
             //realized with BIG KOSTILE, didn't have enough time, sorry(((.
             //
         }
+
+        public static void Parsing_Of_Value()
+        {
+            //
+            //Determine what digits a number consists of (a number is entered, you need to parse it and output all the digits into it in order).
+            //
+            Console.WriteLine("Input you value ");
+            int value = Convert.ToInt32(Console.ReadLine());
+            int temp = 0;
+            while (value >= 1)
+            {
+                temp = value % 10;
+                value = value / 10;
+                Console.Write($" {temp} ,");
+                //string temp_resth = Convert.ToString(temp);
+                //char[] arr = temp_resth.ToCharArray();
+                //Array.Reverse(arr);
+                //Console.Write(arr);
+            }
+            //
+            //Problem with revers of value.
+            //
+        }
+
+        
 
     }
 }
