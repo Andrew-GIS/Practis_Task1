@@ -27,7 +27,8 @@ namespace Practis_Task1
             //QuantityNumbers_InValue();
             //Average_Of_Value();
             //Skier();
-            Multiply_Without_Multiply();
+            //Multiply_Without_Multiply();
+            Square_of_numbers();
         }
         public static void Task1()
         {
@@ -697,6 +698,24 @@ namespace Practis_Task1
             //    resalt = resalt + first;
             //}
             //Console.WriteLine("Multiply  = {0}", resalt);
+        }
+
+        public static void Square_of_numbers()
+        {
+            //
+            //Выведите все квадраты натуральных чисел, не превосходящие данного числа N.
+            //
+            Console.WriteLine("Inpute you N value ");
+            int N = Convert.ToInt32(Console.ReadLine());
+            int square = 1;
+            for (int i = 1; i < N; i++)
+            {
+                square = i*i;
+                if (square < N)
+                {
+                    Console.WriteLine("Squares of {0} = {1}", i,  square);
+                }
+            }
         }
     }
 }
