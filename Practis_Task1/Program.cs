@@ -29,7 +29,8 @@ namespace Practis_Task1
             //Skier();
             //Multiply_Without_Multiply();
             //Square_of_numbers();
-            Fibonacci_Void();
+            //Fibonacci_Void();
+            Fibonachy_Count();
         }
         public static void Task1()
         {
@@ -509,14 +510,14 @@ namespace Practis_Task1
                         break;
 
                     case 2:
-                        
-                            for (int i = 1; i <= value; i++)
+
+                        for (int i = 1; i <= value; i++)
+                        {
+                            if (value % i == 0)
                             {
-                                if (value % i == 0)
-                                {
                                 counter++;
-                                }
                             }
+                        }
                         if (counter == 2)
                         {
                             Console.WriteLine("Your value is simple");
@@ -528,7 +529,7 @@ namespace Practis_Task1
 
                         break;
                     case 3:
-                        if (value%2==0 && value%5==0 && value%3 ==0 && value%6==0 && value%9 ==0)
+                        if (value % 2 == 0 && value % 5 == 0 && value % 3 == 0 && value % 6 == 0 && value % 9 == 0)
                         {
                             Console.WriteLine("OK - Your value is DEVIDE by 2;3;5;6;9 at the same time");
                         }
@@ -542,7 +543,7 @@ namespace Practis_Task1
                             if (i % 2 == 0 && i % 5 == 0 && i % 3 == 0 && i % 6 == 0 && i % 9 == 0)
                             {
                                 Console.Write($"{i}; ");
-                            }   
+                            }
                         }
                         break;
                 }
@@ -552,7 +553,7 @@ namespace Practis_Task1
                 {
                     continue;
                 }
-                else 
+                else
                 {
                     repite = false;
                 }
@@ -584,7 +585,7 @@ namespace Practis_Task1
             Console.WriteLine("Inpute second value");
             int second = Convert.ToInt32(Console.ReadLine());
             int sum_between = 0;
-            for (int i=first;i<=second;i++)
+            for (int i = first; i <= second; i++)
             {
                 //Console.WriteLine($"{i}, ");
                 sum_between += i;
@@ -593,8 +594,8 @@ namespace Practis_Task1
             Console.WriteLine("All neagtive value located between our numbers: ");
             for (int i = first; i <= second; i++)
             {
-                
-                if (i % 2 == 1)   
+
+                if (i % 2 == 1)
                 {
                     Console.Write($"{i}, ");
                 }
@@ -621,31 +622,31 @@ namespace Practis_Task1
 
         public static void Average_Of_Value()
         {
-                Console.WriteLine("Input first value, first value must be smaller than second ");
-                int first = Convert.ToInt32(Console.ReadLine());
-                Console.WriteLine("Inpute second value ");
-                int second = Convert.ToInt32(Console.ReadLine());
-                double avarage = 0;
-                double sum = 0;
-                int counter = 0;
-                if (second >= first)
+            Console.WriteLine("Input first value, first value must be smaller than second ");
+            int first = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Inpute second value ");
+            int second = Convert.ToInt32(Console.ReadLine());
+            double avarage = 0;
+            double sum = 0;
+            int counter = 0;
+            if (second >= first)
+            {
+                for (int i = first; i <= second; i++)
                 {
-                    for (int i = first; i <= second; i++)
-                    {
 
-                        sum += i;
-                        counter++;
-                        avarage = sum / counter;
+                    sum += i;
+                    counter++;
+                    avarage = sum / counter;
 
-                    }
+                }
                 //Console.WriteLine($"Kol {counter}; Sum {sum} ;  Avarage {avarage}");
                 Console.WriteLine($"Avarage of values between firs and second = {avarage}");
 
-                }
-                else
-                {
-                    Console.WriteLine("Your first value is beggest than Second - this is didn't corresponds to our conditions");
-                }
+            }
+            else
+            {
+                Console.WriteLine("Your first value is beggest than Second - this is didn't corresponds to our conditions");
+            }
         }
 
         public static void Skier()
@@ -655,20 +656,20 @@ namespace Practis_Task1
             double distance;
             double increment;
             int counter = 0;
-           
-                do
-                {
-                    increment = start * 0.1;
-                    start = increment + start;
-                    distance = start;
-                    counter++;
+
+            do
+            {
+                increment = start * 0.1;
+                start = increment + start;
+                distance = start;
+                counter++;
 
 
-                }
-                while (distance <= finish);
-                {
-                    Console.WriteLine($"Our skier will reach 100km point at the {counter}th day");
-                }
+            }
+            while (distance <= finish);
+            {
+                Console.WriteLine($"Our skier will reach 100km point at the {counter}th day");
+            }
         }
 
         public static void Multiply_Without_Multiply()
@@ -680,11 +681,11 @@ namespace Practis_Task1
             int second = rnd.Next(-10, 10);
             Console.WriteLine("Second value = {0}", second);
             int multiply = 0;
-           
-                for (int i = 1; i <= second; i++)
-                {
-                    multiply = multiply + first;
-                }
+
+            for (int i = 1; i <= second; i++)
+            {
+                multiply = multiply + first;
+            }
             Console.WriteLine($"Multiply = {multiply}");
             //
             //test with simple value.
@@ -711,17 +712,17 @@ namespace Practis_Task1
             int square = 1;
             for (int i = 1; i < N; i++)
             {
-                square = i*i;
+                square = i * i;
                 if (square < N)
                 {
-                    Console.WriteLine("Squares of {0} = {1}", i,  square);
+                    Console.WriteLine("Squares of {0} = {1}", i, square);
                 }
             }
         }
 
         public static void Fibonacci_Void()
         {
-            Console.WriteLine("Inpute your k value ");
+            Console.WriteLine("Input your k value ");
             int k = Convert.ToInt32(Console.ReadLine());
             int a = 1;
             int b = 1;
@@ -729,15 +730,15 @@ namespace Practis_Task1
             Console.Write("0 , ");
             Console.Write("1 , ");
             Console.Write("1 , ");
-            for (int i =0; i < k; i++)
+            for (int i = 0; i < k; i++)
             {
                 //if (i == 0 || i == 1)
                 //{
                 //    Console.Write($"{i}, ");
-                    
+
                 //}
-                
-                if (sum<k)
+
+                if (sum < k)
                 {
                     sum = a + b;
                     Console.Write($"{sum} , ");
@@ -745,9 +746,42 @@ namespace Practis_Task1
                     b = sum;
                 }
             }
+            //
+            //Program displays one extra value 
+            //
         }
+
+        public static void Fibonachy_Count()
+        {
+            Console.WriteLine("Input numbers of Fibonachy values that you want to display");
+            int k = Convert.ToInt32(Console.ReadLine());
+            int a = 1;
+            int b = 1;
+            int sum = 0;
+            int conter = 0;
+            Console.Write("0 , "); Console.Write("1 , "); Console.Write("1 , ");
+            for (int i = 0; i <= k-4; i++)
+            {
+                do
+                {
+                    sum = a + b;
+                    a = b;
+                    b = sum;
+                    conter++;
+                }
+                while (conter == k);
+                {
+                    Console.Write($"{sum} , ");
+                }
+            }
+            //
+            //realized with BIG KOSTILE, didn't have enough time, sorry(((.
+            //
+        }
+
     }
 }
+
            
 
 
