@@ -32,7 +32,8 @@ namespace Practis_Task1
             //Fibonacci_Void();
             //Fibonachy_Count();
             //Parsing_Of_Value();
-            Exponent();
+            //Exponent();
+            Reverse();
         }
         public static void Task1()
         {
@@ -793,12 +794,14 @@ namespace Practis_Task1
             {
                 temp = value % 10;
                 value = value / 10;
-                Console.Write($" {temp} ,");
-                //string temp_resth = Convert.ToString(temp);
-                //char[] arr = temp_resth.ToCharArray();
+                //Console.Write($"{temp} ");
+
+                string temp_resth = Convert.ToString(temp);
+                char[] arr = temp_resth.ToCharArray();
                 //Array.Reverse(arr);
-                //Console.Write(arr);
+                Console.Write(arr);
             }
+
             //
             //Problem with revers of value.
             //
@@ -837,8 +840,19 @@ namespace Practis_Task1
             }
                 
         }
-            
 
+        public static void Reverse()
+        {
+            Console.WriteLine("Input you value ");
+            int value = Convert.ToInt32(Console.ReadLine());
+            int reverse = 0;
+            while (value > 0)
+            {
+                reverse = reverse*10 + value % 10;
+                value /= 10;
+            }
+            Console.WriteLine($"Reverse value = {reverse}");
+        }
         }
 
     }
