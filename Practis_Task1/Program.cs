@@ -26,7 +26,8 @@ namespace Practis_Task1
             //Value_Between_Numbers();
             //QuantityNumbers_InValue();
             //Average_Of_Value();
-            Skier();
+            //Skier();
+            Multiply_Without_Multiply();
         }
         public static void Task1()
         {
@@ -668,6 +669,35 @@ namespace Practis_Task1
                 }
         }
 
+        public static void Multiply_Without_Multiply()
+        {
+            Random rnd = new Random();
+            int first = rnd.Next(-10, 10);
+            Console.WriteLine("First value = {0}", first);
+            Random rnd2 = new Random();
+            int second = rnd.Next(-10, 10);
+            Console.WriteLine("Second value = {0}", second);
+            int multiply = 0;
+           
+                for (int i = 1; i <= second; i++)
+                {
+                    multiply = multiply + first;
+                }
+            Console.WriteLine($"Multiply = {multiply}");
+            //
+            //test with simple value.
+            //
+            //Console.WriteLine("First ");
+            //int first = Convert.ToInt32(Console.ReadLine());
+            //Console.WriteLine("Second ");
+            //int second = Convert.ToInt32(Console.ReadLine());
+            //int resalt = 0;
+            //for (int i = 1; i <= second; i++)
+            //{
+            //    resalt = resalt + first;
+            //}
+            //Console.WriteLine("Multiply  = {0}", resalt);
+        }
     }
 }
            
