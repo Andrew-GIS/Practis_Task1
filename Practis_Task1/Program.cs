@@ -28,7 +28,8 @@ namespace Practis_Task1
             //Average_Of_Value();
             //Skier();
             //Multiply_Without_Multiply();
-            Square_of_numbers();
+            //Square_of_numbers();
+            Fibonacci_Void();
         }
         public static void Task1()
         {
@@ -714,6 +715,34 @@ namespace Practis_Task1
                 if (square < N)
                 {
                     Console.WriteLine("Squares of {0} = {1}", i,  square);
+                }
+            }
+        }
+
+        public static void Fibonacci_Void()
+        {
+            Console.WriteLine("Inpute your k value ");
+            int k = Convert.ToInt32(Console.ReadLine());
+            int a = 1;
+            int b = 1;
+            int sum = 0;
+            Console.Write("0 , ");
+            Console.Write("1 , ");
+            Console.Write("1 , ");
+            for (int i =0; i < k; i++)
+            {
+                //if (i == 0 || i == 1)
+                //{
+                //    Console.Write($"{i}, ");
+                    
+                //}
+                
+                if (sum<k)
+                {
+                    sum = a + b;
+                    Console.Write($"{sum} , ");
+                    a = b;
+                    b = sum;
                 }
             }
         }
