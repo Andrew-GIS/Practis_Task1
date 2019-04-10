@@ -31,7 +31,8 @@ namespace Practis_Task1
             //Square_of_numbers();
             //Fibonacci_Void();
             //Fibonachy_Count();
-            Parsing_Of_Value();
+            //Parsing_Of_Value();
+            Exponent();
         }
         public static void Task1()
         {
@@ -803,10 +804,45 @@ namespace Practis_Task1
             //
         }
 
-        
+        public static void Exponent()
+        {
+            Console.WriteLine("Input you value ");
+            int value = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Input Exponent ");
+            int exponent = Convert.ToInt32(Console.ReadLine());
+            double resalt = 1;
+            if (exponent > 0)
+            {
+                for (int i = 1; i <= exponent; i++)
+                {
+                    resalt *= value;
+                }
+                Console.WriteLine($"Exponent = {resalt}");
+            }
+            if (exponent < 0)
+            {
+                for (int i = -1; i >= exponent; i--)
+                {
+                    resalt =(resalt* value);
+                }
+                resalt = 1 / resalt;
+                Console.WriteLine($"Exponent = {resalt}");
+                //Console.WriteLine($"Exponent = 1/{resalt}"); - //easy way to write resalt - good look but not a value
+            }
+
+            if (exponent == 0)
+            {
+                resalt = 1;
+                Console.WriteLine($"Exponent = {resalt}");
+            }
+                
+        }
+            
+
+        }
 
     }
-}
+
 
            
 
