@@ -34,7 +34,8 @@ namespace Practis_Task1
             //Parsing_Of_Value();
             //Exponent();
             //Reverse();
-            DeleteSomeValue();
+            //DeleteSomeValue();
+            MaxOfValue();
         }
         public static void Task1()
         {
@@ -874,7 +875,12 @@ namespace Practis_Task1
                 }
                 else if (rewrite != remove)
                 {
-                    Console.Write($"{rewrite}");
+                    string rewrite_2 = Convert.ToString(rewrite);
+                    char[] arr = rewrite_2.ToCharArray();
+                    Array.Reverse(arr);
+                    string resault = new string(arr);
+                    Console.Write($"{resault}");
+
                 }
                 else if (value!=rewrite)
                 {
@@ -883,9 +889,29 @@ namespace Practis_Task1
                 }
             }
             //
-            //Problem with display massage in case of "remove" number didn't exist in value.
+            //Problem with reverse and display massage in case of "remove" number didn't exist in value.
             //
         }
+
+        public static void MaxOfValue()
+        {
+            Console.WriteLine("Inpute your value ");
+            int value = Convert.ToInt32(Console.ReadLine());
+            int max=1;
+            int temp;
+            while (value > 0)
+            {
+                temp = value % 10;
+                value /= 10;
+                if (temp > max)
+                {
+                    max = temp;
+                    Console.WriteLine($"Max number in our value is - {max}");
+                }
+
+            }
+        }
+
         }
 
     }
