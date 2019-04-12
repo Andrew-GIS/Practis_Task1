@@ -33,7 +33,8 @@ namespace Practis_Task1
             //Fibonachy_Count();
             //Parsing_Of_Value();
             //Exponent();
-            Reverse();
+            //Reverse();
+            DeleteSomeValue();
         }
         public static void Task1()
         {
@@ -852,6 +853,38 @@ namespace Practis_Task1
                 value /= 10;
             }
             Console.WriteLine($"Reverse value = {reverse}");
+        }
+
+        public static void DeleteSomeValue()
+        {
+            Console.WriteLine("Inpute your value ");
+            int value = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Inpute number that you want to remove ");
+            int remove = Convert.ToInt32(Console.ReadLine());
+            int rewrite = 0;
+            while (value > 0)
+            {
+                rewrite = value % 10;
+                value /= 10;
+                if (rewrite == remove)
+                {
+                    string rewrite_1 = Convert.ToString(rewrite);
+                    rewrite_1 = "";
+                    Console.Write($"{rewrite_1}");
+                }
+                else if (rewrite != remove)
+                {
+                    Console.Write($"{rewrite}");
+                }
+                else if (value!=rewrite)
+                {
+                    Console.Write($"{rewrite}");
+                    Console.WriteLine("Number that you want to remove did not exist on this value");
+                }
+            }
+            //
+            //Problem with display massage in case of "remove" number didn't exist in value.
+            //
         }
         }
 
