@@ -35,7 +35,8 @@ namespace Practis_Task1
             //Exponent();
             //Reverse();
             //DeleteSomeValue();
-            MaxOfValue();
+            //MaxOfValue();
+            Syracuse_Teory();
         }
         public static void Task1()
         {
@@ -912,6 +913,56 @@ namespace Practis_Task1
             }
         }
 
+        public static void Syracuse_Teory()
+        {
+            Console.WriteLine("Input your value");
+            int value = Convert.ToInt32(Console.ReadLine());
+            int resalt = 0;
+            int count = value % 2;
+            if (count == 0)
+            {
+                
+                do
+                {
+                    resalt = value / 2;
+                    value = resalt;
+                    //Console.Write($"{resalt}, ");
+                }
+                while (resalt != 1);
+                {
+                    Console.WriteLine("Count Value");
+                    //Console.Write($"{resalt} ");
+                    //Console.WriteLine("Our theory is Correct");
+                }
+                if (resalt == 1)
+                {
+                    Console.WriteLine("Our theory is Correct");
+                }
+                else
+                {
+                    Console.WriteLine("Our theory is NOT Correct with UnCount Value");
+                }
+
+            }
+            if (count == 1)
+            {
+                Console.WriteLine("UnCount Value");
+                do
+                {
+                    resalt = ((value * 3) + 1) / 2;
+                    if (resalt > value)
+                    {
+                       break;
+                    }
+                    value = resalt;
+                }
+                while (resalt !=1 );
+                {
+                    Console.WriteLine("Our theory is NOT Correct for UnCount Value");
+                }
+            }
+
+        }
         }
 
     }
