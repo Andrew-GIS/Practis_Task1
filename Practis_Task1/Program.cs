@@ -36,7 +36,8 @@ namespace Practis_Task1
             //Reverse();
             //DeleteSomeValue();
             //MaxOfValue();
-            Syracuse_Teory();
+            //Syracuse_Teory();
+            GuessTheNumber();
         }
         public static void Task1()
         {
@@ -766,7 +767,7 @@ namespace Practis_Task1
             int sum = 0;
             int conter = 0;
             Console.Write("0 , "); Console.Write("1 , "); Console.Write("1 , ");
-            for (int i = 0; i <= k-4; i++)
+            for (int i = 0; i <= k - 4; i++)
             {
                 do
                 {
@@ -829,7 +830,7 @@ namespace Practis_Task1
             {
                 for (int i = -1; i >= exponent; i--)
                 {
-                    resalt =(resalt* value);
+                    resalt = (resalt * value);
                 }
                 resalt = 1 / resalt;
                 Console.WriteLine($"Exponent = {resalt}");
@@ -841,7 +842,7 @@ namespace Practis_Task1
                 resalt = 1;
                 Console.WriteLine($"Exponent = {resalt}");
             }
-                
+
         }
 
         public static void Reverse()
@@ -851,7 +852,7 @@ namespace Practis_Task1
             int reverse = 0;
             while (value > 0)
             {
-                reverse = reverse*10 + value % 10;
+                reverse = reverse * 10 + value % 10;
                 value /= 10;
             }
             Console.WriteLine($"Reverse value = {reverse}");
@@ -883,7 +884,7 @@ namespace Practis_Task1
                     Console.Write($"{resault}");
 
                 }
-                else if (value!=rewrite)
+                else if (value != rewrite)
                 {
                     Console.Write($"{rewrite}");
                     Console.WriteLine("Number that you want to remove did not exist on this value");
@@ -898,7 +899,7 @@ namespace Practis_Task1
         {
             Console.WriteLine("Inpute your value ");
             int value = Convert.ToInt32(Console.ReadLine());
-            int max=1;
+            int max = 1;
             int temp;
             while (value > 0)
             {
@@ -921,7 +922,7 @@ namespace Practis_Task1
             int count = value % 2;
             if (count == 0)
             {
-                
+
                 do
                 {
                     resalt = value / 2;
@@ -952,20 +953,98 @@ namespace Practis_Task1
                     resalt = ((value * 3) + 1) / 2;
                     if (resalt > value)
                     {
-                       break;
+                        break;
                     }
                     value = resalt;
                 }
-                while (resalt !=1 );
+                while (resalt != 1);
                 {
                     Console.WriteLine("Our theory is NOT Correct for UnCount Value");
                 }
             }
 
         }
+
+        public static void GuessTheNumber()
+            //
+            //You maus guess the number.
+            //
+        {
+            Console.WriteLine("Hello! Do you want to play some game with me?");
+            Console.WriteLine("Pick \"Y\" for game and \"N\" if you are have more funny plans");
+            char choose = Convert.ToChar(Console.ReadLine());
+            bool res = true;;
+            while (res = true)
+            {
+                if (choose == 'Y')
+                {
+                    Console.WriteLine("Okay, lets start! \n I guess some and you gissa my number");
+                    Random rnd = new Random();
+                    int value = rnd.Next(0, 10);
+                    Console.WriteLine($"Secret value = {value}");
+                    bool check = true;
+                    while (check = true)
+                    {
+                        int my_value = 0;
+                        Console.WriteLine("input your number");
+                        string my_number = Console.ReadLine();
+                        bool succses = Int32.TryParse(my_number, out my_value);
+
+                        if (!succses)
+                        {
+                            Console.WriteLine("Not valid value");
+                            continue;
+                        }
+
+                        if (my_value > value)
+                        {
+                            Console.WriteLine("No, your number is bigger than mien, try again");
+
+                        }
+                        if (my_value < value)
+                        {
+                            Console.WriteLine("No, your number is smaller than mien, try again");
+
+                        }
+                        if (my_value == value)
+                        {
+                            Console.WriteLine("yes, YES, yes - you win!!!!");
+                            break;
+                        }
+                        continue;
+                    }
+                    break;
+                }
+                else if (choose == 'N')
+                {
+                    Console.WriteLine("Okay, another time");
+                    res = false;
+                    break;
+                }
+                else
+                {
+                    Console.WriteLine("You inpute is not valid number");
+                    break;
+                }
+                //Console.WriteLine("Again: Y - yes, N -no");
+                //string reth = Console.ReadLine();
+                //if (reth == "Y")
+                //{
+                //    res = true;
+
+                //}
+                //if (reth == "N")
+                //{
+                //    res = false;
+                //}
+            }
+            //
+            //Problem with ""Again: Y - yes, N -no" part, in case of "Y" I come bake to - Console.WriteLine("Again: Y - yes, N -no") string, but have need to come back to Console.WriteLine("Pick \"Y\" for game and \"N\" if you are have more funny plans");
+            //
         }
 
     }
+}      
 
 
            
