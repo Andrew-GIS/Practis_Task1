@@ -10,37 +10,69 @@ namespace Practis_Task1
     {
         static void Main(string[] args)
         {
-            //task 1
-            int uberful = 5;
-            int _Identifier = 4;
-            int \u006fldenifier;
-            int myVariab1le;
-
-            //task 2
-            double pi = 3.141592653;
-            double e = 2.7182818284590452;
-            Console.WriteLine($"Pi = {pi}, E = {e}");
-            //task 3
-
-            string first = "\nмоя строка 1";
-            string second = "\tмоя строка 2";
-            string third = "\aмоя строка 3";
-            Console.WriteLine(first);
-            Console.WriteLine(second);
-            Console.WriteLine(third);
-
+            Massive_First_Step();
         }
 
-        public static decimal PerformCalcul(int r)
+        public static void Massive_First_Step()
+            //
+            //Min, Max, Median, Sum, UnCount Values.
+            //
+        {
 
-        { 
-            const decimal Pi = 3.14m;
+            Console.WriteLine("Inpute lenth of our massive ");
+            int lenth = Convert.ToInt32(Console.ReadLine());
+            int[] numbers = new int[lenth];
+            Random rnd = new Random();
+            
+            
+            Console.Write($"Our massive:");
+            for (int i = 0; i < numbers.Length; i++)
+            {
+                numbers[i] = rnd.Next(0, 10);
+                Console.Write($"{ numbers[i]}");
+            }
+            int max = numbers[0];
+            int min = numbers[0];
+            for (int i = 0; i < numbers.Length; i++)
+            {
+                if (numbers[i] > max)
+                {
+                    max = numbers[i];
+                }
+            }
+            Console.WriteLine($"\nMax = {max}");
 
-            decimal square = Pi * r * r;
+            for (int i = 0; i < numbers.Length; i++)
+            {
+                if (numbers[i] < min)
+                {
+                    min = numbers[i];
+                }
+            }
+            Console.WriteLine($"\nMin = {min}");
+            int sum = 0;
+            for (int i = 0; i < numbers.Length; i++)
+            {
+                sum += numbers[i];
+            }
+            Console.WriteLine($"\nSum = {sum}");
+            int mediana = sum / lenth;
+            Console.WriteLine($"\nMediana of the array = {mediana}");
 
-            return square;
-        }
+            Console.Write("\nAll uncount values ");
+            for (int i = 0; i<numbers.Length;i++)
+            {
+                if (numbers[i] % 2 == 1)
+                {
+                    Console.Write($"{numbers[i]}");
+                }
+            }
+            Console.WriteLine();
+            Console.ReadKey();
+            }
     }
+}
+
 
    
-}
+
