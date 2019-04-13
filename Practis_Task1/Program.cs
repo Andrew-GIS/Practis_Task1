@@ -139,6 +139,7 @@ namespace Practis_Task1
                 {
                     Console.Write($"Value {array[i]} ");
                     Console.WriteLine($"Position {i}");
+
                 }
             }
         }
