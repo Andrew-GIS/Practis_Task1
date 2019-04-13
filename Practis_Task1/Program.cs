@@ -37,7 +37,7 @@ namespace Practis_Task1
             //DeleteSomeValue();
             //MaxOfValue();
             //Syracuse_Teory();
-            GuessTheNumber();
+            
         }
         public static void Task1()
         {
@@ -965,83 +965,6 @@ namespace Practis_Task1
 
         }
 
-        public static void GuessTheNumber()
-            //
-            //You maus guess the number.
-            //
-        {
-            Console.WriteLine("Hello! Do you want to play some game with me?");
-            Console.WriteLine("Pick \"Y\" for game and \"N\" if you are have more funny plans");
-            char choose = Convert.ToChar(Console.ReadLine());
-            bool res = true;;
-            while (res = true)
-            {
-                if (choose == 'Y')
-                {
-                    Console.WriteLine("Okay, lets start! \n I guess some and you gissa my number");
-                    Random rnd = new Random();
-                    int value = rnd.Next(0, 10);
-                    Console.WriteLine($"Secret value = {value}");
-                    bool check = true;
-                    while (check = true)
-                    {
-                        int my_value = 0;
-                        Console.WriteLine("input your number");
-                        string my_number = Console.ReadLine();
-                        bool succses = Int32.TryParse(my_number, out my_value);
-
-                        if (!succses)
-                        {
-                            Console.WriteLine("Not valid value");
-                            continue;
-                        }
-
-                        if (my_value > value)
-                        {
-                            Console.WriteLine("No, your number is bigger than mien, try again");
-
-                        }
-                        if (my_value < value)
-                        {
-                            Console.WriteLine("No, your number is smaller than mien, try again");
-
-                        }
-                        if (my_value == value)
-                        {
-                            Console.WriteLine("yes, YES, yes - you win!!!!");
-                            break;
-                        }
-                        continue;
-                    }
-                    break;
-                }
-                else if (choose == 'N')
-                {
-                    Console.WriteLine("Okay, another time");
-                    res = false;
-                    break;
-                }
-                else
-                {
-                    Console.WriteLine("You inpute is not valid number");
-                    break;
-                }
-                //Console.WriteLine("Again: Y - yes, N -no");
-                //string reth = Console.ReadLine();
-                //if (reth == "Y")
-                //{
-                //    res = true;
-
-                //}
-                //if (reth == "N")
-                //{
-                //    res = false;
-                //}
-            }
-            //
-            //Problem with ""Again: Y - yes, N -no" part, in case of "Y" I come bake to - Console.WriteLine("Again: Y - yes, N -no") string, but have need to come back to Console.WriteLine("Pick \"Y\" for game and \"N\" if you are have more funny plans");
-            //
-        }
 
     }
 }      
