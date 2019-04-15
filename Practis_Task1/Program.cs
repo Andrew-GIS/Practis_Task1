@@ -143,6 +143,11 @@ namespace Practis_Task1
                 }
             }
         }
+
+        public static void More_That_Median()
+        {
+
+        }
     }
 }
 
