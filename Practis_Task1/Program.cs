@@ -14,7 +14,9 @@ namespace Practis_Task1
 
             //Duplicate();
 
-            Found_Of_Index();
+            //Found_Of_Index();
+
+            More_Than_average();
         }
 
         public static void Massive_First_Step()
@@ -107,10 +109,7 @@ namespace Practis_Task1
                         continue;
                     Console.Write(arrayWithoutDuplicat[j]);
                 }
-
             }
-
-
         }
 
         public static void Found_Of_Index()
@@ -144,9 +143,32 @@ namespace Practis_Task1
             }
         }
 
-        public static void More_That_Median()
+        public static void More_Than_average()
+        //
+        //found elements that more that average value.
+        //
         {
-
+            int[] array = new int[] {1, 2, 3, 4, 5, 6};
+            for (int i = 0; i < array.Length; i++)
+            {
+                Console.Write($"{array[i]} ");
+            }
+            int sum=0;
+            int mediana = 0;
+            int counter = 0;
+            for (int j = 0; j < array.Length; j++)
+            {
+                sum += array[j];
+                counter++;
+               
+            }
+            mediana = sum / counter;
+            Console.WriteLine($"\nSum = {sum}; Mediana = {mediana}");
+            Console.WriteLine("Elements that more than our median");
+            for (int k = mediana; k < array.Length; k++)
+            {
+                Console.Write($"{array[k]} ");
+            }
         }
     }
 }
