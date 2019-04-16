@@ -16,7 +16,11 @@ namespace Practis_Task1
 
             //Found_Of_Index();
 
-            More_Than_average();
+            //More_Than_average();
+
+            //Task5 - Reverse array
+            int[] array = new int[] {1, 2, 3, 4, 5, 6};
+            MyReverse(array);
         }
 
         public static void Massive_First_Step()
@@ -169,6 +173,21 @@ namespace Practis_Task1
             {
                 Console.Write($"{array[k]} ");
             }
+        }
+
+        public static int[] MyReverse(int[] array)
+        {
+            Console.WriteLine("Do you see our array?");
+            for (int i = 0; i < array.Length; i++)
+            {
+                Console.Write($"{array[i]}, ");
+            }
+            Console.WriteLine("\nAnd now we can do some magic: ");
+            for (int j = array.Length-1; j >= 0; j--)
+            {
+                Console.Write($"{array[j]}, ");
+            }
+            return array;
         }
     }
 }
