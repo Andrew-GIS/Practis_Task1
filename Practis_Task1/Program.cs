@@ -18,9 +18,10 @@ namespace Practis_Task1
 
             //More_Than_average();
 
-            //Task5 - Reverse array
-            int[] array = new int[] {1, 2, 3, 4, 5, 6};
-            MyReverse(array);
+            //Task5 - Reverse array and Task6 - 
+            int[] array = new int[] { 1, 2, 3, 4, 5, 6 , 7, 8, 9, 10};
+            SubArray(array, 2, 4);
+            //MyReverse(array);
         }
 
         public static void Massive_First_Step()
@@ -187,6 +188,45 @@ namespace Practis_Task1
             {
                 Console.Write($"{array[j]}, ");
             }
+            return array;
+        }
+
+        public static int[] SubArray(int[] array, int index, int count)
+            //
+            //array outpute that begin from int index and end at int count
+            //
+        {
+            Console.WriteLine("Our array?");
+            for (int i = 0; i < array.Length; i++)
+            {
+                Console.Write($"{array[i]}, ");
+            }
+            Console.WriteLine("\nLimited array");
+            int[] array_format = new int[count];
+            //int deference = (array.Length - index) + count;
+
+
+
+
+            //for (int j = index; j < count; j++)
+            //{
+            //    Console.Write($"{array_format[j]}, ");
+            //}
+            
+            //if (count > (array.Length - index))
+            //{
+            //    for (int k = index; k < count; k++)
+            //    {
+            //        Console.Write($"{array[k]}, ");
+            //    }
+
+            //}
+            
+            //Console.WriteLine("Inpute index of value from what you want to begin display our array?");
+            //index = Convert.ToInt32(Console.ReadLine());
+            //Console.WriteLine("Inpute count of value from what you want to end display our array?");
+            //count = Convert.ToInt32(Console.ReadLine());
+            
             return array;
         }
     }
