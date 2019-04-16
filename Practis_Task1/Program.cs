@@ -35,45 +35,50 @@ namespace Practis_Task1
                 if (array[0] != 0)
                 {
                     int value_1 = array[i];
-                    for (int j = 0; j <= value_1; j++)
+
+                    if (value_1 == 0)
                     {
-                        if (j % 2 == 1)
+                        Console.WriteLine("");
+                    }
+                    
+                        if (i % 2 != 0)
                         {
                             for (int k = 0; k < value_1; k++)
                             {
                                 Console.Write("0");
                             }
                         }
-                        if (j % 2 == 0)
+                        if (i % 2 == 0)
                         {
-                            for (int k = 0; k <= value_1; k++)
+                            for (int k = 0; k < value_1; k++)
                             {
                                 Console.Write("1");
                             }
                         }
                     }
-                    //{
-                       
-                    //    if (j == array[0])
-                    //    {
-                    //       Console.Write("1");
-                    //    }
-                    // }
-                    //int value = array[i];
-                    //int counter = 0;
-                    //for (int j = 0; j < value; j++)
-                    //{
-                    //    Console.Write("1");
-                    //}
-                    //int value_s = array[i+1];
-                    //for (int k = 0; k < value_s; k++)
-                    //{
-                    //    Console.Write("0");
-                    //}
-
-                }
                 if (array[0] == 0)
                 {
+                    int value_1 = array[i];
+
+                    if (value_1 == 0)
+                    {
+                        Console.WriteLine("");
+                    }
+
+                    if (i % 2 != 0)
+                    {
+                        for (int k = 0; k < value_1; k++)
+                        {
+                            Console.Write("1");
+                        }
+                    }
+                    if (i % 2 == 0)
+                    {
+                        for (int k = 0; k < value_1; k++)
+                        {
+                            Console.Write("0");
+                        }
+                    }
                 }
             }
 
