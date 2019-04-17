@@ -10,7 +10,9 @@ namespace Practis_Task1
     {
         static void Main(string[] args)
         {
-            Unpacking_Array_to_1and0();
+            //Unpacking_Array_to_1and0();
+
+            Market_List();
         }
 
         public static void Unpacking_Array_to_1and0()
@@ -84,7 +86,38 @@ namespace Practis_Task1
 
         }
 
-
+        public static void Market_List()
+        //
+        //Calculate market list with suport 2 arraes
+        //
+        {
+            string[] market_list = new string[10] {"Apple", "Pear", "Cucumber", "Tomatoes", "Dill", "Parsley", "Chicken", "Cheese", "Butter", "Milk" };
+            double[] price = new double[10] {40.50, 31.20, 21.80, 35, 150, 145, 200, 400, 81.40, 53.35};
+            double[] sum_market = new double[10];
+            double sum = 0;
+            double weight = 0;
+            for (int i = 0; i < market_list.Length; i++)
+            {
+                Console.WriteLine("How much {0} do you want to by", market_list[i]);
+                weight = Convert.ToDouble(Console.ReadLine());
+                
+                    sum = price[i] * weight;
+                    
+                        sum_market[i] = sum;
+                  sum = 0;
+            }
+            Console.WriteLine("Final price list = ");
+            for (int k = 0; k < sum_market.Length; k++)
+            {
+                Console.Write($"{sum_market[k]}, ");
+            }
+            double sum_of_all_purchase = 0;
+            for (int s = 0; s < sum_market.Length; s++)
+            {
+                sum_of_all_purchase += sum_market[s];
+            }
+            Console.WriteLine($"\nSum of all you purchase = {sum_of_all_purchase} UAH");
+        }
     }
 }      
 
