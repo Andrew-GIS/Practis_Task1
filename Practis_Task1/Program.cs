@@ -12,7 +12,9 @@ namespace Practis_Task1
         {
             //Unpacking_Array_to_1and0();
 
-            Market_List();
+            //Market_List();
+
+            Excellent_Number();
         }
 
         public static void Unpacking_Array_to_1and0()
@@ -88,7 +90,7 @@ namespace Practis_Task1
 
         public static void Market_List()
         //
-        //Calculate market list with suport 2 arraes
+        //Calculate market list with suport 2 arraes.
         //
         {
             string[] market_list = new string[10] {"Apple", "Pear", "Cucumber", "Tomatoes", "Dill", "Parsley", "Chicken", "Cheese", "Butter", "Milk" };
@@ -98,10 +100,9 @@ namespace Practis_Task1
             double weight = 0;
             for (int i = 0; i < market_list.Length; i++)
             {
-                Console.WriteLine("How much {0} do you want to by", market_list[i]);
+                Console.WriteLine("How much {0} do you want to by (kg)", market_list[i]);
                 weight = Convert.ToDouble(Console.ReadLine());
-                
-                    sum = price[i] * weight;
+                sum = price[i] * weight;
                     
                         sum_market[i] = sum;
                   sum = 0;
@@ -117,6 +118,34 @@ namespace Practis_Task1
                 sum_of_all_purchase += sum_market[s];
             }
             Console.WriteLine($"\nSum of all you purchase = {sum_of_all_purchase} UAH");
+        }
+
+        public static void Excellent_Number()
+        //
+        //We must found all "Excellent" numbers sum of which allow to sum of all of his dividers.
+        //
+        {
+            Console.WriteLine("All excellent numbers at [1-1000] range");
+            int sum = 0;
+            for (int i = 2; i <= 1000; i++)
+            {
+                for (int j = 1; j < i; j++)
+                {
+                    if (i % j == 0)
+                    {
+                        {                        
+                            sum += j;
+                        }
+                    }
+                }
+                if (sum == i)
+                {
+                    Console.Write($"Value {i}, ");
+                }
+                sum = 0;
+            }
+            Console.WriteLine();
+            Console.ReadKey();
         }
     }
 }      
