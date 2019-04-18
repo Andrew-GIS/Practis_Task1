@@ -146,6 +146,17 @@ namespace Practis_Task1
             }
             Console.WriteLine();
             Console.ReadKey();
+            //
+            //Resolved this task without massive, because didn't see necessary to used array.
+            //
+        }
+
+        public static void Encryption()
+        //
+        //In this task we realize some encryption for the string of values.
+        //
+        {
+
         }
     }
 }      
