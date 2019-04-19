@@ -16,7 +16,9 @@ namespace Practis_Task1
 
             //Excellent_Number();
 
-            Encryption();
+            //Encryption();
+
+            Decryption();
         }
 
         public static void Unpacking_Array_to_1and0()
@@ -241,6 +243,61 @@ namespace Practis_Task1
             {
                 Console.Write(item);
             }
+        }
+
+        public static void Decryption()
+        {
+            var encryptChars = new char[10] { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9' };
+            var cipher = new char[11] { ';', '+', '/', '.', '^', '@', '"', '!', '%', '#', '$' };
+            Console.WriteLine("Enter your massage: ");
+            string text = Console.ReadLine();
+            char[] encrypt = new char[text.Length];
+            char not_digit = '-';
+            for (int i = 0; i < text.Length; i++)
+            {
+                for (int j = 0; j < encryptChars.Length; j++)
+                {
+                    if (text[i] == encryptChars[j])
+                    {
+                        encrypt[i] = cipher[j];
+                        break;
+                    }
+                }
+                if (encrypt[i] == '\x0000')
+                {
+                    encrypt[i] = cipher[10];
+                }
+            }
+            Console.WriteLine("Encrypt massage: ");
+            foreach (var item in encrypt)
+            {
+                Console.Write(item);
+            }
+            char [] decrypt = new char[text.Length];
+            for (int i = 0; i < text.Length; i++)
+            {
+                for (int j = 0; j < encryptChars.Length; j++)
+                {
+                    if (encrypt[i] == cipher[j])
+                    {
+                        decrypt[i] = encryptChars[j];
+                        break;
+                    }
+                }
+                if (decrypt[i] == '\x0000')
+                {
+                    decrypt[i] = not_digit;
+                }
+            }
+            Console.WriteLine("\nDecrypt massage: ");
+            foreach (var l in decrypt)
+            {
+                Console.Write(l);
+            }
+            Console.WriteLine("\nEnd ");
+            //
+            //made decription, digit = decription, other - "-".
+            //
         }
     }
 }
