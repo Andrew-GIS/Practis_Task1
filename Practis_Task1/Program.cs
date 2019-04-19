@@ -14,7 +14,9 @@ namespace Practis_Task1
 
             //Market_List();
 
-            Excellent_Number();
+            //Excellent_Number();
+
+            Encryption();
         }
 
         public static void Unpacking_Array_to_1and0()
@@ -156,10 +158,93 @@ namespace Practis_Task1
         //In this task we realize some encryption for the string of values.
         //
         {
+            var encryptChars = new char[10] { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9' };
+            var cipher = new char[11]       { ';', '+', '/', '.', '^', '@', '"', '!', '%', '#', '$' };
+            //Console.WriteLine("Inpute you massage ");
+            //char [] massage = new char [10];
+            //char[] encrypt_massage = new char[10];
+            //for (int i = 0; i < massage.Length; i++)
+            //{
+            //    Console.Write("Inpute {0} ", i + 1);
+            //    massage[i] = Convert.ToChar(Console.ReadLine());
+            //}
+            //for (int j = massage[0]; j < encrypt_massage.Length; j++)
+            //{ 
+            //    if (massage[j] == 0)
+            //    {
+            //        encrypt_massage[j] = cipher[j];
+            //    }
+            //    else if (massage[j] == 1)
+            //    {
+            //        encrypt_massage[j] = cipher[j];
+            //    }
+            //    else if (massage[j] == 2)
+            //    {
+            //        encrypt_massage[j] = cipher[2];
+            //    }
+            //    else if (massage[j] == 3)
+            //    {
+            //        encrypt_massage[j] = cipher[3];
+            //    }
+            //    else if (massage[j] == 4)
+            //    {
+            //        encrypt_massage[j] = cipher[4];
+            //    }
+            //    else if (massage[j] == 5)
+            //    {
+            //        encrypt_massage[j] = cipher[5];
+            //    }
+            //    else if (massage[j] == 6)
+            //    {
+            //        encrypt_massage[j] = cipher[6];
+            //    }
+            //    else if (massage[j] == 7)
+            //    {
+            //        encrypt_massage[j] = cipher[7];
+            //    }
+            //    else if (massage[j] == 8)
+            //    {
+            //        encrypt_massage[j] = cipher[8];
 
+            //    }
+            //    else if (massage[j] == 9)
+            //    {
+            //        encrypt_massage[j] = cipher[9];
+
+            //    }
+            //    else
+            //    {
+            //        encrypt_massage[j] = cipher[10];
+            //    }
+            //}
+            //Console.WriteLine($"Our array:" + string.Join(",", massage));
+            //Console.WriteLine($"Our enqript array:" + string.Join(",", encrypt_massage));
+            Console.WriteLine("Enter your massage: ");
+            string text = Console.ReadLine();
+            char[] encrypt = new char[text.Length];
+            for (int i = 0; i < text.Length; i++)
+            {
+                for (int j = 0; j < encryptChars.Length; j++)
+                {
+                    if (text[i] == encryptChars[j])
+                    {
+                        encrypt[i] = cipher[j];
+                        break;
+                    }
+                }
+                if (encrypt[i] == '\x0000')
+                {
+                    encrypt[i] = cipher[10];
+                }
+            }
+            foreach (var item in encrypt)
+            {
+                Console.Write(item);
+            }
         }
     }
-}      
+}
+        
 
 
            
