@@ -11,7 +11,8 @@ namespace Practis_Task1
         static void Main(string[] args)
         {
             //Task_1.Calculate();
-            Task_2.ConvertOfCurency();
+            //Task_2.ConvertOfCurency();
+            Task3.DeptDisplay();
         }
 
         
