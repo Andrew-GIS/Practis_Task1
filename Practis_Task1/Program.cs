@@ -13,7 +13,8 @@ namespace Practis_Task1
             //Task_1.Calculate();
             //Task_2.ConvertOfCurency();
             //Task3.DeptDisplay();
-            Task4.PIN();
+            //Task4.PIN();
+            Task5.CalulateRow();
         }
 
         
