@@ -10,10 +10,31 @@ namespace Practis_Task1
     {
         public static void SortOfLetters()
         {
+            string first = "";
+            string second = "";
+            first = PrintFirst(first);
+            second = PrintSecond(second);
+            Console.WriteLine("First string = {0};\nSecond string = {1};", first, second);
+            string combine = Combine(first, second);
+            char[] alphabetSort = SortByAlphabet(combine);
+            DisplayResult(alphabetSort);
+            Console.ReadLine();
+        }
+
+        public static bool CheckLettersForFirst(string first)
+        {
+            foreach (char c in first)
+                if (Char.IsNumber(c))
+                    return false;
+            return true;
+        }
+
+        public static string PrintFirst(string first)
+        {
             while (true)
             {
                 Console.WriteLine("Inpute first string");
-                string first = Console.ReadLine();
+                first = Console.ReadLine();
                 if (CheckLettersForFirst(first) == true)
                 {
                     Console.WriteLine("First String is OK, we can continue");
@@ -25,36 +46,7 @@ namespace Practis_Task1
                     continue;
                 }
             }
-            
-            
-            CheckLettersForSecond();
-            Console.WriteLine("Second String is OK, we can continue");
-            //CombineOurStrings(first, second);
-
-
-        }
-
-        public static bool CheckLettersForFirst(string first)
-        {
-            foreach (char c in first)
-                if (Char.IsNumber(c))
-                    return false;
-            return true;
-
-            //for (int i = 0; i < first.Length; i++)
-            //{
-            //    if (first[i] > '0' && first[i] <= '9')
-            //    {
-            //        Console.WriteLine("String contains digit");
-
-            //        return false;
-            //    }
-            //    else
-            //    {
-            //        return true;
-            //    }
-            //}
-            //return true;
+            return first;
         }
 
         public static bool CheckLettersForSecond(string second)
@@ -63,34 +55,64 @@ namespace Practis_Task1
                 if (Char.IsNumber(c))
                     return false;
             return true;
-            //    bool check = true;
-            //    while (check == true)
-            //    {
-            //        Console.WriteLine("Inpute second string");
-            //        string second = Console.ReadLine();
-            //        char[] char_second = second.ToCharArray();
-            //        for (int i = 0; i < char_second.Length; i++)
-            //        {
-            //            if (Char.IsLetter(char_second[i]))
-            //            {
-            //                check = false;
-            //            }
 
-            //            else
-            //            {
-            //                //Console.WriteLine("Inpute correct value");
-            //                check = true;
-            //            }
-            //        }
-
-            //    }
         }
 
-            public static string CombineOurStrings(string first, string second)
+        public static string PrintSecond(string second)
         {
-            string combine_string = first + second;
-            Console.WriteLine("After combinig our string looks like {0}", combine_string);
-            return combine_string;
+            while (true)
+            {
+                Console.WriteLine("Inpute second string");
+                second = Console.ReadLine();
+                if (CheckLettersForFirst(second) == true)
+                {
+                    Console.WriteLine("Second String is OK, we can continue");
+                    break;
+                }
+                else
+                {
+                    Console.WriteLine("Second String Not OK");
+                    continue;
+                }
+            }
+            return second;
+        }
+
+        public static string Combine(string first, string second)
+        {
+            string combine = first + second;
+            Console.WriteLine("Combile String  = {0}", combine);
+            return combine;
+        }
+
+        public static char[] SortByAlphabet(string combine)
+        {
+            //string resalt_of_sort = combine.ToLower();
+            char temp;
+            char[] char_of_sort = combine.ToCharArray();
+            for (int i = 1; i < char_of_sort.Length; i++)
+            {
+                for (int j = 0; j < char_of_sort.Length - 1; j++)
+                {
+                    if (char_of_sort[j] > char_of_sort[j + 1])
+                    {
+                        temp = char_of_sort[j];
+                        char_of_sort[j] = char_of_sort[j + 1];
+                        char_of_sort[j + 1] = temp;
+                    }
+                }
+            }
+            return char_of_sort;
+        }
+
+        public static void DisplayResult(char[] alphabetSort)
+        {
+            Console.Write("Sort string = ");
+            foreach (var item in alphabetSort)
+            {
+                Console.Write(item);
+            }
+            Console.WriteLine("\nGlad to work with you, goodbye!");
         }
     }
 }
