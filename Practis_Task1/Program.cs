@@ -14,7 +14,8 @@ namespace Practis_Task1
             //Task_2.ConvertOfCurency();
             //Task3.DeptDisplay();
             //Task4.PIN();
-            Task5.CalulateRow();
+            ///Task5.CalulateRow();
+            Task6.SortOfLetters();
         }
 
         
