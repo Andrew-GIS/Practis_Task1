@@ -29,5 +29,19 @@ namespace Practis_Task1
             this.destination = destination;
             this.departureTime = departureTime;
         }
+        public int GetTrainNumber()
+        {
+            return this.trainNumber;
+        }
+
+        public string GetDestination()
+        {
+            return this.destination;
+        }
+
+        public DateTime GetDepartureTime()
+        {
+            return this.departureTime;
+        }
     }
 }
