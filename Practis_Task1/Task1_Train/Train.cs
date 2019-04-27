@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Practis_Task1
+namespace Practis_Task1.Task1_Train
 {
     public struct Train
     {

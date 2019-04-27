@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Practis_Task1.Task2;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,7 +11,8 @@ namespace Practis_Task1
     {
         static void Main(string[] args)
         {
-            new TrainsScheduler().Execute();
+            //new TrainsScheduler().Execute();
+            new Handler().Execute();
         }
     }
 }      
