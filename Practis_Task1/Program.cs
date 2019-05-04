@@ -1,4 +1,5 @@
-﻿using Practis_Task1.Task2;
+﻿using Practis_Task1.Task3_ColorPrint;
+using Practis_Task1.Task2;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,7 +13,9 @@ namespace Practis_Task1
         static void Main(string[] args)
         {
             //new TrainsScheduler().Execute();
-            new Handler().Execute();
+            //new Handler().Execute();
+            //new TextPrint();
+            new Print().Result( , );
         }
     }
 }      
