@@ -52,5 +52,7 @@ namespace Practis_Task1
             Console.WriteLine($"{GetType().Name} has moved {metres} meters");
         }
 
+        public virtual void 
+
     }
 }
