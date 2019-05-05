@@ -51,5 +51,6 @@ namespace Practis_Task1
             Console.ForegroundColor = Color; // color of console
             Console.WriteLine($"{GetType().Name} has moved {metres} meters");
         }
+
     }
 }

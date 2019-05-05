@@ -22,6 +22,13 @@ namespace Practis_Task1
             Engine = engine;
             GearBox = gearBox;
         }
+        public void DisplayCar_1()
+        {
+            Console.SetWindowSize(100, 50);
+            //Console.Write("VheelCount\tColor\tMaxSpeed\tPassengerCount\tDoorsCount\tEngine\tGearbox\n");
+            Console.Write($"{DoorsCount}\t{Engine}\t{GearBox}");
+            Console.WriteLine();
+        }
     }
 
     enum EngineType
