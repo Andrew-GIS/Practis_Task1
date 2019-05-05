@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Practis_Task1.Task3_ColorPrint
 {
-    public static class Print
+    public class Print
     {
         string text = Inpute();
         int color = ChooseColor();

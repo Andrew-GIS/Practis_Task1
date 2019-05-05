@@ -14,8 +14,8 @@ namespace Practis_Task1
         {
             //new TrainsScheduler().Execute();
             //new Handler().Execute();
-            //new TextPrint();
-            new Print().Result( , );
+            new TextPrint();
+            //new Print().Result( , );
         }
     }
 }      
