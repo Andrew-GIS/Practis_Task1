@@ -22,11 +22,25 @@ namespace Practis_Task1
             Engine = engine;
             GearBox = gearBox;
         }
-        public void DisplayCar_1()
+        public override void DisplayCahracteristics(Vehicle vehicle)
         {
-            Console.SetWindowSize(100, 50);
-            //Console.Write("VheelCount\tColor\tMaxSpeed\tPassengerCount\tDoorsCount\tEngine\tGearbox\n");
-            Console.Write($"{DoorsCount}\t{Engine}\t{GearBox}");
+            Console.WriteLine(String.Format("{0, 6} | {1, 10} | {2, 9} | {3,10} | {4,5} | {5,10} | {6,10}",
+                "Wheels",
+                "Color",
+                "Max Speed",
+                "Passengers",
+                "Doors",
+                "Engine",
+                "GearBox"));
+            Console.Write(String.Format("{0, 6} | {1, 10} | {2, 9} | {3,10}",
+                vehicle.WheelCount,
+                vehicle.Color,
+                vehicle.MaxSpeed,
+                vehicle.PassengerCount,
+                this.DoorsCount,
+                this.Engine,
+                this.GearBox
+                ));
             Console.WriteLine();
         }
     }
@@ -44,4 +58,5 @@ namespace Practis_Task1
         Auto,
         Robot
     }
+    
 }

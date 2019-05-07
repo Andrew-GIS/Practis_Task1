@@ -52,7 +52,20 @@ namespace Practis_Task1
             Console.WriteLine($"{GetType().Name} has moved {metres} meters");
         }
 
-        public virtual void 
+        public virtual void DisplayCahracteristics(Vehicle vehicle)
+        {
+            Console.WriteLine(String.Format("{0, 6} | {1, 10} | {2, 9} | {3,10}", 
+                "Wheels",
+                "Color",
+                "Max Speed",
+                "Passengers"));
+            Console.Write(String.Format("{0, 6} | {1, 10} | {2, 9} | {3,10}",
+                vehicle.WheelCount,
+                vehicle.Color,
+                vehicle.MaxSpeed,
+                vehicle.PassengerCount));
+            Console.WriteLine();
+        }
 
     }
 }

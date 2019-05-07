@@ -18,6 +18,25 @@ namespace Practis_Task1
             Type = type;
             Breake = breake;
         }
+        public override void DisplayCahracteristics(Vehicle vehicle)
+        {
+            Console.WriteLine(String.Format("{0, 6} | {1, 10} | {2, 9} | {3,10} | {4,5} | {5, 10}",
+                "Wheels",
+                "Color",
+                "Max Speed",
+                "Passengers",
+                "BicycleType",
+                "BreakeType"));
+            Console.Write(String.Format("{0, 6} | {1, 10} | {2, 9} | {3,10} | {4,5} | {5, 10}",
+                vehicle.WheelCount,
+                vehicle.Color,
+                vehicle.MaxSpeed,
+                vehicle.PassengerCount,
+                this.Type,
+                this.Breake
+                ));
+            Console.WriteLine();
+        }
 
     }
     enum BicycleType
