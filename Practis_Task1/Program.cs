@@ -10,38 +10,43 @@ namespace Practis_Task1
     {
         static void Main(string[] args)
         {
-            Rectangle rectangle = new Rectangle { SideA = 10, SideB = 20 };
-            PrintFigure(rectangle);
+            //Rectangle rectangle = new Rectangle { SideA = 10, SideB = 20 };
+            //PrintFigure(rectangle);
+            Toster toster = new Toster();
+            toster.State();
+            Computer computer = new Computer();
+            computer.State();
+            
         }
 
-        static void PrintFigure(IGeometrical figure)
-        {
-            Console.WriteLine("Area" + figure.GetArea());
-            Console.WriteLine(figure.GetPerimetr());
-        }
+        //static void PrintFigure(IGeometrical figure)
+        //{
+        //    Console.WriteLine("Area" + figure.GetArea());
+        //    Console.WriteLine(figure.GetPerimetr());
+        //}
     }
 }
 
-interface IGeometrical
-{
-    double GetPerimetr();
-    double GetArea();
-}
+//interface IGeometrical
+//{
+//    double GetPerimetr();
+//    double GetArea();
+//}
 
-class Rectangle : IGeometrical
-{
-    public double SideA { get; set; }
-    public double SideB { get; set; }
+//class Rectangle : IGeometrical
+//{
+//    public double SideA { get; set; }
+//    public double SideB { get; set; }
 
-    public double GetArea()
-    {
-        return (this.SideA * this.SideB);
-    }
-    public double GetPerimetr ()
-    {
-        return((this.SideB + this.SideA)*2);
-    }
-}
+//    public double GetArea()
+//    {
+//        return (this.SideA * this.SideB);
+//    }
+//    public double GetPerimetr ()
+//    {
+//        return((this.SideB + this.SideA)*2);
+//    }
+//}
 
 //class Circle : IGeometrical
 //{
