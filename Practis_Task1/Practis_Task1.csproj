@@ -47,9 +47,17 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Task1_Figure\Figure.cs" />
     <Compile Include="Task1_Figure\FigureWithPolymorphism.cs" />
+    <Compile Include="Task2_Mammals\Aquatic.cs" />
+    <Compile Include="Task2_Mammals\Arboreal.cs" />
+    <Compile Include="Task2_Mammals\Arial.cs" />
+    <Compile Include="Task2_Mammals\FeedingAndMoving.cs" />
+    <Compile Include="Task2_Mammals\Mammals.cs" />
+    <Compile Include="Task2_Mammals\Subterranean.cs" />
+    <Compile Include="Task2_Mammals\Terrestrial.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
