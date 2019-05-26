@@ -54,6 +54,13 @@
     <Compile Include="Task2_Mammals\Mammals.cs" />
     <Compile Include="Task2_Mammals\Subterranean.cs" />
     <Compile Include="Task2_Mammals\Terrestrial.cs" />
+    <Compile Include="Task3_GrertingPerson\American.cs" />
+    <Compile Include="Task3_GrertingPerson\British.cs" />
+    <Compile Include="Task3_GrertingPerson\Francian.cs" />
+    <Compile Include="Task3_GrertingPerson\Greeting.cs" />
+    <Compile Include="Task3_GrertingPerson\Human.cs" />
+    <Compile Include="Task3_GrertingPerson\Polish.cs" />
+    <Compile Include="Task3_GrertingPerson\Ukrainian.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
