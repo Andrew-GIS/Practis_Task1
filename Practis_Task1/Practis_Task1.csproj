@@ -67,6 +67,11 @@
     <Compile Include="Task4_Calculator\Operation.cs" />
     <Compile Include="Task4_Calculator\SubtractOperation.cs" />
     <Compile Include="Task4_Calculator\SumOperation.cs" />
+    <Compile Include="Task5\Animal.cs" />
+    <Compile Include="Task5\Beast.cs" />
+    <Compile Include="Task5\Cat.cs" />
+    <Compile Include="Task5\Dog.cs" />
+    <Compile Include="Task5\Lynx.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
