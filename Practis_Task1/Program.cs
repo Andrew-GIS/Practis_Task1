@@ -1,5 +1,6 @@
 ﻿using Practis_Task1.Task2_Mammals;
 using Practis_Task1.Task3_GrertingPerson;
+using Practis_Task1.Task4_Calculator;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -31,8 +32,14 @@ namespace Practis_Task1
             //
             //Task3 - task where realized Greeting in different languages.
             //
-            Greeting set = new Greeting();
-            set.HelloWord();
+            //Greeting set = new Greeting();
+            //set.HelloWord();
+
+            //
+            //Task4 - Calulator with support polymorphism.
+            //
+            Calculate calculate = new Calculate();
+            calculate.Calculator(4, 2);
         }
     }
 }

@@ -61,6 +61,12 @@
     <Compile Include="Task3_GrertingPerson\Human.cs" />
     <Compile Include="Task3_GrertingPerson\Polish.cs" />
     <Compile Include="Task3_GrertingPerson\Ukrainian.cs" />
+    <Compile Include="Task4_Calculator\Calculate.cs" />
+    <Compile Include="Task4_Calculator\DivideOperation.cs" />
+    <Compile Include="Task4_Calculator\MultiplyOperation.cs" />
+    <Compile Include="Task4_Calculator\Operation.cs" />
+    <Compile Include="Task4_Calculator\SubtractOperation.cs" />
+    <Compile Include="Task4_Calculator\SumOperation.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
