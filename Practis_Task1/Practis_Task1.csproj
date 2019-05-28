@@ -68,10 +68,15 @@
     <Compile Include="Task4_Calculator\SubtractOperation.cs" />
     <Compile Include="Task4_Calculator\SumOperation.cs" />
     <Compile Include="Task5\Animal.cs" />
-    <Compile Include="Task5\Beast.cs" />
     <Compile Include="Task5\Cat.cs" />
     <Compile Include="Task5\Dog.cs" />
     <Compile Include="Task5\Lynx.cs" />
+    <Compile Include="Task6_ Gallery\Flowers.cs" />
+    <Compile Include="Task6_ Gallery\Gallery.cs" />
+    <Compile Include="Task6_ Gallery\Plant.cs" />
+    <Compile Include="Task6_ Gallery\PlantList.cs" />
+    <Compile Include="Task6_ Gallery\Tree.cs" />
+    <Compile Include="Task6_ Gallery\Worker.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

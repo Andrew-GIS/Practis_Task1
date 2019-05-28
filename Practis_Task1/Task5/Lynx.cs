@@ -10,7 +10,7 @@ namespace Practis_Task1.Task5
     {
         public override string  Bite()
         {
-            string action = $"Рысь {0} кусает", Name;
+            string action = $"Рысь {Name} кусает";
             return action;
         }
 

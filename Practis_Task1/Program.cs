@@ -2,6 +2,7 @@
 using Practis_Task1.Task3_GrertingPerson;
 using Practis_Task1.Task4_Calculator;
 using Practis_Task1.Task5;
+using Practis_Task1.Task6__Gallery;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -43,7 +44,7 @@ namespace Practis_Task1
             //calculate.Calculator(4, 2);
 
             //
-            //Task5 - 
+            //Task5 - Animal sound and Bites
             //
             Animal[] arrAnimal = new Animal[8];
             arrAnimal[0] = new Dog { Name = "Шарик" };
@@ -56,13 +57,27 @@ namespace Practis_Task1
             arrAnimal[7] = new Lynx { Name = "Рыська" };
             foreach (Animal a in arrAnimal)
             {
+                a.Bite();
+                if (a as IPurr != null)
+                {
+                    ((IPurr)a).Purr();
+                }
                 Console.WriteLine($"{a.Bite()}");
-                Console.WriteLine();
+                Console.WriteLine($"");
+            }
+
+            //
+            //Task6 - gallery
+            //
+            //Gallery g = new Gallery(GetListOfPlans(), ivan);
+
+
+            
             }
 
         }
     }
-}
+
 
 
     
