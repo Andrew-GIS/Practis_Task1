@@ -24,26 +24,26 @@ namespace Practis_Task1.Task6__Gallery
             double heightPlant = Convert.ToDouble(Console.ReadLine());
             Console.WriteLine($"How many water did you use to pouring you {this.Type} (ml) (normal quantity of water is from 100 to 500ml)");
             double pour = Convert.ToDouble(Console.ReadLine());
-            bool check = true;
-            while (check == true)
+            //bool check = true;
+            while (true)
             {
                 if (pour <= 100)
                 {
                     Console.WriteLine($"Your {this.Type} wasn't pour");
-                    continue;
+                    break;
                 }
                 else if (pour > 100 && pour < 500)
                 {
                     Console.WriteLine($"{this.Type} was pour by {pour}ml of water");
                     heightPlant += 1;
-                    Console.WriteLine($"Congratulate - hieght of your {this.Type} become {heightPlant}");
-                    check = false;
+                    Console.WriteLine($"Congratulate - hieght of your {this.Type} become {heightPlant}cm");
+                    break;
                 }
                 else
                 {
                     Console.WriteLine("To much water - don't do this anymore, it is harmful for your plant - Don't do this!");
-                    Console.WriteLine("Repeat inputting");
-                    continue;
+                    //Console.WriteLine("Repeat inputting");
+                    break;
                 }
             }
             return pour;
@@ -60,7 +60,7 @@ namespace Practis_Task1.Task6__Gallery
                 if (mineral <= 0)
                 {
                     Console.WriteLine("Your plant wasn't fertilize");
-                    continue;
+                    break;
                 }
                 else if (mineral > 0 && mineral< 10)
                 {
@@ -73,8 +73,8 @@ namespace Practis_Task1.Task6__Gallery
                 else
                 {
                     Console.WriteLine("To much soil - don't do this anymore, it is harmful for your plant");
-                    Console.WriteLine("Repeat inputting");
-                    continue;
+                    //Console.WriteLine("Repeat inputting");
+                    break;
                 }
             }
             return mineral;
@@ -84,10 +84,14 @@ namespace Practis_Task1.Task6__Gallery
         {
             double pour = TookWater();
             double mineral = TookMineral();
-            if (pour > 100 && mineral > 0)
+            if (pour > 100 && mineral > 0 && pour <= 500 && mineral <= 10)
             {
                 double oxigen = (pour + mineral) / 2;
                 Console.WriteLine($"Plant output {oxigen} ml of oxygen");
+            }
+            else
+            {
+                Console.WriteLine($"Your Worker is failed, {this.Type} doesn't have water and mineral, or count of it is to much");
             }
         }
 

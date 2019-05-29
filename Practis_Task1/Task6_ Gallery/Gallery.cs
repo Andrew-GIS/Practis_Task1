@@ -8,21 +8,21 @@ namespace Practis_Task1.Task6__Gallery
 {
     public class Gallery
     {
-        private Plant[] plants;
+        public Plant[] plant;
 
-        private Worker worker;
+        public Worker worker;
 
-        public Gallery(Plant[] plants, Worker worker)
+        public Gallery(Plant[] plant, Worker worker)
         {
-            this.plants = plants;
+            this.plant = plant;
             this.worker = worker;
         }
 
         public void Work()
         {
-            foreach (var item in this.plants)
+            foreach (var item in this.plant)
             {
-                Console.WriteLine($"{this.worker.GetType().Name} manage {item.Type}");
+                Console.WriteLine($"{this.worker.GetType().Name} work with {item.Type}");
                 worker.WorkWithPlants(item);
             }
         }

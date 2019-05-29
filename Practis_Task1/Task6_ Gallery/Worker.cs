@@ -12,16 +12,16 @@ namespace Practis_Task1.Task6__Gallery
         {
             if (plant is Flowers flowers)
             {
-                flowers.TookWater();
-                flowers.TookMineral();
+                //flowers.TookWater();
+                //flowers.TookMineral();
                 flowers.DoPhotosynthesis();
                 flowers.LeafNumberChange();
                 flowers.PetalNumberChange();
             }
             else if (plant is Tree tree)
             {
-                tree.TookWater();
-                tree.TookMineral();
+                //tree.TookWater();
+                //tree.TookMineral();
                 tree.DoPhotosynthesis();
                 tree.BranchNumberChange();
                 tree.AnimalsThatLivesInTreeNumberChange();
