@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Practis_Task1.Task1;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,58 +11,15 @@ namespace Practis_Task1
     {
         static void Main(string[] args)
         {
-            //Rectangle rectangle = new Rectangle { SideA = 10, SideB = 20 };
-            //PrintFigure(rectangle);
-            Toster toster = new Toster();
-            toster.State();
-            Computer computer = new Computer();
-            computer.State();
-            
+            //
+            //Task1 - train with interfaces 
+            //
+            House house = new House();
+            house.CheckGadgets();
         }
-
-        //static void PrintFigure(IGeometrical figure)
-        //{
-        //    Console.WriteLine("Area" + figure.GetArea());
-        //    Console.WriteLine(figure.GetPerimetr());
-        //}
     }
 }
 
-//interface IGeometrical
-//{
-//    double GetPerimetr();
-//    double GetArea();
-//}
-
-//class Rectangle : IGeometrical
-//{
-//    public double SideA { get; set; }
-//    public double SideB { get; set; }
-
-//    public double GetArea()
-//    {
-//        return (this.SideA * this.SideB);
-//    }
-//    public double GetPerimetr ()
-//    {
-//        return((this.SideB + this.SideA)*2);
-//    }
-//}
-
-//class Circle : IGeometrical
-//{
-//    public int SideA { get; set; }
-//    public int SideB { get; set; }
-
-//    public int GetArea()
-//    {
-//        return (this.SideA * this.SideB);
-//    }
-//    public double GetPerimetr()
-//    {
-//        return (this.SideB * this.SideA);
-//    }
-//}
 
 
 

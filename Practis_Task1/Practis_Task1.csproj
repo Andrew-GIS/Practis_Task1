@@ -45,7 +45,9 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Task1\Switch.cs" />
+    <Compile Include="Task1\Computer.cs" />
+    <Compile Include="Task1\House.cs" />
+    <Compile Include="Task1\Toster.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
