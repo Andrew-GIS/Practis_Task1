@@ -1,5 +1,4 @@
 ﻿using Practis_Task1.Task1;
-using Practis_Task1.Task2_Bank;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,25 +12,18 @@ namespace Practis_Task1
         static void Main(string[] args)
         {
             //
-            //Task1 - train with interfaces. 
+            //Task1 - upper case task.
             //
-            //House house = new House();
-            //house.CheckGadgets();
-
-            //
-            //Task2 - Bank proggram.
-            //
-            Bank bank = new Bank();
-            bank.CreateAccaunt();
-
+            Jaden_Smith text = new Jaden_Smith();
+            text.WriteLikeJSmith();
         }
     }
 }
 
 
+           
 
 
 
-
-
+   
 
