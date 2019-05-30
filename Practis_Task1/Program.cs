@@ -21,12 +21,8 @@ namespace Practis_Task1
             //
             //Task2 - Bank proggram.
             //
-            //BankAccount account = new BankAccount(1000, "Petro");
-            //account.GetOwner();
-            //account.GetBalance();
-            //account.ClosureAccount();
-            DepositAccount deposit = new DepositAccount(1000, "Ivan");
-            deposit.TakeOffMoney();
+            Bank bank = new Bank();
+            bank.CreateAccaunt();
 
         }
     }
