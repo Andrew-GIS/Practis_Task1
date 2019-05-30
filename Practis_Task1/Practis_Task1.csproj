@@ -48,12 +48,15 @@
     <Compile Include="Task1\Computer.cs" />
     <Compile Include="Task1\House.cs" />
     <Compile Include="Task1\Toster.cs" />
+    <Compile Include="Task2_Bank\Bank.cs" />
+    <Compile Include="Task2_Bank\BankAccount.cs" />
+    <Compile Include="Task2_Bank\CardAccount.cs" />
+    <Compile Include="Task2_Bank\CurrentAccount.cs" />
+    <Compile Include="Task2_Bank\DepositAccount.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Task2_Bank\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
