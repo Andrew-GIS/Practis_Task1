@@ -1,4 +1,5 @@
 ﻿using Practis_Task1.Task1;
+using Practis_Task1.Task2;
 using Practis_Task1.Task3;
 using System;
 using System.Collections.Generic;
@@ -18,10 +19,15 @@ namespace Practis_Task1
             //Jaden_Smith text = new Jaden_Smith();
             //text.WriteLikeJSmith();
             //
-            //Task3 - Founding of vowels letters
+            //Task3 - Founding of vowels letters.
             //
-            Vowels vowels = new Vowels();
-            vowels.FoundingVowels();
+            //Vowels vowels = new Vowels();
+            //vowels.FoundingVowels();
+            //
+            //Task2 - Printer program
+            //
+            Printer printer = new Printer();
+            printer.ShowResult();
         }
     }
 }
