@@ -12,11 +12,16 @@ namespace Practis_Task1
     {
         static void Main(string[] args)
         {
-            //FolderInfo info = new FolderInfo();
-            //info.DisplayInfo();
-
-            TextFile text = new TextFile();
-            text.CreateText();
+            //
+            //Task1
+            //
+            FolderInfo info = new FolderInfo();
+            info.DisplayInfo();
+            //
+            //Task 2.
+            //
+            //TextFile text = new TextFile();
+            //text.CreateText();
         }
     }
 }
