@@ -16,7 +16,7 @@ namespace Practis_Task1.Task1
         {
             Console.WriteLine($"Name of your folders: {ChooseDirectory()}");
             Console.WriteLine(string.Empty);
-            var folderNumber = this.CountingFolder(ChooseDirectory());
+            var folderNumber = this.CountingFolder();
         }
 
         public string ChooseDirectory()
@@ -24,49 +24,27 @@ namespace Practis_Task1.Task1
             return $"D:\\test";
         }
 
-        public string CountingFolder(string directory)
+        public string CountingFolder()
         {
-            directory = this.ChooseDirectory();
+            var directory = this.ChooseDirectory();
             int counter = 0;
 
-            ///int directoryCount = System.IO.Directory.GetDirectories($"{directory}").Length;
-
-            //DirectoryInfo DrInfo = new DirectoryInfo(directory);
-            //DirectoryInfo[] folder = DrInfo.GetDirectories();
-            //FileInfo[] Fi = DrInfo.GetFiles();
-
-            //foreach (var item in folder)
-            //{
-            //    Console.WriteLine(item);
-            //    counter++;
-            //    Console.WriteLine(counter);
-            //}
 
             foreach (var item in Directory.GetDirectories(directory))
             {
-                foreach (var i in Directory.GetDirectories(directory))
+                //Console.WriteLine(item);
+                counter++;
+                do
                 {
-                    //Console.WriteLine(i);
-                    counter++;
+                    //CountingFolder();
                 }
-                CountingFolder(item);
+                while (counter != 0);
+                {
+                    Console.WriteLine("End of counting");
+                }
+                Console.WriteLine(counter);
             }
-
-            //foreach (var item in Directory.GetDirectories(directory))
-            //{
-            //    //Console.WriteLine(item);
-            //    counter++;
-            //    //do
-            //    //{
-            //    //    CountingFolder();
-            //    //}
-            //    //while (counter != 0);
-            //    //{
-            //    //    Console.WriteLine("End of counting");
-            //    //}
-            //    //Console.WriteLine(counter);
-            //}
-            //Console.WriteLine(string.Empty);
+            Console.WriteLine(string.Empty);
             return $"You folder contains {counter} folder(s)";
         }
 
@@ -87,3 +65,29 @@ namespace Practis_Task1.Task1
         }
     }
 }
+
+//http://www.cyberforum.ru/csharp-beginners/thread621797.html
+
+
+///int directoryCount = System.IO.Directory.GetDirectories($"{directory}").Length;
+
+//DirectoryInfo DrInfo = new DirectoryInfo(directory);
+//DirectoryInfo[] folder = DrInfo.GetDirectories();
+//FileInfo[] Fi = DrInfo.GetFiles();
+
+//foreach (var item in folder)
+//{
+//    Console.WriteLine(item);
+//    counter++;
+//    Console.WriteLine(counter);
+//}
+
+//foreach (var item in Directory.GetDirectories(directory))
+//{
+//    foreach (var i in Directory.GetDirectories(directory))
+//    {
+//        //Console.WriteLine(i);
+//        counter++;
+//    }
+//    CountingFolder();
+//}
