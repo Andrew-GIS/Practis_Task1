@@ -16,7 +16,8 @@ namespace Practis_Task1.Task1
         {
             Console.WriteLine($"Name of your folders: {ChooseDirectory()}");
             Console.WriteLine(string.Empty);
-            var folderNumber = this.CountingFolder();
+            Console.WriteLine(CountingFolder(ChooseDirectory()));
+            //var folderNumber = this.CountingFolder();
         }
 
         public string ChooseDirectory()
@@ -24,26 +25,34 @@ namespace Practis_Task1.Task1
             return $"D:\\test";
         }
 
-        public string CountingFolder()
+        public string CountingFolder(string directory)
         {
-            var directory = this.ChooseDirectory();
+            directory = this.ChooseDirectory();
             int counter = 0;
+            counter = Directory.GetDirectories(directory).Length;
 
-
-            foreach (var item in Directory.GetDirectories(directory))
+            if (counter != 0)
             {
-                //Console.WriteLine(item);
-                counter++;
-                do
-                {
-                    //CountingFolder();
-                }
-                while (counter != 0);
-                {
-                    Console.WriteLine("End of counting");
-                }
-                Console.WriteLine(counter);
+                directory = Path.GetFullPath(directory);
             }
+
+            //foreach (var item in Directory.GetDirectories(directory))
+            //{
+            //    //Console.WriteLine(item);
+            //    //counter++;
+            //    //directory = Path.GetDirectoryName(directory);
+            //    //counter = Directory.GetDirectories(directory).Length;
+            //    //do
+            //    //{
+            //    //    counter = Directory.GetDirectories(directory).Length;
+            //    //    //CountingFolder(directory);
+            //    //}
+            //    //while (counter != 0);
+            //    //{
+            //    //    Console.WriteLine("End of counting");
+            //    //}
+            //    //Console.WriteLine(counter);
+            //}
             Console.WriteLine(string.Empty);
             return $"You folder contains {counter} folder(s)";
         }
