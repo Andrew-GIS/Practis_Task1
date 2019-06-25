@@ -42,12 +42,32 @@ namespace Practis_Task1.Task1
 
         public void Clear()
         {
-            throw new NotImplementedException();
+            T[] array = new T[0];
         }
 
         public bool Contains(T item)
         {
-            throw new NotImplementedException();
+            for (int i = 0; i < array.Length - 1; i++)
+            {
+                if (array[i].Equals(item))
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        public override string ToString()
+        {
+            Console.WriteLine("Detailed Inforamtion");
+            Console.WriteLine("Elements of your array");
+            foreach (var item in array)
+            {
+                Console.WriteLine($"{item}, ");
+            }
+            Console.WriteLine($"Length of your array - {array.Length}");
+            string finish = "This us the end, good lack.";
+            return finish;
         }
     }
 
