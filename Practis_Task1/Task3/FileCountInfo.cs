@@ -14,7 +14,7 @@ namespace Practis_Task1.Task3
         {
             string way = "D:\\test";
             string name = FileName();
-            string resultWay = way + "." + name;
+            string resultWay = way + "\\" + name;
             return resultWay;
         }
 
@@ -32,19 +32,21 @@ namespace Practis_Task1.Task3
 
         public void FileCreated()
         {
-            string way = this.CreateWay();
+            string way = "D:\\test";
+            string name = FileName();
+            string resultWay = way + "\\" + name;
             string text = this.TextInputing();
 
             if (Directory.Exists(way))
             {
-                File.Create(way);
-                File.WriteAllText(way, text);
+                File.Create(resultWay);
+                File.WriteAllText(resultWay, text);
             }
             else
             {
                 DirectoryInfo di = Directory.CreateDirectory(way);
-                File.Create(way);
-                File.WriteAllText(way, text);
+                File.Create(resultWay);
+                File.WriteAllText(resultWay, text);
             }
 
         }
