@@ -12,7 +12,7 @@ namespace Practis_Task1.Task1
 
         public MyList()
         {
-            T[] array = new T[0];
+            this.array = new T[0];
         }
 
         public int Count
@@ -42,12 +42,12 @@ namespace Practis_Task1.Task1
 
         public void Clear()
         {
-            T[] array = new T[0];
+            this.array = new T[0];
         }
 
         public bool Contains(T item)
         {
-            for (int i = 0; i < array.Length - 1; i++)
+            for (int i = 0; i < array.Length; i++)
             {
                 if (array[i].Equals(item))
                 {
