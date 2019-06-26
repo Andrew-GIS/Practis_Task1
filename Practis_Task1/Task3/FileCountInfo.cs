@@ -14,7 +14,7 @@ namespace Practis_Task1.Task3
         {
             string way = "D:\\test";
             string name = FileName();
-            string resultWay = way + "\\" + name;
+            string resultWay = "D:\\test\\Text.txt";
             return resultWay;
         }
 
@@ -32,21 +32,30 @@ namespace Practis_Task1.Task3
 
         public void FileCreated()
         {
-            string way = "D:\\test";
-            string name = FileName();
-            string resultWay = way + "\\" + name;
-            string text = this.TextInputing();
+            try
+            {
 
-            if (Directory.Exists(way))
-            {
-                File.Create(resultWay);
-                File.WriteAllText(resultWay, text);
+                string way = @"D:\test\";
+                //string name = FileName();
+                //string resultWay = way + "\\" + name;
+                string resultWay = this.CreateWay();
+                string text = this.TextInputing();
+
+                if (Directory.Exists(way))
+                {
+                    File.Create(resultWay);
+                    File.WriteAllText(resultWay, text);
+                }
+                else
+                {
+                    DirectoryInfo di = Directory.CreateDirectory(way);
+                    File.Create(resultWay);
+                    File.WriteAllText(resultWay, text);
+                }
             }
-            else
+            catch (UnauthorizedAccessException)
             {
-                DirectoryInfo di = Directory.CreateDirectory(way);
-                File.Create(resultWay);
-                File.WriteAllText(resultWay, text);
+                Console.WriteLine("Access Error");
             }
 
         }
