@@ -1,4 +1,5 @@
 ﻿using Practis_Task1.Task1;
+using Practis_Task1.Task2;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,17 +12,24 @@ namespace Practis_Task1
     {
         static void Main(string[] args)
         {
-            //try
-            //{
-                MyList<int> userList = new MyList<int>();
-                userList.Add(4);
-                userList.Add(11);
-                userList.ToString();
-            //}
-            //catch (NullReferenceException)
-            //{
-            //    Console.WriteLine("Null - retry");
-            //}
+            try
+            {
+                //
+                //Task1.
+                //
+                //MyList<int> userList = new MyList<int>();
+                //userList.Add(4);
+                //userList.Add(11);
+                //userList.ToString();
+                //
+                //Task2.
+                //
+                Car<> car1 = new Car("Lada", 1995);
+            }
+            catch (NullReferenceException)
+            {
+                Console.WriteLine("Null - retry");
+            }
         }
     }
 }      
