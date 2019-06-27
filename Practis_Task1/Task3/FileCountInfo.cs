@@ -35,9 +35,7 @@ namespace Practis_Task1.Task3
             try
             {
 
-                string way = @"D:\test\";
-                //string name = FileName();
-                //string resultWay = way + "\\" + name;
+                string way = @"D:\test\"; 
                 string resultWay = this.CreateWay();
                 string text = this.TextInputing();
 
