@@ -8,8 +8,9 @@ namespace Practis_Task1.Task2
 {
     class CarInfo
     {
-        public int CarYear { get; set; }
+        public int сarYear; 
 
-        public string  CarBrand { get; set; }
+        public string сarBrand; 
+        
     }
 }

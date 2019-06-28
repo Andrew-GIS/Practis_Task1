@@ -50,10 +50,14 @@ namespace Practis_Task1.Task2
         {
             Console.WriteLine("Detailed Inforamtion");
             Console.WriteLine("Cars in Car Park");
-            foreach (var item in carArray)
+            for (int i = 0; i < carArray.Length; i++)
             {
-                Console.WriteLine($"{item}, ");
+                Console.WriteLine(carArray[i].ToString());
             }
+            //foreach (var item in carArray)
+            //{
+            //    Console.WriteLine($"{item}, ");
+            //}
             Console.WriteLine($"Quanterty of cars in car park - {carArray.Length}");
             string finish = "Good lack.";
             return finish; ;

@@ -12,12 +12,12 @@ namespace Practis_Task1.Task2
         {
             var car = new CarCollection<CarInfo>();
 
-            car.AddCar(new CarInfo { CarBrand = "Lada Kalina", CarYear = 1995 });
-            car.AddCar(new CarInfo { CarBrand = "BMW M7", CarYear = 2010 });
-            car.AddCar(new CarInfo { CarBrand = "Tayouta 15", CarYear = 2000 });
-            car.AddCar(new CarInfo { CarBrand = "ВАЗ 2101", CarYear = 1975 });
+            car.AddCar(new CarInfo { сarBrand = "Lada Kalina", сarYear = 1995 });
+            car.AddCar(new CarInfo { сarBrand = "BMW M7", сarYear = 2010 });
+            car.AddCar(new CarInfo { сarBrand = "Tayouta 15", сarYear = 2000 });
+            car.AddCar(new CarInfo { сarBrand = "ВАЗ 2101", сarYear = 1975 });
 
-            car.ToString();
+            Console.WriteLine(car.ToString()); 
         }
     }
 }
