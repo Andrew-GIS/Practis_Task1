@@ -10,10 +10,9 @@ namespace Practis_Task1.Task2
     {
         public T[] carArray { get; set; }
 
-        public CarCollection(string carBrand, int carYear)
+        public CarCollection()
         {
-            CarBrand = carBrand;
-            CarYear = carYear;
+            
             this.carArray = new T[0];
         }
 
@@ -34,7 +33,7 @@ namespace Practis_Task1.Task2
             }
         }
 
-        public void AddCar(T a, string carBrand, int carYear)
+        public void AddCar(T a)
         {
             T[] array = new T[carArray.Length + 1];
             carArray.CopyTo(array, 0);
@@ -46,12 +45,25 @@ namespace Practis_Task1.Task2
         {
             this.carArray = new T[0];
         }
+
+        public override string ToString()
+        {
+            Console.WriteLine("Detailed Inforamtion");
+            Console.WriteLine("Cars in Car Park");
+            foreach (var item in carArray)
+            {
+                Console.WriteLine($"{item}, ");
+            }
+            Console.WriteLine($"Quanterty of cars in car park - {carArray.Length}");
+            string finish = "Good lack.";
+            return finish; ;
+        }
     }
 }
 
 interface ICarPark<T>
 {
-    void AddCar(T a, string carBrand, int createYear);
+    void AddCar(T a);
     int Count { get; }
     T this[int index] { get; }
     void DeleteAll();

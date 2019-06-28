@@ -24,7 +24,8 @@ namespace Practis_Task1
                 //
                 //Task2.
                 //
-                Car<> car1 = new Car("Lada", 1995);
+                CarPark park1 = new CarPark();
+                park1.ShowCar();
             }
             catch (NullReferenceException)
             {
