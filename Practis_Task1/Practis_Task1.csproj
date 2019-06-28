@@ -45,9 +45,42 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Task1_Figure\Figure.cs" />
+    <Compile Include="Task1_Figure\FigureWithPolymorphism.cs" />
+    <Compile Include="Task2_Mammals\Aquatic.cs" />
+    <Compile Include="Task2_Mammals\Arboreal.cs" />
+    <Compile Include="Task2_Mammals\Arial.cs" />
+    <Compile Include="Task2_Mammals\FeedingAndMoving.cs" />
+    <Compile Include="Task2_Mammals\Mammals.cs" />
+    <Compile Include="Task2_Mammals\Subterranean.cs" />
+    <Compile Include="Task2_Mammals\Terrestrial.cs" />
+    <Compile Include="Task3_GrertingPerson\American.cs" />
+    <Compile Include="Task3_GrertingPerson\British.cs" />
+    <Compile Include="Task3_GrertingPerson\Francian.cs" />
+    <Compile Include="Task3_GrertingPerson\Greeting.cs" />
+    <Compile Include="Task3_GrertingPerson\Human.cs" />
+    <Compile Include="Task3_GrertingPerson\Polish.cs" />
+    <Compile Include="Task3_GrertingPerson\Ukrainian.cs" />
+    <Compile Include="Task4_Calculator\Calculate.cs" />
+    <Compile Include="Task4_Calculator\DivideOperation.cs" />
+    <Compile Include="Task4_Calculator\MultiplyOperation.cs" />
+    <Compile Include="Task4_Calculator\Operation.cs" />
+    <Compile Include="Task4_Calculator\SubtractOperation.cs" />
+    <Compile Include="Task4_Calculator\SumOperation.cs" />
+    <Compile Include="Task5\Animal.cs" />
+    <Compile Include="Task5\Cat.cs" />
+    <Compile Include="Task5\Dog.cs" />
+    <Compile Include="Task5\Lynx.cs" />
+    <Compile Include="Task6_ Gallery\Flowers.cs" />
+    <Compile Include="Task6_ Gallery\Gallery.cs" />
+    <Compile Include="Task6_ Gallery\Plant.cs" />
+    <Compile Include="Task6_ Gallery\PlantList.cs" />
+    <Compile Include="Task6_ Gallery\Tree.cs" />
+    <Compile Include="Task6_ Gallery\Worker.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
