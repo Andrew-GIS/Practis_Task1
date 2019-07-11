@@ -8,20 +8,23 @@ namespace Practis_Task1
 {
     class Program
     {
+        //
+        //Link - https://docs.google.com/document/d/1V5IDam36AkdjpfqL0rr_JYCF8bPIwrXyti_BxC3hkqM/edit.
+        //
         static void Main(string[] args)
         {
-            //Determine_Symvol();
+            Determine_Symvol();
 
             //Change_Position();
 
-            Delete_Spaces_Between_Signs();
+            //Delete_Spaces_Between_Signs();
         }
 
         public static void Determine_Symvol()
         {
-            Console.WriteLine("Inpute some symvols ");
+            Console.WriteLine("Inpute your string ");
             string test = Console.ReadLine();
-            Console.WriteLine("Symvols that you want to found ");
+            Console.WriteLine("Symbol that you want to found ");
             char found = Convert.ToChar(Console.ReadLine());
             int counter = 0;
             for (int i = 0; i < test.Length; i++)
@@ -31,9 +34,8 @@ namespace Practis_Task1
                 {
                     counter++;
                 }
-                
             }
-            Console.Write($"Number of duplicate symvol = {counter}");
+            Console.Write($"Symbol '{found}' is meeting = {counter} times\n");
         }
 
         public static void Change_Position()
@@ -58,7 +60,7 @@ namespace Practis_Task1
                 Console.Write(test[i]);
                 if (test[i] == quation)
                 {
-                    second = test[i];
+                    //second = test[i];
                 }
             }
             //string[] second = test.Split(' ');
