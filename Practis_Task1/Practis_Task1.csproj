@@ -43,8 +43,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Practice04.05\Vehicle.cs" />
+    <Compile Include="Task3_ColorPrint\Print.cs" />
+    <Compile Include="Task3_ColorPrint\Text.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Task1_Train\Train.cs" />
+    <Compile Include="Task1_Train\TrainsScheduler.cs" />
+    <Compile Include="Task2\Handler.cs" />
+    <Compile Include="Task2\MyClass.cs" />
+    <Compile Include="Task2\MyStructure.cs" />
+    <Compile Include="Task4\Pupil.cs" />
+    <Compile Include="Task4\PupilList.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
