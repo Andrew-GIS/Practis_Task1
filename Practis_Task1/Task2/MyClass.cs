@@ -19,6 +19,5 @@ namespace Practis_Task1.Task2
         {
             this.change = fieldValue;
         }
-
     }
 }

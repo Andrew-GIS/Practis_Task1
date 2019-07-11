@@ -10,7 +10,6 @@ namespace Practis_Task1.Task3_ColorPrint
     {
         string text = InputText();
         
-
         public static string InputText()
         {
             Console.WriteLine("Hello, you can write your text: ");
@@ -54,5 +53,4 @@ namespace Practis_Task1.Task3_ColorPrint
             }
         }
     }
-
 }

@@ -21,10 +21,12 @@ namespace Practis_Task1.Task2
             Console.WriteLine($"Class field is: {myClassInstance.GetClassField()}");
             Console.WriteLine($"Structure field is: {myStructureInstance.GetStrucureField()}");
         }
+
         private void Change(MyStructure instance)
         {
             instance.SetStructureFirld("Structure has benn changed");
         }
+
         private void Change(MyClass instance)
         {
             instance.SetStructureFirld("Class has been changed");

@@ -47,7 +47,6 @@ namespace Practis_Task1.Task1_Train
                 if (this.trainList[i].GetTrainNumber() == trainNumber)
                     selectedTrain = this.trainList[i];
             }
-
             if (selectedTrain.GetTrainNumber() == 0)
             {
                 Console.WriteLine($"Train number {trainNumber} was not found in the list of trains.");
@@ -76,7 +75,6 @@ namespace Practis_Task1.Task1_Train
                     break;
                 }
             }
-
             string destination = string.Empty;
             while (true)
             {
@@ -88,7 +86,6 @@ namespace Practis_Task1.Task1_Train
                     break;
                 }
             }
-
             return new Train(numbers, destination, departureTime);
         }
     }

@@ -8,9 +8,6 @@ namespace Practis_Task1.Task1_Train
 {
     public struct Train
     {
-        /// <summary>
-        /// /
-        /// </summary>
         private int trainNumber;
 
         private string destination;
@@ -29,6 +26,7 @@ namespace Practis_Task1.Task1_Train
             this.destination = destination;
             this.departureTime = departureTime;
         }
+
         public int GetTrainNumber()
         {
             return this.trainNumber;

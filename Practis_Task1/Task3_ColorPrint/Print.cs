@@ -18,6 +18,7 @@ namespace Practis_Task1.Task3_ColorPrint
             string text = Console.ReadLine();
             return text;
         }
+
         public static int ChooseColor()
         {
             int color;
@@ -66,8 +67,6 @@ namespace Practis_Task1.Task3_ColorPrint
                 }
             }
         }
-
     }
-    
 }
 

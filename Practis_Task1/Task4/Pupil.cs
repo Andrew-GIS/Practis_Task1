@@ -32,22 +32,25 @@ namespace Practis_Task1.Task4
             this.schoolNumber = schoolNumber;
             this.shoolClass = schoolClass;
         }
+
         public string GetNameSurname()
         {
             return this.nameSurname;
         }
+
         public int GetAge()
         {
             return this.age;
         }
+
         public int GetSchoolNumber()
         {
             return this.schoolNumber;
         }
+
         public string GetSchoolClass()
         {
             return this.shoolClass;
         }
-
     }
 }

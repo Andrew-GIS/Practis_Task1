@@ -10,7 +10,5 @@ namespace Practis_Task1.Task4
     {
         private const int PipilsNumber = 5;
         private Pupil[] pupilList;
-
-
     }
 }
