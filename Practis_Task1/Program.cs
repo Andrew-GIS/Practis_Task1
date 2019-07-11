@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Practis_Task1.Calculator;
+using Practis_Task1.task2;
 
 namespace Practis_Task1
 {
@@ -12,7 +13,27 @@ namespace Practis_Task1
         static void Main(string[] args)
         {
             //new Execution().Execute();
-            new ExecutionFunk().ExecuteFunk();
+            //new ExecutionFunk().ExecuteFunk();
+            //
+            //task1.
+            ////
+            //Employee employee = new Employee();
+            //employee.DeferedExemple();
+            //employee.UneferedExemle();
+            //
+            //task2.
+            //
+            CompanyEmployer em = new CompanyEmployer();
+            //em.AlphabetDisplay();
+            //em.DisplayMoreThan30Years();
+            //em.GenderDisplay();
+            //em.NameLastNameDisplay();
+            //em.O_NameAge20();
+            //em.NumberOfCompanyEmployer();
+            em.FirstEmployer();
+            em.LastEmployer();
+            //em.FirstOf25();
+            //em.OlegSearch();
         }
     }
 }
