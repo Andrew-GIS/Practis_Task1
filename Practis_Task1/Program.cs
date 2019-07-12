@@ -19,11 +19,20 @@ namespace Practis_Task1
             //More_Than_average();
             //done.Task4.
             //Task5 - Reverse array and Task6 - 
-            int[] array = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
-            MyReverse(array);
+            //int[] array = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+            //MyReverse(array);
             //Task5.done
-            
-
+            //SubArray(array, 1, 3);
+            //Task6.done
+            //Add1Element(array);
+            //AddToFirstPosition(array, 1);
+            //Task7.done.
+            //XfoundingInArray(1);
+            //Task8.done.
+            //ChangePosition();
+            //Task9.done.
+            SumOfColum(0);
+            //Task10.done.
         }
 
         public static void Massive_First_Step()
@@ -215,17 +224,152 @@ namespace Practis_Task1
 
         public static int[] MyReverse(int[] array)
         {
-            Console.WriteLine("Array:");
-            for (int i = 0; i < array.Length; i++)
-            {
-                Console.Write($"{array[i]} ");
-            }
+            Console.WriteLine("Array: " + string.Join(", ", array));
             Console.WriteLine("\nReverse array: ");
             for (int j = array.Length-1; j >= 0; j--)
             {
                 Console.Write($"{array[j]} ");
             }
             return array;
+        }
+
+        public static int[] SubArray(int[] array, int index, int count)
+        {
+            Console.WriteLine("Array: " + string.Join(", ", array));
+            int totalLength = index + count;
+            int[] changedArray = new int[count];
+            for (int i = 0; i < changedArray.Length; i++)
+            {
+                if (totalLength <= array.Length)
+                    changedArray[i] = array[index + i];
+                else
+                {
+                    while (index + i < array.Length)
+                    {
+                        changedArray[i] = array[index + i];
+                        i++;
+                    }
+                }
+            }
+
+            if (totalLength > array.Length)
+            {
+                int zeroNumber = index + count - array.Length;
+                int zeroIndexInArray = changedArray.Length - zeroNumber;
+                for (int i = zeroIndexInArray; i < changedArray.Length; i++)
+                {
+                    if (changedArray[i] == 0) changedArray[i] = 1;
+                }
+            }
+            Console.WriteLine("SubArray: " + string.Join(" , ", changedArray));
+
+            return changedArray;
+        }
+
+        public static int[] Add1Element(int[] array)
+        {
+            Console.WriteLine("Array: " + string.Join(", ", array));
+            Console.WriteLine($"Lenth at start = {array.Length}");
+
+            int[] newArray = new int[array.Length + 1];
+            for (int i = 0; i < array.Length; i++)
+            {
+                newArray[i] = array[i];
+            }
+            Console.WriteLine("NewArray: "+ string.Join(", ", newArray));
+            Console.WriteLine($"Lenth of newArray {newArray.Length}");
+            return newArray;
+        }
+
+        public static int[] AddToFirstPosition(int[] array, int value)
+        {
+            Console.WriteLine("Array: " + string.Join(", ", array));
+            int[] newArray = new int[array.Length + 1];
+            int firstPosition = newArray.Length - array.Length;
+            newArray[0] = value;
+            for (int i = 1; i < newArray.Length; i++)
+            {
+                newArray[i] = array[i - 1];
+            }
+            Console.WriteLine($"NewArray: " + string.Join(", ", newArray));
+            return newArray;
+        }
+
+        public static void XfoundingInArray(int x)
+        {
+            int[,] array = new int[,]{ { 1, 2, 3, 4, 5, 5, 6, 7, 8 } , {1, 4, 5, 6, 7, 8, 9, 10, 3} };
+            int counter = 0;
+            for (int i = 0; i < array.GetLength(0); i++)
+            {
+                for (int j = 0; j < array.GetLength(1); j++)
+                {
+                    //Console.Write($"{array[i,j]} ");
+                    if (array[i, j] == x)
+                    {
+                        counter++;
+                    }
+                }
+            }
+            Console.WriteLine($"Number of founding of {x} value = {counter} times");
+        }
+
+        public static void ChangePosition()
+        {
+            int[,] array = new int[,] { {51, 4, 3, 2}, 
+                                        { 1, 4, 5, 6},
+                                        {3, 5, 9, 6 } };
+
+            int rows = array.GetLength(0);
+            int colums = array.GetLength(1);
+            int firstRow = 1;
+            int secondRow = 2;
+            Console.WriteLine("Array at start");
+            for (int i = 0; i < rows; i++)
+            {
+                for (int j = 0; j < colums; j++)
+                {
+                    Console.Write($"{array[i,j]},\t ");
+                }
+            }
+            Console.WriteLine();
+            //change rows position.
+            for (int i = 0; i < colums; i++)
+            {
+                var temp = array[firstRow, i];
+                array[firstRow, i] = array[secondRow, i];
+                array[secondRow, i] = temp;
+            }
+
+            Console.WriteLine("Array after change");
+            for (int i = 0; i < rows; i++)
+            {
+                for (int j = 0; j < colums; j++)
+                {
+                    Console.Write($"{array[i, j]},\t ");
+                }
+            }
+            Console.WriteLine();
+        }
+
+        public static void SumOfColum(int columNumber)
+        {
+            int[,] array = new int[,] { {51, 4, 3, 2},
+                                        { 1, 4, 5, 6},
+                                        {3, 5, 9, 6 } };
+            int rows = array.GetLength(0);
+            int colums = array.GetLength(1);
+            int sum = 0;
+            for (int i = 0; i < rows; i++)
+            {
+                for (int j = 0; j < colums; j++)
+                {
+                    if (array[i, j] == array[i, columNumber])
+                    {
+                        sum += array[i,j];
+                    }
+                }
+            }
+            Console.WriteLine($"Sum of {columNumber+1} colum = {sum}");
         }
     }
 }
