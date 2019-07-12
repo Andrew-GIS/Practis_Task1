@@ -13,9 +13,11 @@ namespace Practis_Task1
         //
         static void Main(string[] args)
         {
-            Determine_Symvol();
+            //Determine_Symvol();
+            //Task2.done.
 
-            //Change_Position();
+            Change_Position();
+            //Task3.done.
 
             //Delete_Spaces_Between_Signs();
         }
