@@ -10,34 +10,42 @@ namespace Practis_Task1
     {
         static void Main(string[] args)
         {
-            //Massive_First_Step();
-            //done.Task1.
+            //Task1.done.
+            //MathOperation();
+
+            //Task2.done.
             //Duplicate();
-            //done.Task2.
+
+            //Task3.done.
             //Found_Of_Index();
-            //done.Task3.
+
+            //Task4.done.
             //More_Than_average();
-            //done.Task4.
-            //Task5 - Reverse array and Task6 - 
+
+            //Task5.done.
             //int[] array = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
             //MyReverse(array);
-            //Task5.done
+
+            //Task6.done.
             //SubArray(array, 1, 3);
-            //Task6.done
+
+            //Task7.done.
             //Add1Element(array);
             //AddToFirstPosition(array, 1);
-            //Task7.done.
-            //XfoundingInArray(1);
+
             //Task8.done.
-            //ChangePosition();
+            //XfoundingInArray(1);
+
             //Task9.done.
-            SumOfColum(0);
+            //ChangePosition();
+
             //Task10.done.
+            SumOfColum(0);
         }
 
-        public static void Massive_First_Step()
+        public static void MathOperation()
         //
-        //Min, Max, Median, Sum, UnCount Values.
+        //Task1.Min, Max, Median, Sum, UnCount Values.
         //
         {
             while (true)
@@ -107,7 +115,7 @@ namespace Practis_Task1
 
         public static void Duplicate()
         //
-        //Deletion of duplicates.
+        //Task2.Deletion of duplicates.
         //
         {
             int[] array = new int[] {1, 1, 2, 13, 22, 2, 22};
@@ -159,7 +167,7 @@ namespace Practis_Task1
 
         public static void Found_Of_Index()
         //
-        //Find Position of value that include in boundaries.
+        //Task3.Find Position of value that include in boundaries.
         //
         {
             Console.WriteLine("I generate array in boundaries of 0 - 20 ");
@@ -192,7 +200,7 @@ namespace Practis_Task1
 
         public static void More_Than_average()
         //
-        //found elements that more that average value.
+        //Task3.Found elements that more that average value.
         //
         {
             int[] array = new int[] {1, 2, 3, 4, 5, 6};
@@ -223,6 +231,9 @@ namespace Practis_Task1
         }
 
         public static int[] MyReverse(int[] array)
+            //
+            //Task4.
+            //
         {
             Console.WriteLine("Array: " + string.Join(", ", array));
             Console.WriteLine("\nReverse array: ");
@@ -234,6 +245,9 @@ namespace Practis_Task1
         }
 
         public static int[] SubArray(int[] array, int index, int count)
+            //
+            //Task5.
+            //
         {
             Console.WriteLine("Array: " + string.Join(", ", array));
             int totalLength = index + count;
@@ -267,6 +281,9 @@ namespace Practis_Task1
         }
 
         public static int[] Add1Element(int[] array)
+            //
+            //Task6.
+            //
         {
             Console.WriteLine("Array: " + string.Join(", ", array));
             Console.WriteLine($"Lenth at start = {array.Length}");
@@ -282,6 +299,9 @@ namespace Practis_Task1
         }
 
         public static int[] AddToFirstPosition(int[] array, int value)
+            //
+            //Task7.
+            //
         {
             Console.WriteLine("Array: " + string.Join(", ", array));
             int[] newArray = new int[array.Length + 1];
@@ -296,6 +316,9 @@ namespace Practis_Task1
         }
 
         public static void XfoundingInArray(int x)
+            //
+            //Task8.
+            //
         {
             int[,] array = new int[,]{ { 1, 2, 3, 4, 5, 5, 6, 7, 8 } , {1, 4, 5, 6, 7, 8, 9, 10, 3} };
             int counter = 0;
@@ -314,6 +337,9 @@ namespace Practis_Task1
         }
 
         public static void ChangePosition()
+            //
+            //Task9.
+            //
         {
             int[,] array = new int[,] { {51, 4, 3, 2}, 
                                         { 1, 4, 5, 6},
@@ -352,6 +378,9 @@ namespace Practis_Task1
         }
 
         public static void SumOfColum(int columNumber)
+            //
+            //Task10.
+            //
         {
             int[,] array = new int[,] { {51, 4, 3, 2},
                                         { 1, 4, 5, 6},
