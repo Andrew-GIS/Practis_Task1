@@ -8,7 +8,7 @@ namespace Practis_Task1.Task2
 {
     class CarPark
     {
-        public void ShowCar ()
+        public void ShowCar()
         {
             var car = new CarCollection<CarInfo>();
 
@@ -17,7 +17,7 @@ namespace Practis_Task1.Task2
             car.AddCar(new CarInfo { сarBrand = "Tayouta 15", сarYear = 2000 });
             car.AddCar(new CarInfo { сarBrand = "ВАЗ 2101", сarYear = 1975 });
 
-            Console.WriteLine(car.ToString()); 
+            Console.WriteLine(car.ToString());
         }
     }
 }

@@ -60,11 +60,12 @@ namespace Practis_Task1.Task1
         public override string ToString()
         {
             Console.WriteLine("Detailed Inforamtion");
-            Console.WriteLine("Elements of your array");
+            Console.Write("Elements of your array: ");
             foreach (var item in array)
             {
-                Console.WriteLine($"{item}, ");
+                Console.Write($"{item}, ");
             }
+            Console.WriteLine(Environment.NewLine);
             Console.WriteLine($"Length of your array - {array.Length}");
             string finish = "This us the end, good lack.";
             return finish;

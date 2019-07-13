@@ -12,6 +12,9 @@ namespace Practis_Task1
     {
         static void Main(string[] args)
         {
+            //
+            //Link - https://docs.google.com/document/d/1QvUEa2VUAqyhXEo3TJLOkOM9x5lbacruosTKjre6Yjw/edit.
+            //
             try
             {
                 //
@@ -20,8 +23,9 @@ namespace Practis_Task1
                 //MyList<int> userList = new MyList<int>();
                 //userList.Add(4);
                 //userList.Add(11);
+                //userList.Contains(4);
                 //userList.ToString();
-                //
+
                 //Task2.
                 //
                 CarPark park1 = new CarPark();

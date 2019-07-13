@@ -48,16 +48,15 @@ namespace Practis_Task1.Task2
 
         public override string ToString()
         {
+            var car = string.Empty;
             Console.WriteLine("Detailed Inforamtion");
-            Console.WriteLine("Cars in Car Park");
+            Console.WriteLine("Cars in Car Park:");
+
             for (int i = 0; i < carArray.Length; i++)
             {
-                Console.WriteLine(carArray[i].ToString());
+                car += $"{carArray[i].сarBrand} {carArray[i].сarYear}\n"; 
             }
-            //foreach (var item in carArray)
-            //{
-            //    Console.WriteLine($"{item}, ");
-            //}
+            Console.WriteLine(car);
             Console.WriteLine($"Quanterty of cars in car park - {carArray.Length}");
             string finish = "Good lack.";
             return finish; ;
