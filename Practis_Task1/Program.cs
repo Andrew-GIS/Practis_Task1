@@ -13,13 +13,14 @@ namespace Practis_Task1
         //
         static void Main(string[] args)
         {
-            //Determine_Symvol();
             //Task2.done.
+            //Determine_Symvol();
 
-            Change_Position();
             //Task3.done.
+            //ChangeStringPosition();
 
-            //Delete_Spaces_Between_Signs();
+            //Task4.
+            DeleteSpacesBetweenQuestionSigns();
         }
 
         public static void Determine_Symvol()
@@ -40,7 +41,7 @@ namespace Practis_Task1
             Console.Write($"Symbol '{found}' is meeting = {counter} times\n");
         }
 
-        public static void Change_Position()
+        public static void ChangeStringPosition()
         {
             Console.WriteLine("Inpute some symvols to your string");
             string first = Console.ReadLine();
@@ -52,19 +53,21 @@ namespace Practis_Task1
             Console.WriteLine($"Resalt = " + first.Insert(position, second));
         }
 
-        public static void Delete_Spaces_Between_Signs()
+        public static void DeleteSpacesBetweenQuestionSigns()
         {
             string test = "How are you? Are you fine? Yes!";
             string second = "";
             char quation = '?';
-            for (int i = 0; i < test.Length; i++)
-            {
-                Console.Write(test[i]);
-                if (test[i] == quation)
-                {
-                    //second = test[i];
-                }
-            }
+            test.IndexOf("?");
+            Console.WriteLine(test.IndexOf("?"));
+            //for (int i = 0; i < test.Length; i++)
+            //{
+            //    Console.Write(test[i]);
+            //    if (test[i] == quation)
+            //    {
+            //        //second = test[i];
+            //    }
+            //}
             //string[] second = test.Split(' ');
             //foreach (var space in second)
             //{
