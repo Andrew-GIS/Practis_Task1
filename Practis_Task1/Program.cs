@@ -1,5 +1,6 @@
 ﻿using Practis_Task1.Task1;
 using Practis_Task1.Task2;
+using Practis_Task1.Task3;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,10 +27,18 @@ namespace Practis_Task1
                 //userList.Contains(4);
                 //userList.ToString();
 
+                //
                 //Task2.
                 //
-                CarPark park1 = new CarPark();
-                park1.ShowCar();
+                //CarPark park1 = new CarPark();
+                //park1.ShowCar();
+
+                //
+                //Task3.
+                //
+                Task3.BuildingList chain1 = new BuildingList();
+                chain1.BuildList();
+
             }
             catch (NullReferenceException)
             {
