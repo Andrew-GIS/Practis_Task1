@@ -18,10 +18,9 @@ namespace Practis_Task1.Task1_.Task2_Dictionary
 
         public void Founding()
         {
-            string 
-            for (int i = 0; i < student.Count; i++)
+            foreach (var item in student)
             {
-                Console.WriteLine(student[i,i]);
+                Console.WriteLine(item.ToString());
             }
         }
     }

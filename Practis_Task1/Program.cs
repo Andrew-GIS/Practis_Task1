@@ -9,11 +9,16 @@ namespace Practis_Task1
 {
     class Program
     {
+        //
+        //Link - https://docs.google.com/document/d/1-GdiO03KerTHLvQCrvS3aIOZQCo3nxcLglFpFtH82nw/edit.
+        //
         static void Main(string[] args)
         {
-            StudentCollection stud = new StudentCollection();
-            stud.CountOfStudent();
-            stud.ShowStudents();
+            //
+            //Task1.
+            //
+            ManageCollection collection = new ManageCollection();
+            collection.Execute();
         }
 
     }

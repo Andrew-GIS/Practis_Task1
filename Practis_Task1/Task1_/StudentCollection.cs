@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Practis_Task1.Task1_
 {
-    class StudentCollection 
+    public class StudentCollection 
     {
         List<Student> students = new List<Student> {
         new Student("Ivan", "Petrov", "3", "432", "4"),

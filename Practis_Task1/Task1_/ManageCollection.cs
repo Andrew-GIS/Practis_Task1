@@ -8,41 +8,49 @@ namespace Practis_Task1.Task1_
 {
     class ManageCollection
     {
+        StudentCollection instance = new StudentCollection();
+
         public void Execute()
         {
-            StudentCollection instance = new StudentCollection();
-            var list = instance.GetList();
-            list.Add(new Student("Ivan", "Petrov", "3", "432", "4"));
-            list.RemoveAt(0);
+            Console.WriteLine($"All students at group now");
+            ShowStudents();
+            Console.Write("Count of sudent: ");
+            CountOfStudent();
+            Console.WriteLine("After adding student Ivan Petrov");
+            AddStudent();
+            Console.WriteLine(Environment.NewLine);
+            ShowStudents();
+            Console.Write("Number of student become: ");
+            CountOfStudent();
+            Console.WriteLine("List of student after removing Ivan Petrov");
+            ShowStudents();
+        }
+
+        public void AddStudent()
+        {
+            Student added = new Student("Ivan", "Petrov", "3", "432", "4");
+            instance.GetList().Add(added);
+
+        }
+
+        public void RemoveStudent()
+        {
+            instance.GetList().Remove(new Student("Ivan", "Petrov", "3", "432", "4"));
+        }
+
+        public void CountOfStudent()
+        {
+            int count = instance.GetList().Count();
+            Console.WriteLine($"Number of students - {count}");
+        }
+
+        public void ShowStudents()
+        {
             Console.WriteLine("List of students:");
-            for (int i = 0; i < list.Count; i++)
+            for (int i = 0; i < instance.GetList().Count; i++)
             {
-                Console.WriteLine(list[i].ToString());
+                Console.WriteLine(instance.GetList()[i].ToString());
             }
         }
-        //public void AddStudent()
-        //{
-        //    list.Add();
-        //}
-
-        //public void RemoveStudent()
-        //{
-        //    students.Remove(new Student("Ivan", "Petrov", "3", "432", "4"));
-        //}
-
-        //public void CountOfStudent()
-        //{
-        //    int count = students.Count();
-        //    Console.WriteLine($"Number of students - {count}");
-        //}
-
-        //public void ShowStudents()
-        //{
-        //    Console.WriteLine("List of students:");
-        //    for (int i = 0; i < students.Count; i++)
-        //    {
-        //        Console.WriteLine(students[i].ToString());
-        //    }
-        //}
     }
 }

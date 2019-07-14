@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Practis_Task1.Task1_
 {
-    class Student
+    public class Student
     {
         private string firstName;
         private string lastName;
@@ -84,7 +84,7 @@ namespace Practis_Task1.Task1_
 
         public override string ToString()
         {
-            return this.FirstName + ", " + this.LastName + ", " + Cours + ", " + Groupe + ", " + Faculty + ".";
+            return $"Name: {this.FirstName}; " + $"LastName: {this.LastName}; " + $"Cours: {Cours}; "+ $"Groupe {Groupe}; "+ $"Faculty: {Faculty};.\n";
         }
 
     }
