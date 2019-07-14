@@ -1,4 +1,5 @@
 ﻿using Practis_Task1.Task1_;
+using Practis_Task1.Task1_.Task2_Dictionary;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,6 +20,11 @@ namespace Practis_Task1
             //
             ManageCollection collection = new ManageCollection();
             collection.Execute();
+            //
+            //Task2.
+            //
+            StudentFounding manage = new StudentFounding();
+            manage.Execute();
         }
 
     }

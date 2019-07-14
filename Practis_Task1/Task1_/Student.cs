@@ -84,7 +84,11 @@ namespace Practis_Task1.Task1_
 
         public override string ToString()
         {
-            return $"Name: {this.FirstName}; " + $"LastName: {this.LastName}; " + $"Cours: {Cours}; "+ $"Groupe {Groupe}; "+ $"Faculty: {Faculty};.\n";
+            //return $"Name: {this.FirstName}; " + $"LastName: {this.LastName}; " + $"Cours: {this.Cours}; "+ $"Groupe {this.Groupe}; "+ $"Faculty: {this.Faculty};.\n";
+            return $"Student: {this.FirstName} {this.LastName}\n" +
+                $"Cours: {this.Cours}\n" +
+                $"Group: {this.Groupe}\n" +
+                $"Faculty: {this.Faculty}\n";
         }
 
     }
