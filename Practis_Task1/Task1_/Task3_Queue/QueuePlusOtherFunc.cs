@@ -1,31 +1,34 @@
-﻿using System;
+﻿using Practis_Task1.Task1_.Task2_Dictionary;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Practis_Task1.Task1_.Task2_Dictionary
+namespace Practis_Task1.Task1_.Task3_Queue
 {
-    class StudentFounding
+    class QueuePlusOtherFunc
     {
+        Queue<string> schedule = new Queue<string>();
         StudentDictionary students = new StudentDictionary();
 
         public void Execute()
         {
             bool work = true;
             while (work==true)
-            { 
-            bool check = true;
+            {
+                bool check = true;
                 while (check == true)
                 {
-                    Console.WriteLine($"Glad you at student managment proggram!\nWhat did you want to do with your student?\n" +
+                    Console.WriteLine($"Glad you at student management program!\nWhat did you want to do with your student?\n" +
                         $"Present students number - {students.GetDictionary().Count}\n" +
-                        $"1.Show student list.\n" +
+                        $"1.Show list of student .\n" +
                         $"2.Add new student.\n" +
                         $"3.Remove some student.\n" +
                         $"4.Remove all student.\n" +
                         $"5.Found some student by name\n"+
-                        $"6.Exit"
+                        $"6.Operation with lesson Schedule\n" +
+                        $"7.Exit"
                         );
                     string read = Console.ReadLine();
                     int choose;
@@ -36,7 +39,7 @@ namespace Practis_Task1.Task1_.Task2_Dictionary
                     }
                     else
                     {
-                        if (choose <= 0 || choose > 6)
+                        if (choose <= 0 || choose > 7)
                         {
                             Console.WriteLine("Tre again, your answer must be from 1 to 5");
                             check = true;
@@ -65,8 +68,9 @@ namespace Practis_Task1.Task1_.Task2_Dictionary
                             FoundStudent();
                             break;
                         case (6):
-                            Console.WriteLine("GoodBy");
-                            work = false;
+                            ScheduleOperation();
+                            break;
+                        case (7):
                             break;
                     }
                     Console.WriteLine("Do you want to continue? Press 'y' for yes, and 'n' for no");
@@ -74,6 +78,8 @@ namespace Practis_Task1.Task1_.Task2_Dictionary
                     if (answerForContinue == "y" || answerForContinue == "Y" || answerForContinue == "yes" || answerForContinue == "YES")
                         continue;
                     else
+                        check = false;
+                        work = false;
                         break;
                 }
             }
@@ -117,13 +123,13 @@ namespace Practis_Task1.Task1_.Task2_Dictionary
                 {
                     Console.WriteLine("Inpute name and lastname of student whom you want to remove from list:\nName:");
                     string name = Console.ReadLine();
-                
+
                     Console.WriteLine("Lastname:");
                     string lastname = Console.ReadLine();
                     if (students.GetDictionary().ContainsKey(name + " " + lastname))
                     {
                         students.GetDictionary().Remove(name + " " + lastname);
-                        
+
                         Console.WriteLine("Do you go out from program of Adding Student? y- yes/n-no");
                         string answer = Console.ReadLine();
                         if (answer == "Y" || answer == "y" || answer == "yes" || answer == "YES")
@@ -179,5 +185,62 @@ namespace Practis_Task1.Task1_.Task2_Dictionary
                 counter++;
             }
         }
+
+        public void ScheduleOperation()
+        {
+            while (true)
+            {
+                Console.WriteLine("Welcome to Lesson Manager Program\n" +
+                    $"1.Add lesson.\n" +
+                    $"2.Remove first lesson\n" +
+                    $"3.Show lesson schedule"
+                    );
+                string read = Console.ReadLine();
+                int choose;
+                if (!Int32.TryParse(read, out choose))
+                {
+                    Console.WriteLine("Not a number, try again");
+                    continue;
+                }
+                else
+                {
+                    if (choose <= 0 || choose > 3)
+                    {
+                        Console.WriteLine("Tre again, your answer must be from 1 to 3");
+                        continue;
+                    }
+                    else
+                    {
+                        switch (choose)
+                        {
+                            case (1):
+                                Console.WriteLine("Input name of subject that you want to add to schedule:");
+                                string subjectAdded = Console.ReadLine();
+                                schedule.Enqueue(subjectAdded);
+                                break;
+                            case (2):
+                                Console.WriteLine("Removing first lesson");
+                                schedule.Dequeue();
+                                break;
+                            case (3):
+                                Console.WriteLine("Full lessons schedule");
+                                foreach (var lesson in schedule)
+                                {
+                                    Console.WriteLine(lesson);
+                                }
+                                break;
+                        }
+                        Console.WriteLine("Do you want to continue? Press 'y' for yes, and 'n' for no");
+                        string answerForContinue = Console.ReadLine();
+                        if (answerForContinue == "y" || answerForContinue == "Y" || answerForContinue == "yes" || answerForContinue == "YES")
+                            continue;
+                        else
+                            break;
+                    }
+                }
+            }
+
+        }
     }
 }
+

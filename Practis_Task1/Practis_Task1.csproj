@@ -50,9 +50,11 @@
     <Compile Include="Task1_\StudentCollection.cs" />
     <Compile Include="Task1_\Task2_Dictionary\StudentDictionary.cs" />
     <Compile Include="Task1_\Task2_Dictionary\StudentFounding.cs" />
+    <Compile Include="Task1_\Task3_Queue\QueuePlusOtherFunc.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
