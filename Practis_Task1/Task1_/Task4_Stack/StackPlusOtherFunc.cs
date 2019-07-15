@@ -6,10 +6,11 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Practis_Task1.Task1_.Task3_Queue
+namespace Practis_Task1.Task1_
 {
-    class QueuePlusOtherFunc
+    class StackPlusOtherFunc
     {
+        Stack<string> libraryBook = new Stack<string>();
         Queue<string> schedule = new Queue<string>();
         Queue<string> taskList = new Queue<string>();
         StudentDictionary students = new StudentDictionary();
@@ -17,7 +18,7 @@ namespace Practis_Task1.Task1_.Task3_Queue
         public void Execute()
         {
             bool work = true;
-            while (work==true)
+            while (work == true)
             {
                 bool check = true;
                 while (check == true)
@@ -28,10 +29,11 @@ namespace Practis_Task1.Task1_.Task3_Queue
                         $"2.Add new student.\n" +
                         $"3.Remove some student.\n" +
                         $"4.Remove all student.\n" +
-                        $"5.Found some student by name\n"+
+                        $"5.Found some student by name\n" +
                         $"6.Operation with lesson Schedule\n" +
-                        $"7.Manage student Task List\n"+
-                        $"8.Exit"
+                        $"7.Manage student Task List\n" +
+                        $"8.Managing existing books\n" +
+                        $"9.Exit"
                         );
                     string read = Console.ReadLine();
                     int choose;
@@ -42,9 +44,9 @@ namespace Practis_Task1.Task1_.Task3_Queue
                     }
                     else
                     {
-                        if (choose <= 0 || choose > 8)
+                        if (choose <= 0 || choose > 9)
                         {
-                            Console.WriteLine("Tre again, your answer must be from 1 to 8");
+                            Console.WriteLine("Tre again, your answer must be from 1 to 9");
                             check = true;
                             continue;
                         }
@@ -77,6 +79,9 @@ namespace Practis_Task1.Task1_.Task3_Queue
                             ManageTaskList();
                             break;
                         case (8):
+                            ManageBookExisting();
+                            break;
+                        case (9):
                             work = false;
                             break;
                     }
@@ -86,8 +91,8 @@ namespace Practis_Task1.Task1_.Task3_Queue
                         continue;
                     else
                         check = false;
-                        work = false;
-                        break;
+                    work = false;
+                    break;
                 }
             }
         }
@@ -256,7 +261,7 @@ namespace Practis_Task1.Task1_.Task3_Queue
                 Console.WriteLine("Welcome to Lesson Manager Program\n" +
                     $"1.Add task.\n" +
                     $"2.Remove first task\n" +
-                    $"3.Show task list\n"+
+                    $"3.Show task list\n" +
                     $"4.Oversee for a progress of tasks"
                     );
                 string read = Console.ReadLine();
@@ -315,6 +320,63 @@ namespace Practis_Task1.Task1_.Task3_Queue
                 }
             }
         }
+
+        public void ManageBookExisting()
+        {
+            while (true)
+            {
+                Console.WriteLine("Welcome to Accounting of Library Book Program\n" +
+                    $"1.Take book from library.\n" +
+                    $"2.Remove last book\n" +
+                    $"3.Show list of book\n"
+                    );
+                string read = Console.ReadLine();
+                int choose;
+                if (!Int32.TryParse(read, out choose))
+                {
+                    Console.WriteLine("Not a number, try again");
+                    continue;
+                }
+                else
+                {
+                    if (choose <= 0 || choose > 3)
+                    {
+                        Console.WriteLine("Tre again, your answer must be from 1 to 3");
+                        continue;
+                    }
+                    else
+                    {
+                        switch (choose)
+                        {
+                            case (1):
+                                Console.WriteLine("Take book from library:\nWrite name of the book");
+                                string bookAdded = Console.ReadLine();
+                                libraryBook.Push(bookAdded);
+                                Console.WriteLine($"You take book {bookAdded} from library");
+                                break;
+                            case (2):
+                                Console.WriteLine("Removing last book");
+                                var removed =  libraryBook.Pop();
+                                Console.WriteLine($"Removed book -  {removed}");
+                                break;
+                            case (3):
+                                int counter = 1;
+                                foreach (var book in libraryBook)
+                                {
+                                    Console.WriteLine($"{counter}.{book}");
+                                    counter++;
+                                }
+                                break;
+                        }
+                        Console.WriteLine("Do you want to continue? Press 'y' for yes, and 'n' for no");
+                        string answerForContinue = Console.ReadLine();
+                        if (answerForContinue == "y" || answerForContinue == "Y" || answerForContinue == "yes" || answerForContinue == "YES")
+                            continue;
+                        else
+                            break;
+                    }
+                }
+            }
+        }
     }
 }
-

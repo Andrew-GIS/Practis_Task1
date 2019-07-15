@@ -48,6 +48,7 @@
     <Compile Include="Task1_\ManageCollection.cs" />
     <Compile Include="Task1_\Student.cs" />
     <Compile Include="Task1_\StudentCollection.cs" />
+    <Compile Include="Task1_\Task4_Stack\StackPlusOtherFunc.cs" />
     <Compile Include="Task1_\Task2_Dictionary\StudentDictionary.cs" />
     <Compile Include="Task1_\Task2_Dictionary\StudentFounding.cs" />
     <Compile Include="Task1_\Task3_Queue\QueuePlusOtherFunc.cs" />

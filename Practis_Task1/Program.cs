@@ -29,10 +29,14 @@ namespace Practis_Task1
             //
             //Task3.
             //
-            QueuePlusOtherFunc manage = new QueuePlusOtherFunc();
+            //QueuePlusOtherFunc manage = new QueuePlusOtherFunc();
+            //manage.Execute();
+            //
+            //Task4.
+            //
+            StackPlusOtherFunc manage = new StackPlusOtherFunc();
             manage.Execute();
         }
-
     }
 }      
 
