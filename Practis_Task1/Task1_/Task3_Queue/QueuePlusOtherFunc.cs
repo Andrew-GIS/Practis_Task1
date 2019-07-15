@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace Practis_Task1.Task1_.Task3_Queue
@@ -10,6 +11,7 @@ namespace Practis_Task1.Task1_.Task3_Queue
     class QueuePlusOtherFunc
     {
         Queue<string> schedule = new Queue<string>();
+        Queue<string> taskList = new Queue<string>();
         StudentDictionary students = new StudentDictionary();
 
         public void Execute()
@@ -28,7 +30,8 @@ namespace Practis_Task1.Task1_.Task3_Queue
                         $"4.Remove all student.\n" +
                         $"5.Found some student by name\n"+
                         $"6.Operation with lesson Schedule\n" +
-                        $"7.Exit"
+                        $"7.Manage student Task List\n"+
+                        $"8.Exit"
                         );
                     string read = Console.ReadLine();
                     int choose;
@@ -39,9 +42,9 @@ namespace Practis_Task1.Task1_.Task3_Queue
                     }
                     else
                     {
-                        if (choose <= 0 || choose > 7)
+                        if (choose <= 0 || choose > 8)
                         {
-                            Console.WriteLine("Tre again, your answer must be from 1 to 5");
+                            Console.WriteLine("Tre again, your answer must be from 1 to 8");
                             check = true;
                             continue;
                         }
@@ -71,6 +74,9 @@ namespace Practis_Task1.Task1_.Task3_Queue
                             ScheduleOperation();
                             break;
                         case (7):
+                            ManageTaskList();
+                            break;
+                        case (8):
                             break;
                     }
                     Console.WriteLine("Do you want to continue? Press 'y' for yes, and 'n' for no");
@@ -240,6 +246,73 @@ namespace Practis_Task1.Task1_.Task3_Queue
                 }
             }
 
+        }
+
+        public void ManageTaskList()
+        {
+            while (true)
+            {
+                Console.WriteLine("Welcome to Lesson Manager Program\n" +
+                    $"1.Add task.\n" +
+                    $"2.Remove first task\n" +
+                    $"3.Show task list\n"+
+                    $"4.Oversee for a progress of tasks"
+                    );
+                string read = Console.ReadLine();
+                int choose;
+                if (!Int32.TryParse(read, out choose))
+                {
+                    Console.WriteLine("Not a number, try again");
+                    continue;
+                }
+                else
+                {
+                    if (choose <= 0 || choose > 4)
+                    {
+                        Console.WriteLine("Tre again, your answer must be from 1 to 4");
+                        continue;
+                    }
+                    else
+                    {
+                        switch (choose)
+                        {
+                            case (1):
+                                Console.WriteLine("Add task to task list:");
+                                string taskAdded = Console.ReadLine();
+                                taskList.Enqueue(taskAdded);
+                                break;
+                            case (2):
+                                Console.WriteLine("Removing first task");
+                                taskList.Dequeue();
+                                break;
+                            case (3):
+                                foreach (var task in taskList)
+                                {
+                                    Console.WriteLine(task);
+                                }
+                                break;
+                            case (4):
+                                Console.WriteLine("Task List:");
+                                int counter = 1;
+                                foreach (var task in taskList)
+                                {
+                                    Console.Write($"{counter}{task}");
+                                    Thread.Sleep(1000);
+                                    Console.Write("\tdone;");
+                                    counter++;
+                                    Console.WriteLine(Environment.NewLine);
+                                }
+                                break;
+                        }
+                        Console.WriteLine("Do you want to continue? Press 'y' for yes, and 'n' for no");
+                        string answerForContinue = Console.ReadLine();
+                        if (answerForContinue == "y" || answerForContinue == "Y" || answerForContinue == "yes" || answerForContinue == "YES")
+                            continue;
+                        else
+                            break;
+                    }
+                }
+            }
         }
     }
 }
