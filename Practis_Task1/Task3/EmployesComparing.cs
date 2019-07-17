@@ -69,6 +69,9 @@ namespace Practis_Task1.Task2
                 Console.WriteLine($"{counter}.{item.ToString()}");
                 counter++;
             }
+            //
+            //hard way
+            //
             //int duplicateCount = 0;
             //for (int i = 0; i < fullEmployeeList.Length; i++)
             //{

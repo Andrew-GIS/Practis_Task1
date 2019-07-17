@@ -132,7 +132,6 @@ namespace Practis_Task1.task2
             }
         }
 
-
         public void DisplayCompanyEmployer(IEnumerable<CompanyEmployer> employees)
         {
             int counter = 0;
@@ -161,8 +160,6 @@ namespace Practis_Task1.task2
             }
         }
     }
-
-
 
     public class Pupil
     {

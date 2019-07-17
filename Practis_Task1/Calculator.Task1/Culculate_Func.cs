@@ -57,6 +57,7 @@ namespace Practis_Task1.Calculator
             helper.Excecute(calculator.Divide);
         }
     }
+
     public delegate double CalculateDelegateFunk(double firstArgument, double secondArgument);
 }
 
