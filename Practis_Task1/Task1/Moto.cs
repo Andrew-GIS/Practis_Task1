@@ -9,21 +9,22 @@ namespace Practis_Task1
     class Moto: Vehicle
     {
         public MotoType Type { get; set; }
+
         public Moto (MotoType type,
         int wheelCount, ConsoleColor color, int maxSpeed, int passengerCount)
             : base(wheelCount, color, maxSpeed, passengerCount)
         {
-            Type = type;
+            this.Type = type;
         }
-        public override void DisplayCahracteristics(Vehicle vehicle)
+        public override void DisplayCharacteristics(Vehicle vehicle)
         {
-            Console.WriteLine(String.Format("{0, 6} | {1, 10} | {2, 9} | {3,10} | {4,5}",
+            Console.WriteLine(String.Format("{0, 6} | {1, 10} | {2, 9} | {3,10} | {4,10}",
                 "Wheels",
                 "Color",
                 "Max Speed",
                 "Passengers",
                 "MotoType"));
-            Console.Write(String.Format("{0, 6} | {1, 10} | {2, 9} | {3,10}",
+            Console.Write(String.Format("{0, 6} | {1, 10} | {2, 9} | {3,10} | {4,10}",
                 vehicle.WheelCount,
                 vehicle.Color,
                 vehicle.MaxSpeed,
@@ -33,6 +34,7 @@ namespace Practis_Task1
             Console.WriteLine();
         }
     }
+
     enum MotoType
     {
         Adventure,

@@ -6,11 +6,14 @@ using System.Threading.Tasks;
 
 namespace Practis_Task1
 {
+    //
+    //Link - https://docs.google.com/document/d/1FpgqIMQZixLwckypAdN0tQQZ0dtEoV8xKWTd7dcsC7k/edit.
+    //
     class Vehicle
     {
-        private int wheelCount = 1;
+        private int wheelCount;
         public ConsoleColor Color { get; set; }
-        private int maxSpeed = 1;
+        private int maxSpeed;
         public int PassengerCount { get; set; }
 
         public int WheelCount
@@ -18,7 +21,10 @@ namespace Practis_Task1
             get { return wheelCount; }
             set
             {
-                if (value > 0)
+                if (value <= 0)
+                {
+                    throw new ArgumentException("Wheel number value should be more than 0");
+                }
                 {
                     wheelCount = value;
                 }
@@ -40,10 +46,10 @@ namespace Practis_Task1
 
         public Vehicle(int wheelCount, ConsoleColor color, int maxSpeed, int passengerCount)
         {
-            WheelCount = wheelCount;
-            Color = color;
-            MaxSpeed = maxSpeed;
-            PassengerCount = passengerCount;
+            this.WheelCount = wheelCount;
+            this.Color = color;
+            this.MaxSpeed = maxSpeed;
+            this.PassengerCount = passengerCount;
         }
 
         public void Move(int metres)
@@ -52,7 +58,7 @@ namespace Practis_Task1
             Console.WriteLine($"{GetType().Name} has moved {metres} meters");
         }
 
-        public virtual void DisplayCahracteristics(Vehicle vehicle)
+        public virtual void DisplayCharacteristics(Vehicle vehicle)
         {
             Console.WriteLine(String.Format("{0, 6} | {1, 10} | {2, 9} | {3,10}", 
                 "Wheels",

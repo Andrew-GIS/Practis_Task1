@@ -15,19 +15,19 @@ namespace Practis_Task1
             int wheelCount, ConsoleColor color, int maxSpeed, int passengerCount)
             : base(wheelCount, color, maxSpeed, passengerCount)
         {
-            Type = type;
-            Breake = breake;
+            this.Type = type;
+            this.Breake = breake;
         }
-        public override void DisplayCahracteristics(Vehicle vehicle)
+        public override void DisplayCharacteristics(Vehicle vehicle)
         {
-            Console.WriteLine(String.Format("{0, 6} | {1, 10} | {2, 9} | {3,10} | {4,5} | {5, 10}",
+            Console.WriteLine(String.Format("{0, 6} | {1, 10} | {2, 9} | {3,10} | {4,10} | {5, 10}",
                 "Wheels",
                 "Color",
                 "Max Speed",
                 "Passengers",
                 "BicycleType",
                 "BreakeType"));
-            Console.Write(String.Format("{0, 6} | {1, 10} | {2, 9} | {3,10} | {4,5} | {5, 10}",
+            Console.Write(String.Format("{0, 6} | {1, 10} | {2, 9} | {3,10} | {4,10} | {5, 10}",
                 vehicle.WheelCount,
                 vehicle.Color,
                 vehicle.MaxSpeed,
@@ -37,8 +37,8 @@ namespace Practis_Task1
                 ));
             Console.WriteLine();
         }
-
     }
+
     enum BicycleType
     {
         RoadBike,

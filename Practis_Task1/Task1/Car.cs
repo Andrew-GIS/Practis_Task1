@@ -18,13 +18,14 @@ namespace Practis_Task1
             int wheelCount, ConsoleColor color, int maxSpeed, int passengerCount)
             : base(wheelCount, color, maxSpeed, passengerCount)
         {
-            DoorsCount = doorsCount;
-            Engine = engine;
-            GearBox = gearBox;
+            this.DoorsCount = doorsCount;
+            this.Engine = engine;
+            this.GearBox = gearBox;
         }
-        public override void DisplayCahracteristics(Vehicle vehicle)
+
+        public override void DisplayCharacteristics(Vehicle vehicle)
         {
-            Console.WriteLine(String.Format("{0, 6} | {1, 10} | {2, 9} | {3,10} | {4,5} | {5,10} | {6,10}",
+            Console.WriteLine(String.Format("{0, 6} | {1, 10} | {2, 9} | {3,10} | {4,10} | {5,10} | {6,10}",
                 "Wheels",
                 "Color",
                 "Max Speed",
@@ -32,7 +33,7 @@ namespace Practis_Task1
                 "Doors",
                 "Engine",
                 "GearBox"));
-            Console.Write(String.Format("{0, 6} | {1, 10} | {2, 9} | {3,10}",
+            Console.Write(String.Format("{0, 6} | {1, 10} | {2, 9} | {3,10} | {4,10} | {5,10} | {6,10}",
                 vehicle.WheelCount,
                 vehicle.Color,
                 vehicle.MaxSpeed,
