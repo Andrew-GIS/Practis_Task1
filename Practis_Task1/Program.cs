@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Practis_Task1.Calculator;
 using Practis_Task1.task2;
+using Practis_Task1.Task2;
 
 namespace Practis_Task1
 {
@@ -23,17 +24,25 @@ namespace Practis_Task1
             //
             //task2.
             //
-            CompanyEmployer em = new CompanyEmployer();
+            //CompanyEmployer em = new CompanyEmployer();
             //em.AlphabetDisplay();
             //em.DisplayMoreThan30Years();
             //em.GenderDisplay();
             //em.NameLastNameDisplay();
             //em.O_NameAge20();
             //em.NumberOfCompanyEmployer();
-            em.FirstEmployer();
-            em.LastEmployer();
+            //em.FirstEmployer();
+            //em.LastEmployer();
             //em.FirstOf25();
             //em.OlegSearch();
+            //
+            //Task3.
+            //
+            EmployesComparing employes = new EmployesComparing();
+            //employes.UnionWithDuplicate();
+            //employes.UnionWithoutDuplicate();
+            //employes.DisplayDuplicateEmployee();
+            employes.AddingEmployee();
         }
     }
 }

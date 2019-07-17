@@ -13,29 +13,36 @@ namespace Practis_Task1.task2
         public int Age { get; set; }
         public string Gender { get; set; }
         public string Company { get; set; }
+        public string Status { get; set; }
 
         public static IEnumerable<CompanyEmployer> GetCompanyEmployer()
         {
             return
                 new List<CompanyEmployer>
                 {
-                    new CompanyEmployer{Name = "Andrey", LastName = "Fedorchenko", Age= 23, Gender = "M", Company = "Intetics" },
-                    new CompanyEmployer{Name = "Vlad", LastName = "Radchenko", Age= 23, Gender = "M", Company = "Epam" },
-                    new CompanyEmployer{Name = "Kiril", LastName = "Novikov", Age= 23, Gender = "M", Company = "Intetics" },
-                    new CompanyEmployer{Name = "Olga", LastName = "Pavlenko", Age= 83, Gender = "F", Company = "Sigma" },
-                    new CompanyEmployer{Name = "Ivan", LastName = "Rilkov", Age= 33, Gender = "M", Company = "Intetics" },
-                    new CompanyEmployer{Name = "Kate", LastName = "Zvarich", Age= 53, Gender = "F", Company = "Epam" },
-                    new CompanyEmployer{Name = "Ann", LastName = "Ivanova", Age= 40, Gender = "F", Company = "Intetics" },
-                    new CompanyEmployer{Name = "Ann", LastName = "Simonchuk", Age= 23, Gender = "F", Company = "Sigma" },
-                    new CompanyEmployer{Name = "Oleg", LastName = "Sherstuc", Age= 23, Gender = "M", Company = "Intetics" },
-                    new CompanyEmployer{Name = "Dmitro", LastName = "Koval", Age= 23, Gender = "M", Company = "Epam" },
+                    new CompanyEmployer{Name = "Andrey", LastName = "Fedorchenko", Age= 23, Gender = "M", Company = "Intetics", Status = "Probation" },
+                    new CompanyEmployer{Name = "Vlad", LastName = "Radchenko", Age= 23, Gender = "M", Company = "Epam", Status = "Officially" },
+                    new CompanyEmployer{Name = "Kiril", LastName = "Novikov", Age= 23, Gender = "M", Company = "Intetics", Status = "Officially" },
+                    new CompanyEmployer{Name = "Olga", LastName = "Pavlenko", Age= 83, Gender = "F", Company = "Sigma", Status = "Officially" },
+                    new CompanyEmployer{Name = "Ivan", LastName = "Rilkov", Age= 33, Gender = "M", Company = "Intetics", Status = "Probation" },
+                    new CompanyEmployer{Name = "Kate", LastName = "Zvarich", Age= 53, Gender = "F", Company = "Epam", Status = "Probation" },
+                    new CompanyEmployer{Name = "Ann", LastName = "Ivanova", Age= 40, Gender = "F", Company = "Intetics", Status = "Officially" },
+                    new CompanyEmployer{Name = "Ann", LastName = "Simonchuk", Age= 23, Gender = "F", Company = "Sigma", Status = "Officially" },
+                    new CompanyEmployer{Name = "Oleg", LastName = "Sherstuc", Age= 23, Gender = "M", Company = "Intetics", Status = "Probation" },
+                    new CompanyEmployer{Name = "Dmitro", LastName = "Koval", Age= 23, Gender = "M", Company = "Epam", Status = "Probation" },
                 };
+        }
+
+        public int GetHashCode(CompanyEmployer obj)
+        {
+            return obj.GetHashCode();
         }
 
         public override string ToString()
         {
-            return $"{this.Name} {this.LastName} {this.Age} {this.Gender} {this.Company}";
+            return $"Name: {this.Name};\nLastName: {this.LastName};\nAge: {this.Age};\nGender: {this.Gender};\nCompany: {this.Company};\nWork Status: {this.Status};\n";
         }
+
 
         public void AlphabetDisplay()
         {
@@ -136,7 +143,26 @@ namespace Practis_Task1.task2
             }
             Console.WriteLine($"Number of founding: {counter}");
         }
+
+        public class CompanyEmployeeComparer : IEqualityComparer<CompanyEmployer>
+        {
+            public bool Equals(CompanyEmployer employee1, CompanyEmployer employee2)
+            {
+                if (employee1.Name.ToString() == employee2.Name.ToString() && employee1.LastName.ToString() == employee2.LastName.ToString())
+                {
+                    return true;
+                }
+                return false;
+            }
+
+            public int GetHashCode(CompanyEmployer employee)
+            {
+                return employee.Name.GetHashCode();
+            }
+        }
     }
+
+
 
     public class Pupil
     {

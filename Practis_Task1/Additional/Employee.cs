@@ -52,5 +52,33 @@ namespace Practis_Task1
             }
             Console.WriteLine("-------------------------");
         }
+
+        public bool Equals(Employee employee)
+        {
+            if (Object.ReferenceEquals(employee, null))
+                return false;
+
+            if (Object.ReferenceEquals(this, employee)) return true;
+
+            return this.FirstName.Equals(employee.FirstName) &&
+               this.LastName.Equals(employee.LastName);
+        }
+
+        public class EmployeeComparer : IEqualityComparer<Employee>
+        {
+            public bool Equals(Employee employee1, Employee employee2)
+            {
+                if (employee1.FirstName.ToString().ToUpper() == employee2.FirstName.ToString().ToUpper() && employee1.LastName.ToString().ToUpper() == employee2.LastName.ToString().ToUpper())
+                {
+                    return true;
+                }
+                return false;
+            }
+
+            public int GetHashCode(Employee obj)
+            {
+                return obj.GetHashCode();
+            }
+        }
     }
 }
