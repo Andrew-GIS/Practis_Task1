@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Additional\garbage.cs" />
     <Compile Include="Calculator.Task1\Calculator.cs" />
     <Compile Include="Calculator.Task1\Culculate_Func.cs" />
     <Compile Include="Additional\Employee.cs" />
