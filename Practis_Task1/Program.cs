@@ -21,8 +21,8 @@ namespace Practis_Task1
             //
             //Task 2.
             //
-            //TextFile text = new TextFile();
-            //text.CreateText();
+            TextFile text = new TextFile();
+            text.CreateText();
             //
             //Task 3.
             //
