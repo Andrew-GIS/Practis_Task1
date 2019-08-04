@@ -43,8 +43,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Field.cs" />
+    <Compile Include="Figure.cs" />
+    <Compile Include="GameLogic.cs" />
+    <Compile Include="MyCar.cs" />
+    <Compile Include="Node.cs" />
+    <Compile Include="OtherCar.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RoadBorder.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

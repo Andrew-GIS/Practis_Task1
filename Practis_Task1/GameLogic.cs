@@ -6,19 +6,7 @@ using System.Threading.Tasks;
 
 namespace Practis_Task1
 {
-    class Program
+    class GameLogic
     {
-        static void Main(string[] args)
-        {
-
-        }
     }
-}      
-
-
-           
-
-
-
-   
-
+}
