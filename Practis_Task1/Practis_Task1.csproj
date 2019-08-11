@@ -53,6 +53,7 @@
     <Compile Include="Task1\Ping.cs" />
     <Compile Include="Task1\Pong.cs" />
     <Compile Include="Task2\Hunter.cs" />
+    <Compile Include="Task2\HuntingProcess.cs" />
     <Compile Include="Task2\Rabbit.cs" />
   </ItemGroup>
   <ItemGroup>
