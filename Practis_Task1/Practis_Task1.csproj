@@ -55,9 +55,13 @@
     <Compile Include="Task2\Hunter.cs" />
     <Compile Include="Task2\HuntingProcess.cs" />
     <Compile Include="Task2\Rabbit.cs" />
+    <Compile Include="Task3\Pupil.cs" />
+    <Compile Include="Task3\Teacher.cs" />
+    <Compile Include="Task3\TestSpace.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
