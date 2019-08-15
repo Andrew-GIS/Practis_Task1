@@ -3,139 +3,97 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static Practis_Task1.Enums;
 
 namespace Practis_Task1
 {
     class Refregerator
     {
-        private OpenTypeMain mainDoor;
-        private OperationMode operationMode;
-        private OpenTypeFrizer freezerDoor;
+        public DoorState MainDoor { get; set; }
 
-        public OpenTypeMain MainDoor
+        public RefregeratorStatus RefregeratorStatus { get; set; }
+
+        public DoorState FreezerDoor { get; set; }
+
+        public event EventHandler<RefregeratorEventArgs> refregeratorEvent;
+
+        public Refregerator()
         {
-            get
+            this.MainDoor = DoorState.Close;
+            this.RefregeratorStatus = RefregeratorStatus.On;
+            this.FreezerDoor = DoorState.Close;
+        }
+
+        protected virtual void RefregeratorEvent(RefregeratorEventArgs e)
+        {
+            this.refregeratorEvent?.Invoke(this, e);
+        }
+
+        protected virtual void OnRefregeratorStatus(RefregeratorEventArgs e)
+        {
+            if (this.refregeratorEvent != null)
             {
-                return mainDoor;
-            }
-            set
-            {
-                mainDoor = value;
+                e.refregeratorStatus = RefregeratorStatus;
+                e.mainDoor = this.MainDoor;
+                e.freezerDoor = this.FreezerDoor;
+
+                this.refregeratorEvent(this, e);
             }
         }
 
-        public OperationMode OperationMode
+        public void SendMessage(string message)
         {
-            get
-            {
-                return operationMode;
-            }
-            set
-            {
-                operationMode = value;
-            }
+            this.RefregeratorEvent(new RefregeratorEventArgs(this.RefregeratorStatus, this.MainDoor, this.FreezerDoor, message));
         }
 
-        public OpenTypeFrizer FreezerDoor
+        public RefregeratorStatus TurnOnRefregerator()
         {
-            get
-            {
-                return freezerDoor;
-            }
-            set
-            {
-                freezerDoor = value;
-            }
+            this.RefregeratorStatus = RefregeratorStatus.On;
+            this.SendMessage($"Refregerator is {this.RefregeratorStatus}");
+            return RefregeratorStatus;
         }
 
-        public event EventHandler someEvent;
-
-        public Refregerator(OperationMode mode, OpenTypeMain main, OpenTypeFrizer frezer)
+        public RefregeratorStatus TurnOffRefregerator()
         {
-            this.mainDoor = main;
-            this.operationMode = mode;
-            this.freezerDoor = frezer;
+            this.RefregeratorStatus = RefregeratorStatus.Off;
+            this.SendMessage($"Refregerator is {this.RefregeratorStatus}");
+            return RefregeratorStatus;
         }
 
-        protected virtual void EventMassage(EventArgs e)
+        public DoorState OpenMainDoor()
         {
-            this.someEvent?.Invoke(this, e);
+            this.MainDoor = DoorState.Open;
+            this.SendMessage($"Main door is {this.MainDoor}");
+            return MainDoor;
         }
 
-
-        public void ChangeMainDoorRegime()
+        public DoorState CloseMainDoor()
         {
-            Console.WriteLine($"lets look to our door");
-            if (mainDoor == OpenTypeMain.Close)
-            {
-                Console.WriteLine("Main Door is close, lets open it.");
-                mainDoor = OpenTypeMain.Open;
-                this.EventMassage(new EventArgs());
-            }
-            else
-            {
-                Console.WriteLine("Main Door is open, lets close it.");
-                mainDoor = OpenTypeMain.Close;
-                this.EventMassage(new EventArgs());
-            }
+            this.MainDoor = DoorState.Close;
+            this.SendMessage($"Main door is {this.MainDoor}");
+            return MainDoor;
         }
 
-        public void ChangeFrezerDoorRegime()
+        public DoorState CloseFreezerDoor()
         {
-            Console.WriteLine($"lets look to our frizer door");
-            if (freezerDoor == OpenTypeFrizer.Close)
-            {
-                Console.WriteLine("Freezer Door is close, lets open it.");
-                freezerDoor = OpenTypeFrizer.Open;
-                this.EventMassage(new EventArgs());
-            }
-            else
-            {
-                Console.WriteLine("Freezer Door is open, lets close it.");
-                freezerDoor = OpenTypeFrizer.Close;
-                this.EventMassage(new EventArgs());
-            }
+            this.FreezerDoor = DoorState.Close;
+            this.SendMessage($"Freezer door is {this.MainDoor}");
+            return FreezerDoor;
         }
 
-        public void SwitchPowerRegime()
+        public DoorState OpenFreezerDoor()
         {
-            Console.WriteLine("Lets check power regime of our refregerator");
-            if (operationMode == OperationMode.Off)
-            {
-                Console.WriteLine("Our refregerator is ON lets turn ON it.");
-                operationMode = OperationMode.On;
-                this.EventMassage(new EventArgs());
-            }
-            else
-            {
-                Console.WriteLine("Our refregerator is ON lets turn OFF it.");
-                operationMode = OperationMode.Off;
-                this.EventMassage(new EventArgs());
-            }
+            this.FreezerDoor = DoorState.Open;
+            this.SendMessage($"Freezer door is {this.MainDoor}");
+            return FreezerDoor;
         }
 
         public override string ToString()
         {
-            return $"Your refregerator now is: Regime - {this.operationMode.GetType()}, Main Door - {this.mainDoor}, Freezer - {this.freezerDoor.ToString()} ";
+            return $"Your refregerator now is:{Environment.NewLine}" +
+                $"-Regime - {this.RefregeratorStatus.ToString()}{Environment.NewLine}" +
+                $"-Main Door - {this.MainDoor.ToString()}{Environment.NewLine}" +
+                $"-Freezer - {this.FreezerDoor.ToString()} ";
         }
     }
 }
-
-public enum OpenTypeMain
-{
-    Close,
-    Open
-}
-
-public enum OpenTypeFrizer
-{
-    Close,
-    Open
-}
-
-enum OperationMode
-{
-    On,
-    Off
-}
-    
