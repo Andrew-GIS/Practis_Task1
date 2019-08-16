@@ -3,11 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using static Practis_Task1.Enums;
 
 namespace Practis_Task1
 {
-    class Refregerator
+    public class Refregerator
     {
         public DoorState MainDoor { get; set; }
 
@@ -15,7 +14,7 @@ namespace Practis_Task1
 
         public DoorState FreezerDoor { get; set; }
 
-        public event EventHandler<RefregeratorEventArgs> refregeratorEvent;
+        public event EventHandler<RefregeratorEventArgs> EventRefregerator;
 
         public Refregerator()
         {
@@ -26,18 +25,13 @@ namespace Practis_Task1
 
         protected virtual void RefregeratorEvent(RefregeratorEventArgs e)
         {
-            this.refregeratorEvent?.Invoke(this, e);
-        }
-
-        protected virtual void OnRefregeratorStatus(RefregeratorEventArgs e)
-        {
-            if (this.refregeratorEvent != null)
+            if (this.EventRefregerator != null)
             {
-                e.refregeratorStatus = RefregeratorStatus;
-                e.mainDoor = this.MainDoor;
-                e.freezerDoor = this.FreezerDoor;
+                e.RefregeratorStatus = this.RefregeratorStatus;
+                e.MainDoor = this.MainDoor;
+                e.FreezerDoor = this.FreezerDoor;
 
-                this.refregeratorEvent(this, e);
+                this.EventRefregerator(this, e);
             }
         }
 
@@ -96,4 +90,16 @@ namespace Practis_Task1
                 $"-Freezer - {this.FreezerDoor.ToString()} ";
         }
     }
+}
+
+public enum DoorState
+{
+    Close = 0,
+    Open = 1
+}
+
+public enum RefregeratorStatus
+{
+    On = 0,
+    Off = 1
 }

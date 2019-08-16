@@ -3,17 +3,22 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using static Practis_Task1.Enums;
 
 namespace Practis_Task1
 {
-    class Manager
+    public class Manager
     {
-        Refregerator referegerator = new Refregerator();
+        public Refregerator refregerator;
+
+        public Manager()
+        {
+            Refregerator refregerator = new Refregerator();
+        }
+        
 
         public void ManageRefregerator()
         {
-            this.referegerator.refregeratorEvent += this.OnRefregiratorEventInvoked;
+            this.refregerator.EventRefregerator += this.OnRefregiratorEventInvoked;
 
             bool check = true;
 
@@ -46,90 +51,90 @@ namespace Practis_Task1
                 switch (checkedChoose)
                 {
                     case (1):
-                        if (referegerator.RefregeratorStatus == RefregeratorStatus.Off)
+                        if (this.refregerator.RefregeratorStatus == RefregeratorStatus.Off)
                         {
                             Console.WriteLine($"Your refregerator already OFF {Environment.NewLine}");
                             continue;
                         }
                         else
                         {
-                            referegerator.TurnOffRefregerator();
+                            refregerator.TurnOffRefregerator();
                             Console.WriteLine(Environment.NewLine);
                             continue;
                         }
                     case (2):
-                        if (referegerator.RefregeratorStatus == RefregeratorStatus.On)
+                        if (this.refregerator.RefregeratorStatus == RefregeratorStatus.On)
                         {
                             Console.WriteLine($"Your refregerator already ON {Environment.NewLine}");
                             continue;
                         }
                         else
                         {
-                            referegerator.TurnOnRefregerator();
+                            refregerator.TurnOnRefregerator();
                             Console.WriteLine(Environment.NewLine);
                             continue;
                         }
                     case (3):
-                        if (referegerator.MainDoor == DoorState.Close)
+                        if (this.refregerator.MainDoor == DoorState.Close)
                         {
                             Console.WriteLine($"Your Main door already Closed {Environment.NewLine}");
                             continue;
                         }
                         else
                         {
-                            referegerator.CloseMainDoor();
+                            refregerator.CloseMainDoor();
                             Console.WriteLine(Environment.NewLine);
                             continue;
                         }
                     case (4):
-                        if (referegerator.MainDoor == DoorState.Open)
+                        if (this.refregerator.MainDoor == DoorState.Open)
                         {
                             Console.WriteLine($"Your Main door already Open {Environment.NewLine}");
                             continue;
                         }
                         else
                         {
-                            referegerator.OpenMainDoor();
+                            refregerator.OpenMainDoor();
                             Console.WriteLine(Environment.NewLine);
                             continue;
                         }
                     case (5):
-                        if (referegerator.FreezerDoor == DoorState.Close && referegerator.MainDoor == DoorState.Open)
+                        if (this.refregerator.FreezerDoor == DoorState.Close && refregerator.MainDoor == DoorState.Open)
                         {
                             Console.WriteLine($"Your Freezer door already Closed {Environment.NewLine}");
                             continue;
                         }
-                        else if (referegerator.MainDoor == DoorState.Close)
+                        else if (refregerator.MainDoor == DoorState.Close)
                         {
                             Console.WriteLine("You should open main door for this action");
                             continue;
                         }
                         else
                         {
-                            referegerator.CloseFreezerDoor();
+                            refregerator.CloseFreezerDoor();
                             Console.WriteLine(Environment.NewLine);
                             continue;
                         }
                     case (6):
-                        if (referegerator.FreezerDoor == DoorState.Open && referegerator.MainDoor == DoorState.Open)
+                        if (this.refregerator.FreezerDoor == DoorState.Open && refregerator.MainDoor == DoorState.Open)
                         {
                             Console.WriteLine($"Your Freezer door already Open {Environment.NewLine}");
                             continue;
                         }
-                        else if (referegerator.MainDoor == DoorState.Close)
+                        else if (this.refregerator.MainDoor == DoorState.Close)
                         {
                             Console.WriteLine("You should open main door for this action");
                             continue;
                         }
                         else
                         {
-                            referegerator.OpenFreezerDoor();
+                            refregerator.OpenFreezerDoor();
                             Console.WriteLine(Environment.NewLine);
                             continue;
                         }
                     case (7):
                         check = false;
-                        this.referegerator.refregeratorEvent -= this.OnRefregiratorEventInvoked;
+                        this.refregerator.EventRefregerator -= this.OnRefregiratorEventInvoked;
                         Console.WriteLine("Good Luck");
                         break;
                 }
@@ -140,9 +145,9 @@ namespace Practis_Task1
         {
             Console.WriteLine(e.Message);
             Console.WriteLine($"Your refregerator now is:{Environment.NewLine}" +
-                $"-Regime - {e.refregeratorStatus}{Environment.NewLine}" +
-                $"-Main Door - {e.mainDoor}{Environment.NewLine}" +
-                $"-Freezer - {e.freezerDoor}");
+                $"-Regime - {e.RefregeratorStatus}{Environment.NewLine}" +
+                $"-Main Door - {e.MainDoor}{Environment.NewLine}" +
+                $"-Freezer - {e.FreezerDoor}");
         }
     }
 }
