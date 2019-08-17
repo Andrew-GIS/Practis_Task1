@@ -8,16 +8,16 @@ using static Practis_Task1.Task1._2.PingPongEventArgs;
 
 namespace Practis_Task1.Task1._2
 {
-    class Ping2
+    class PingSecond
     {
         //public delegate void pingDelegate(object sender, PingPongEventArgs e);
 
-        public event EventDelegate pingEvent2;
+        public event EventDelegate PingEvent2;
 
         protected virtual void OnPing2(PingPongEventArgs e)
         {
-            if (pingEvent2 != null)
-                pingEvent2(this, e);
+            if (this.PingEvent2 != null)
+                this.PingEvent2(this, e);
         }
 
         public void DoPing2()

@@ -7,14 +7,14 @@ using System.Threading.Tasks;
 
 namespace Practis_Task1.Task1
 {
-    class Ping
+    public class Ping
     {
-        public event EventHandler pingEvent;
+        public event EventHandler PingEvent;
 
         protected virtual void OnPing(EventArgs e)
         {
-            if (pingEvent != null)
-                pingEvent(this, e);
+            if (this.PingEvent != null)
+                this.PingEvent(this, e);
         }
 
         public void DoPing()

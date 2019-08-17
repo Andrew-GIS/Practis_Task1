@@ -19,30 +19,30 @@ namespace Practis_Task1
             //Task1.PingPong.
             //
             //Game game = new Game();
-            //Game2 game2 = new Game2();
+            //GamePartSecond() game2 = new GamePartSecond();
 
             //
-            //Hunting.
+            //Task2.Hunting.
             //
-            //HuntingProcess hunting = new HuntingProcess();
-            //hunting.DoHuntingProcess();
+            HuntingProcess hunting = new HuntingProcess();
+            hunting.DoHuntingProcess();
 
             //
-            //IDisposable realization
+            //IDisposable realization.
             //
-            TestSpace test1 = new TestSpace();
-            test1.Check();
-            TestSpace test2 = new TestSpace();
-            test2.Check2();
+            //TestSpace test1 = new TestSpace();
+            //test1.Check();
+            //TestSpace test2 = new TestSpace();
+            //test2.Check2();
         }
 
     }
-}      
-
-
-           
+}
 
 
 
-   
+
+
+
+
 

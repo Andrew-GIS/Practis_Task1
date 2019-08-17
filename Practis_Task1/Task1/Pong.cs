@@ -7,15 +7,15 @@ using System.Threading.Tasks;
 
 namespace Practis_Task1.Task1
 {
-    class Pong
+    public class Pong
     {
-        public event EventHandler pongEvent;
+        public event EventHandler PongEvent;
 
         protected virtual void OnPong(EventArgs e)
         {
             //if (pongAction != null)
             //    pongAction(this, e);
-            this.pongEvent?.Invoke(this, e);
+            this.PongEvent?.Invoke(this, e);
         }
 
         public void DoPong()

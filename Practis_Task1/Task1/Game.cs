@@ -6,20 +6,20 @@ using System.Threading.Tasks;
 
 namespace Practis_Task1.Task1
 {
-    class Game
+    public class Game
     {
-        private Ping ping; 
-        private Pong pong; 
+        private readonly Ping ping; 
+        private readonly Pong pong; 
 
         public Game()
         {
             this.ping = new Ping();
             this.pong = new Pong();
 
-            ping.pingEvent += OnPingInvoke;
-            pong.pongEvent += OnPongInvoke;
+            this.ping.PingEvent += OnPingInvoke;
+            this.pong.PongEvent += OnPongInvoke;
 
-            ping.DoPing();
+            this.ping.DoPing();
         }
 
         public void OnPingInvoke(object sender, EventArgs e)

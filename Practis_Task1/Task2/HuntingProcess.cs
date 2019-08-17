@@ -19,9 +19,9 @@ namespace Practis_Task1.Task2
             this.rabbit.NewRabbitLocation -= this.InvokedNewLocation;
         }
 
-        public void InvokedNewLocation(int locationX, int locationY)
+        public void InvokedNewLocation(CoordinateEventArgs e)
         {
-            this.hunter.GetRabbitLocation(locationX, locationY);
+            this.hunter.GetRabbitLocation(e.LocationX, e.LocationY);
         }
     }
 }

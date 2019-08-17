@@ -2,26 +2,18 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace Practis_Task1.Task2
 {
-    class Hunter
+    public class Hunter
     {
-        public void GetRabbitLocation(int locationX, int locationY)
+        public void GetRabbitLocation(int LocationX, int LocationY)
         {
-            int huntingTry = 0;
-            if (huntingTry < 10)
-            {
-                Console.WriteLine($"I found rabbit on next coordinate\n" +
-                    $"X: {locationX}\n" +
-                    $"Y: {locationY}\n");
-                huntingTry++;
-            }
-            else
-            {
-                Console.WriteLine("Need to have some break time");
-            }
+            Console.WriteLine($"I found rabbit on next coordinate\n" +
+                $"X: {LocationX}{Environment.NewLine}" +
+                $"Y: {LocationY}{Environment.NewLine}");
         }
     }
 }

@@ -6,18 +6,18 @@ using System.Threading.Tasks;
 
 namespace Practis_Task1.Task1._2
 {
-    class Game2
+    class GamePartSecond
     {
-        private Ping2 ping;
+        private PingSecond ping;
         private Pong2 pong;
 
-        public Game2()
+        public GamePartSecond()
         {
-            this.ping = new Ping2();
+            this.ping = new PingSecond();
             this.pong = new Pong2();
 
-            ping.pingEvent2 += OnPingInvoke;
-            pong.pongEvent2 += OnPongInvoke;
+            ping.PingEvent2 += OnPingInvoke;
+            pong.PongEvent2 += OnPongInvoke;
 
             ping.DoPing2();
         }

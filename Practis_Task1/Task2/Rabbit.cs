@@ -7,32 +7,38 @@ using System.Threading;
 
 namespace Practis_Task1.Task2
 {
-    class Rabbit
+    public delegate void LocationInfo(CoordinateEventArgs e);
+
+    public class Rabbit
     {
-        public int locationX { get; set; }
+        private int LocationX { get; set; }
 
-        public int locationY { get; set; }
-
-        public Random random = new Random();
-
-        public delegate void LocationInfo(int locationX, int locationY);
+        private int LocationY { get; set; }
 
         public event LocationInfo NewRabbitLocation;
-        
+
+        public Rabbit()
+        {
+            this.LocationX = 0;
+            this.LocationY = 0;
+        }
+
         public void RabbitMoving()
         {
-            while(true)
+            var random = new Random();
+            while (true)
             {
-                this.locationX = random.Next(1, 10);
-                this.locationY = random.Next(1, 10);
-                this.EventHandle(this.locationX, this.locationY);
-                Thread.Sleep(random.Next(500, 1000));
+                this.LocationX = random.Next(1, 10);
+                this.LocationY = random.Next(1, 10);
+                this.EventHandle(new CoordinateEventArgs(this.LocationX, this.LocationY));
+                Thread.Sleep(500);
             }
         }
 
-        public void EventHandle(int locationX, int locationY)
+        public void EventHandle(CoordinateEventArgs e)
         {
-            this.NewRabbitLocation.Invoke(locationX, locationY);
+            this.NewRabbitLocation?.Invoke(e);
         }
     }
+
 }
