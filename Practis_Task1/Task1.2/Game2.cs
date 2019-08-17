@@ -9,29 +9,29 @@ namespace Practis_Task1.Task1._2
     class GamePartSecond
     {
         private PingSecond ping;
-        private Pong2 pong;
+        private PongSecond pong;
 
         public GamePartSecond()
         {
             this.ping = new PingSecond();
-            this.pong = new Pong2();
+            this.pong = new PongSecond();
 
-            ping.PingEvent2 += OnPingInvoke;
-            pong.PongEvent2 += OnPongInvoke;
+            ping.PingEventSecond += OnPingInvoke;
+            pong.PongEventSecond += OnPongInvoke;
 
-            ping.DoPing2();
+            ping.DoPingSecond();
         }
 
         public void OnPingInvoke(object sender, PingPongEventArgs e)
         {
             Console.WriteLine(e.ToString());
-            this.pong.DoPong2();
+            this.pong.DoPongSecond();
         }
 
         public void OnPongInvoke(object sender, PingPongEventArgs e)
         {
             Console.WriteLine(e.ToString());
-            this.ping.DoPing2();
+            this.ping.DoPingSecond();
         }
     }
 }

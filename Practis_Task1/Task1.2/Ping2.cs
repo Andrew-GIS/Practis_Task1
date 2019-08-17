@@ -10,17 +10,15 @@ namespace Practis_Task1.Task1._2
 {
     class PingSecond
     {
-        //public delegate void pingDelegate(object sender, PingPongEventArgs e);
-
-        public event EventDelegate PingEvent2;
+        public event EventDelegate PingEventSecond;
 
         protected virtual void OnPing2(PingPongEventArgs e)
         {
-            if (this.PingEvent2 != null)
-                this.PingEvent2(this, e);
+            if (this.PingEventSecond != null)
+                this.PingEventSecond(this, e);
         }
 
-        public void DoPing2()
+        public void DoPingSecond()
         {
             Console.WriteLine($"Ping is done ...{Environment.NewLine}");
             Thread.Sleep(1000);

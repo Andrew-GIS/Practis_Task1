@@ -8,17 +8,17 @@ using static Practis_Task1.Task1._2.PingPongEventArgs;
 
 namespace Practis_Task1.Task1._2
 {
-     class Pong2
+     class PongSecond
     {
-        public event EventDelegate PongEvent2;
+        public event EventDelegate PongEventSecond;
 
         protected virtual void OnPong2(PingPongEventArgs e)
         {
-            if (this.PongEvent2 != null)
-                this.PongEvent2(this, e);
+            if (this.PongEventSecond != null)
+                this.PongEventSecond(this, e);
         }
 
-        public void DoPong2()
+        public void DoPongSecond()
         {
             Console.WriteLine($"Pong is done ...{Environment.NewLine}");
             Thread.Sleep(1000);
