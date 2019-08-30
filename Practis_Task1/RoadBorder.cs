@@ -7,32 +7,94 @@ using System.Threading.Tasks;
 
 namespace Practis_Task1
 {
-    class RoadBorder: Figure
+    class RoadBorder
     {
-        public RoadBorder(char symbol, ConsoleColor color) : base(symbol, color)
+        private Field field = new Field();
+
+        private int startBorderCoordinate;
+
+        private int endBornderCoordinate;
+
+        public int StartBorderCoordinate
         {
-            this.Symbol = '|';
+            get { return startBorderCoordinate; }
+
+            set
+            {
+                if (value >= 0)
+                    startBorderCoordinate = value;
+            }
         }
 
-        public override void InitializeState()
+        public int EndBorderCoordinate
         {
-            this.Node = new List<Node>()
+            get { return endBornderCoordinate; }
+
+            set
             {
-                new Node(0,10),      new Node(10,10),
-                new Node(0,9),       new Node(9,9),
-                new Node(0,8),       new Node(8,8)
-            };
+                if (value > 0)
+                    endBornderCoordinate = value;
+            }
         }
 
-        public override void Move(MoveDirection direction)
+        private int widthWindow;
+
+        private int heightWindow;
+
+        private char Symbol { get; set; }
+
+        public RoadBorder()
         {
-            if (direction == MoveDirection.Down)
+            widthWindow = this.field.FieldWidth;
+            heightWindow = this.field.FieldHight;
+            this.Symbol = '#';
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            startBorderCoordinate = 0;
+            endBornderCoordinate = 9;
+            Console.CursorVisible = false;
+        }
+
+        public void Move()
+        {
+            while (true)
             {
-                foreach (var item in Node)
+                int positionTop = 0;
+
+                Thread.Sleep(30);
+                for (int i = Console.WindowHeight - 1; i > 0; i--)
                 {
-                    item.Down();
-                    Thread.Sleep(1000);
+                    //Thread.Sleep(30);
+                    this.DrowBouder(this.Symbol, i, endBornderCoordinate);
+
+                    if (i % 3 == 0)
+                    {
+                        this.DrowBouder(' ', i + 1, endBornderCoordinate);
+                    }
+                    positionTop++;
                 }
+
+                if (GameProcess.isCrash == true)
+                {
+
+                    Thread.CurrentThread.Abort();
+                    Console.Clear();
+                }
+            }
+        }
+
+        public void DrowBouder(char Symbol, int startBouderCoordinate, int endBounderCoordinate)
+        {
+            lock (GameProcess.locker)
+            {
+                Console.SetCursorPosition(0, startBouderCoordinate);
+                Console.ForegroundColor = ConsoleColor.Yellow;
+                Console.BackgroundColor = ConsoleColor.Black;
+                Console.Write(Symbol);
+
+                Console.SetCursorPosition(endBounderCoordinate, startBouderCoordinate);
+                Console.ForegroundColor = ConsoleColor.Yellow;
+                Console.BackgroundColor = ConsoleColor.Black;
+                Console.Write(Symbol);
             }
         }
     }

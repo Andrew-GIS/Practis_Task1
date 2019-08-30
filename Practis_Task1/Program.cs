@@ -10,7 +10,8 @@ namespace Practis_Task1
     {
         static void Main(string[] args)
         {
-
+            GameProcess game = new GameProcess();
+            game.StartGame();
         }
     }
 }      

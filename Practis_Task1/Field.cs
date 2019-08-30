@@ -6,38 +6,39 @@ using System.Threading.Tasks;
 
 namespace Practis_Task1
 {
-    class Field
+    public class Field
     {
-        private int startX {get;}
-        private int startY {get;}
-        public int Width { get; }
-        public int Height { get; }
-        private List<Figure> figures;
+        private int widthWindow;
+
+        private int heightWindow;
+
+        public int FieldWidth
+        {
+            get { return widthWindow; }
+
+            set
+            {
+                if (value > 0)
+                    widthWindow = value;
+            }
+        }
+
+        public int FieldHight
+        {
+            get { return heightWindow; }
+            set
+            {
+                if (value > 0)
+                    heightWindow = value;
+            }
+        }
 
         public Field()
         {
-            Width = 10;
-            Height = 20;
+            widthWindow = 30;
+            heightWindow = 30;
+            Console.WindowWidth = widthWindow;
+            Console.WindowHeight = heightWindow;
         }
-
-        public void Initialize()
-        {
-            Console.BackgroundColor = ConsoleColor.Gray;
-
-            List<Figure> figures = new List<Figure>
-            {
-                new MyCar('*', ConsoleColor.White),
-                new OtherCar('^', ConsoleColor.Red),
-                new OtherCar('^', ConsoleColor.Green),
-                new OtherCar('^', ConsoleColor.Blue),
-                new RoadBorder('|', ConsoleColor.White)
-            };
-        }
-
-        public bool IsPositionFree(Figure figure)
-        {
-
-        }
-
     }
 }
