@@ -1,0 +1,96 @@
+﻿using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Practis_Task1.Task3
+{
+    class FileCountInfo
+    {
+        public string CreateWay()
+        {
+            string way = "D:\\test";
+            string name = FileName();
+            string resultWay = "D:\\test\\Text.txt";
+            return resultWay;
+        }
+
+        public string TextInputing()
+        {
+            string text = "Text text text";
+            return text;
+        }
+
+        public string FileName()
+        {
+            string name = "Text.txt";
+            return name;
+        }
+
+        public void FileCreated()
+        {
+            try
+            {
+
+                string way = @"D:\test\"; 
+                string resultWay = this.CreateWay();
+                string text = this.TextInputing();
+
+                if (Directory.Exists(way))
+                {
+                    File.Create(resultWay);
+                    File.WriteAllText(resultWay, text);
+                }
+                else
+                {
+                    DirectoryInfo di = Directory.CreateDirectory(way);
+                    File.Create(resultWay);
+                    File.WriteAllText(resultWay, text);
+                }
+            }
+            catch (UnauthorizedAccessException)
+            {
+                Console.WriteLine("Access Error");
+            }
+
+        }
+
+        public void Counting()
+        {
+            try
+            {
+                string way = this.CreateWay();
+                string text = this.TextInputing();
+
+                string resultText = File.ReadAllText(way);
+                int countSymbol = resultText.Length;
+
+                int countWords = 0;
+                foreach (var item in resultText)
+                {
+                    if (item == ' ' || item == '\n')
+                    {
+                        countWords++;
+                    }
+                }
+
+                int countStrings = 0;
+                foreach (var item in resultText)
+                {
+                    if (item == '\n')
+                    {
+                        countStrings++;
+                    }
+                }
+                Console.WriteLine("Count of symbols = {0}\nCount of worlds = {1}\nCount of strings = {2}", countSymbol, countWords, countStrings);
+            }
+            catch (UnauthorizedAccessException)
+            {
+                Console.WriteLine("Access Error");
+            }
+            
+        }
+    }
+}
