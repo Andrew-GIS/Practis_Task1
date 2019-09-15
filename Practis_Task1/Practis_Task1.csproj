@@ -45,9 +45,17 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Task1\MyList.cs" />
+    <Compile Include="Task2\CarCollection.cs" />
+    <Compile Include="Task2\CarInfo.cs" />
+    <Compile Include="Task2\CarPark.cs" />
+    <Compile Include="Task3\BuildingList.cs" />
+    <Compile Include="Task3\LinkedList.cs" />
+    <Compile Include="Task3\Node.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
