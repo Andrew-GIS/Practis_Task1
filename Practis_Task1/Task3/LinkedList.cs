@@ -9,8 +9,8 @@ namespace Practis_Task1.Task3
 {
     public class LinkedList<T>: IEnumerable<T> //linked list
     {
-        Node<T> head; //head/first element.
-        Node<T> tail; //last/tail element.
+        public Node<T> head; //head/first element.
+        public Node<T> tail; //last/tail element.
         int count; // count of element in list.
 
         //add element.

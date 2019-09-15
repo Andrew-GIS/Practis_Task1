@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Practis_Task1.Task2
 {
-    class CarPark
+    public class CarPark
     {
         public void ShowCar()
         {

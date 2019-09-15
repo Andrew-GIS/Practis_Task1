@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Practis_Task1.Task2
 {
-    class CarInfo
+   public class CarInfo
     {
         public int сarYear { get; set; } 
 

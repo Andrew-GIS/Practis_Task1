@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Practis_Task1.Task1
 {
-    class MyList<T> : IMyList<T>
+    public class MyList<T> : IMyList<T>
     {
         public T[] array { get; set; }
 
@@ -61,10 +61,12 @@ namespace Practis_Task1.Task1
         {
             Console.WriteLine("Detailed Inforamtion");
             Console.Write("Elements of your array: ");
+
             foreach (var item in array)
             {
                 Console.Write($"{item}, ");
             }
+
             Console.WriteLine(Environment.NewLine);
             Console.WriteLine($"Length of your array - {array.Length}");
             string finish = "This us the end, good lack.";

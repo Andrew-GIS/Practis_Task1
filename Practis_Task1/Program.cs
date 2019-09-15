@@ -30,14 +30,14 @@ namespace Practis_Task1
                 //
                 //Task2.
                 //
-                //CarPark park1 = new CarPark();
-                //park1.ShowCar();
+                CarPark park1 = new CarPark();
+                park1.ShowCar();
 
                 //
                 //Task3.
                 //
-                Task3.BuildingList chain1 = new BuildingList();
-                chain1.BuildList();
+                //Task3.BuildingList chain1 = new BuildingList();
+                //chain1.BuildList();
 
             }
             catch (NullReferenceException)

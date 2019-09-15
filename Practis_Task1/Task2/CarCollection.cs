@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Practis_Task1.Task2
 {
-    class CarCollection<T> : CarInfo, ICarPark<T> where T: CarInfo
+    class CarCollection<T> : ICarPark<T> where T: CarInfo
     {
         public T[] carArray { get; set; }
 
