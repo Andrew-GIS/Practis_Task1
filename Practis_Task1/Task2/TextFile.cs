@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Practis_Task1.Task2
 {
-    class TextFile
+    public class TextFile
     {
         public void CreateText()
         {
@@ -30,7 +30,7 @@ namespace Practis_Task1.Task2
                     File.WriteAllText(path + fileName, text);
                 }
             }
-            catch (FileAccess.)
+            catch 
             {
 
             }

@@ -7,96 +7,65 @@ using System.Threading.Tasks;
 
 namespace Practis_Task1.Task1
 {
-    class FolderInfo
+    public class FolderInfo
     {
-        //
-        // вызвать рекусрсивный метод по нахождению обьема
-        //
-        public void DisplayInfo()
+        public void ShowFolderInfo()
         {
-            Console.WriteLine($"Name of your folders: {ChooseDirectory()}");
-            Console.WriteLine(string.Empty);
-            Console.WriteLine(CountingFolder(ChooseDirectory()));
-            //var folderNumber = this.CountingFolder();
+            try
+            {
+                var directory = new DirectoryInfo(ChooseDirectory());
+
+                if (directory.Exists)
+                {
+                    double folderSize = GetSizeOfFolder(directory);
+                    int folrersNumber = GetCountOfFolders(directory);
+                    Console.WriteLine($"Numbers of folders in derectory - {folrersNumber}\n" +
+                        $"Total size of folder - {folderSize} bytes, {Math.Round(folderSize / 1024)} kbytes");
+                }
+                else
+                {
+                    Console.WriteLine("Directory didn't exists");
+                }
+            }
+            catch (UnauthorizedAccessException e)
+            {
+                Console.WriteLine("Access Denied, sorry");
+            }
         }
 
         public string ChooseDirectory()
         {
-            return $"D:\\test";
+            //return $@"D:\test";
+            return $@"C:\Windows\System32";
         }
 
-        public string CountingFolder(string directory)
+        public int GetCountOfFolders(DirectoryInfo directory)
         {
-            directory = this.ChooseDirectory();
-            int counter = 0;
-            counter = Directory.GetDirectories(directory).Length;
+            directory = new DirectoryInfo(ChooseDirectory());
+            int folderNumber = 0;
+            folderNumber = directory.GetDirectories().Length;
 
-            if (counter != 0)
-            {
-                directory = Path.GetFullPath(directory);
-            }
-
-            //foreach (var item in Directory.GetDirectories(directory))
-            //{
-            //    //Console.WriteLine(item);
-            //    //counter++;
-            //    //directory = Path.GetDirectoryName(directory);
-            //    //counter = Directory.GetDirectories(directory).Length;
-            //    //do
-            //    //{
-            //    //    counter = Directory.GetDirectories(directory).Length;
-            //    //    //CountingFolder(directory);
-            //    //}
-            //    //while (counter != 0);
-            //    //{
-            //    //    Console.WriteLine("End of counting");
-            //    //}
-            //    //Console.WriteLine(counter);
-            //}
-            Console.WriteLine(string.Empty);
-            return $"You folder contains {counter} folder(s)";
+            return folderNumber;
         }
 
-        public void CountingFiles ()
+        public double GetSizeOfFolder(DirectoryInfo directory)
         {
-            var directory = this.ChooseDirectory();
-            long size = 0;
-            int counter = 0;
-            DirectoryInfo info = new DirectoryInfo(directory);
-            foreach (var item in Directory.GetFiles(directory))
+            double sizeValue = 0;
+            double counter = 0;
+
+
+            counter += directory.GetDirectories().Length;
+
+            foreach (var file in directory.GetFiles())
             {
-                Console.WriteLine(item);
-                size += item.Length;
-                counter++;
+                sizeValue += file.Length;
             }
-            Console.WriteLine($"Files - {counter}");
-            //Console.WriteLine($"Size of your directory - {size} bite(s)");
+
+            foreach (var folder in directory.GetDirectories())
+            {
+                sizeValue += GetSizeOfFolder(folder);
+            }
+            return sizeValue;
         }
     }
 }
-
-//http://www.cyberforum.ru/csharp-beginners/thread621797.html
-
-
-///int directoryCount = System.IO.Directory.GetDirectories($"{directory}").Length;
-
-//DirectoryInfo DrInfo = new DirectoryInfo(directory);
-//DirectoryInfo[] folder = DrInfo.GetDirectories();
-//FileInfo[] Fi = DrInfo.GetFiles();
-
-//foreach (var item in folder)
-//{
-//    Console.WriteLine(item);
-//    counter++;
-//    Console.WriteLine(counter);
-//}
-
-//foreach (var item in Directory.GetDirectories(directory))
-//{
-//    foreach (var i in Directory.GetDirectories(directory))
-//    {
-//        //Console.WriteLine(i);
-//        counter++;
-//    }
-//    CountingFolder();
-//}

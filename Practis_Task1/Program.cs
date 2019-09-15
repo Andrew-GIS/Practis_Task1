@@ -16,19 +16,19 @@ namespace Practis_Task1
             //
             //Task1
             //
-            //FolderInfo info = new FolderInfo();
-            //info.DisplayInfo();
-            //
+            new FolderInfo().ShowFolderInfo();
+            
             //Task 2.
             //
-            TextFile text = new TextFile();
-            text.CreateText();
+            //TextFile text = new TextFile();
+            //text.CreateText();
+
             //
             //Task 3.
             //
-            FileCountInfo file = new FileCountInfo();
-            file.FileCreated();
-            file.Counting();
+            //FileCountInfo file = new FileCountInfo();
+            //file.FileCreated();
+            //file.Counting();
         }
     }
 }

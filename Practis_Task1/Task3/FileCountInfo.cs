@@ -9,7 +9,6 @@ namespace Practis_Task1.Task3
 {
     class FileCountInfo
     {
-        
         public string CreateWay()
         {
             string way = "D:\\test";
